@@ -1,7 +1,7 @@
 extends Popup
 var let_go = 0
-func get_let_go():
 
+func get_let_go():
 	return let_go
 
 

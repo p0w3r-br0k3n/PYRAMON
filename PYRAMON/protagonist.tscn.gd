@@ -5,6 +5,7 @@ const sp=3
 
 func _ready():
 	pass
+
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_left"):
 		vel.x=0
@@ -30,6 +31,7 @@ func _physics_process(delta):
 		
 	else:
 		vel.y=lerp(vel.z,0,0.1)
+	
 	move_and_slide(vel)
 
 

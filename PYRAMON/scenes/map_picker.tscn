@@ -49,6 +49,9 @@ margin_right = 309.804
 margin_bottom = 419.466
 rect_scale = Vector2( 0.432368, 0.45939 )
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Sprite" type="Sprite" parent="lets_a_go_desc"]
 texture = ExtResource( 5 )
@@ -64,6 +67,9 @@ custom_colors/font_color = Color( 0.164706, 0.458824, 0.117647, 1 )
 text = "Welcome to Pyramon Correction Center soldier!
 Your job is to well... not let anyone escape. 
 Good luck and don't drink during work!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="choose_text" type="TextureRect" parent="."]
 margin_left = 638.186

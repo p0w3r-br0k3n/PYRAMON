@@ -1,6 +1,6 @@
 extends KinematicBody
 
-var speed = 200
+var speed = 1
 var velocity = Vector3()
 
 
@@ -17,8 +17,7 @@ func _physics_process(delta):
 	for i in get_slide_count():
 		var col = get_slide_collision(i)
 		if(col):
-			print(col.get_collider())
 			if(col.collider is RigidBody):
 				col.collider.apply_central_impulse(-col.normal*3)
-				col.collider.hurt()
-			queue_free()
+				# col.collider.hurt()
+			# queue_free()

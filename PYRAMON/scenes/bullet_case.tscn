@@ -11,14 +11,13 @@ roughness = 0.4
 uv1_triplanar = true
 uv1_triplanar_sharpness = 0.420448
 
-[node name="bullet_case" type="Spatial"]
+[node name="bullet_case" type="RigidBody"]
 
-[node name="RigidBody" type="RigidBody" parent="."]
-
-[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="RigidBody/CollisionShape"]
-transform = Transform( 1, 0.000599394, -0.000373255, -0.000599508, 1, -0.000327377, 0.000373072, 0.000327586, 1, 0, 0, 0 )
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
