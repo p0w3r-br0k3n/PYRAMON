@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/bullet.gd" type="Script" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+
+[sub_resource type="CapsuleMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.866667, 0.835294, 0.0392157, 1 )
+metallic = 0.5
+metallic_specular = 1.0
+anisotropy_enabled = true
+anisotropy = 0.4
+uv1_triplanar = true
+uv1_triplanar_sharpness = 9.84915
+uv2_triplanar = true
+uv2_triplanar_sharpness = 14.42
+
+[node name="bullet" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )

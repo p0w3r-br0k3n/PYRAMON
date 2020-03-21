@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="CylinderShape" id=1]
+
+[sub_resource type="CylinderMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.901961, 0.862745, 0.270588, 1 )
+metallic = 0.7
+roughness = 0.4
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.420448
+
+[node name="bullet_case" type="Spatial"]
+
+[node name="RigidBody" type="RigidBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="RigidBody/CollisionShape"]
+transform = Transform( 1, 0.000599394, -0.000373255, -0.000599508, 1, -0.000327377, 0.000373072, 0.000327586, 1, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
