@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://games_cursor.gd" type="Script" id=1]
+[ext_resource path="res://code/games_cursor.gd" type="Script" id=1]
 [ext_resource path="res://sprites/aim.png" type="Texture" id=2]
+
 
 [node name="games_cursor" type="Node2D"]
 script = ExtResource( 1 )

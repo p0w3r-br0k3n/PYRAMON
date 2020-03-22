@@ -3,7 +3,8 @@
 [ext_resource path="res://fonts/NewShape-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://ui/next_button.png" type="Texture" id=2]
 [ext_resource path="res://ui/next_button_pressed.png" type="Texture" id=3]
-[ext_resource path="res://next_button.gd" type="Script" id=4]
+[ext_resource path="res://code/next_button.gd" type="Script" id=4]
+
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
