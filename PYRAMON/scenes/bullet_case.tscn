@@ -14,7 +14,7 @@ uv1_triplanar_sharpness = 0.420448
 [node name="bullet_case" type="RigidBody"]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0 )
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
