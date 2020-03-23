@@ -1,7 +1,8 @@
 extends KinematicBody
 
-var speed = 10
 
+
+var speed = 1
 var velocity = Vector3()
 
 
@@ -29,3 +30,4 @@ func _physics_process(delta):
 		
 		if(queue_free):
 			queue_free()
+
