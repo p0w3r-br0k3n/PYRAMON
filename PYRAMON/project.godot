@@ -61,6 +61,10 @@ mouse_click={
  ]
 }
 
+[physics]
+
+3d/physics_engine="Bullet"
+
 [rendering]
 
 quality/intended_usage/framebuffer_allocation.mobile=2
@@ -75,5 +79,5 @@ quality/subsurface_scattering/follow_surface=true
 environment/default_clear_color=Color( 0.301961, 0.301961, 0.301961, 1 )
 quality/reflections/atlas_size=8192
 quality/reflections/atlas_subdiv=32
-quality/filters/msaa=4
+quality/filters/msaa=3
 environment/default_environment="res://environment/1st_stage_environment.tres"

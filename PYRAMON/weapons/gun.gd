@@ -2,30 +2,45 @@ extends Spatial
 
 onready var Bullet = preload("res://scenes/bullet.tscn")
 onready var Case = preload("res://scenes/bullet_case.tscn")
+onready var Sound = $pistol_gun_sound_source
+onready var Smoke = $smoke_pistol
 onready var Camera = get_node("/root/Spatial/InterpolatedCamera")
 
 onready var Parent = get_parent()
+
+onready var timer = null
+onready var smoke_delay = 2
+onready var can_smoke = false
 
 onready var mouse_position = Vector3()
 
 var bullet_spawn_location = Vector3()
 var case_spawn_location = Vector3()
-var reload = 0
+var reload = 9
+
 func _ready():
-	pass
-	
+	timer = Timer.new()
+	timer.connect("timeout", self, "timeout_complete")
+	timer.set_wait_time(smoke_delay)
+	add_child(timer)
 
 func _process(delta):
 	if Input.is_action_just_pressed("mouse_click"):
 		var mouse_pos = get_tree().root.get_mouse_position()
 		mouse_position = Vector3(mouse_pos.x, mouse_pos.y, 0)
 		shoot()
-		var pistol_gun_sound = $"pistol_gun_sound_source"
-		pistol_gun_sound.play()
-		var smoke_pistol= $"smoke_pistol"
-		
+
+func timeout_complete():
+	Smoke.set_emitting(true)
 
 func shoot():
+	# check if we have ammo
+	if(reload == 0):
+		# here we would probably add some reload function
+		return
+	# play bullet sound
+	Sound.play()
+	Smoke.set_emitting(false)
 	# spawn bullet and case
 	var bullet = Bullet.instance()
 	var case = Case.instance()
@@ -55,9 +70,6 @@ func shoot():
 	case.global_rotate(Vector3(1, 0, 0), 300)
 	case.global_translate(case_translation_vector)
 	case.apply_impulse(Vector3(0, 0, 0), Vector3(0, 0, 1))
-	reload= reload+1 
 	
-		
-	if reload ==9:
-		reload=0
-		
+	reload = reload - 1
+	timer.start()
