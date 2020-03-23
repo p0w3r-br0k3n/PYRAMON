@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://weapons/gun.gd" type="Script" id=1]
 [ext_resource path="res://weapons/blinn1.material" type="Material" id=2]
+[ext_resource path="res://sounds/pistol_fire_sound.wav" type="AudioStream" id=3]
+[ext_resource path="res://sprites/smoke.png" type="Texture" id=4]
+[ext_resource path="res://scenes/smoke_pistol.gd" type="Script" id=5]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "polySurface2Mesh"
@@ -35,6 +38,21 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -6.52211 ), Vector3( 0, 0, 0 ) ]
 }
 
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+flags_vertex_lighting = true
+albedo_texture = ExtResource( 4 )
+metallic = 0.29
+metallic_specular = 0.31
+roughness = 0.3
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 4
+emission_point_count = 1
+angular_velocity = 2.8026e-044
+
+[sub_resource type="QuadMesh" id=5]
+
 [node name="pisto01" type="Spatial"]
 script = ExtResource( 1 )
 
@@ -46,3 +64,16 @@ material/0 = null
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "basic_gun_recoil"
 anims/basic_gun_recoil = SubResource( 2 )
+
+[node name="pistol_gun_sound_source" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+
+[node name="smoke_pistol" type="Particles" parent="."]
+transform = Transform( 0.0122806, -4.78279e-005, 1.08438e-007, -3.46727e-005, -0.0459781, 9.23283e-010, -9.75908e-010, 1.52628e-011, 1.12755, -0.0439243, 0.0214355, 0.0703674 )
+material_override = SubResource( 3 )
+emitting = false
+amount = 1
+one_shot = true
+process_material = SubResource( 4 )
+draw_pass_1 = SubResource( 5 )
+script = ExtResource( 5 )

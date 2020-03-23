@@ -10,17 +10,20 @@ onready var mouse_position = Vector3()
 
 var bullet_spawn_location = Vector3()
 var case_spawn_location = Vector3()
-
+var reload = 0
 func _ready():
 	pass
+	
 
 func _process(delta):
 	if Input.is_action_just_pressed("mouse_click"):
 		var mouse_pos = get_tree().root.get_mouse_position()
 		mouse_position = Vector3(mouse_pos.x, mouse_pos.y, 0)
 		shoot()
-
-
+		var pistol_gun_sound = $"pistol_gun_sound_source"
+		pistol_gun_sound.play()
+		var smoke_pistol= $"smoke_pistol"
+		
 
 func shoot():
 	# spawn bullet and case
@@ -52,3 +55,9 @@ func shoot():
 	case.global_rotate(Vector3(1, 0, 0), 300)
 	case.global_translate(case_translation_vector)
 	case.apply_impulse(Vector3(0, 0, 0), Vector3(0, 0, 1))
+	reload= reload+1 
+	
+		
+	if reload ==9:
+		reload=0
+		

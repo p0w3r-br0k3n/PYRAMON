@@ -1,7 +1,8 @@
 extends KinematicBody
 
-var speed = 10
 
+
+var speed = 8
 var velocity = Vector3()
 
 
