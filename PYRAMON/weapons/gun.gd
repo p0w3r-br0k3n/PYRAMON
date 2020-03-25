@@ -9,7 +9,7 @@ onready var Camera = get_node("/root/Spatial/InterpolatedCamera")
 onready var Parent = get_parent()
 
 onready var timer = null
-onready var smoke_delay = 2
+onready var smoke_delay = 0.35
 onready var can_smoke = false
 
 onready var mouse_position = Vector3()
