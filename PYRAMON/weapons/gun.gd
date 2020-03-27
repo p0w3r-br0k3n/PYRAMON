@@ -34,8 +34,12 @@ func timeout_complete():
 	Smoke.set_emitting(true)
 
 func shoot():
+	
+	# plays recoil animation
+	$AnimationPlayer.play("basic_gun_recoil")
 	# check if we have ammo
 	if(reload == 0):
+		$AnimationPlayer.play("basic_gun_reload")
 		# here we would probably add some reload function
 		return
 	# play bullet sound
