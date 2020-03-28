@@ -5,6 +5,7 @@
 [ext_resource path="res://sounds/pistol_fire_sound.wav" type="AudioStream" id=3]
 [ext_resource path="res://sprites/fire_smoke_sprite.png" type="Texture" id=4]
 [ext_resource path="res://particles/smoke_fire_particles.tres" type="Material" id=5]
+[ext_resource path="res://sounds/pistol_reload_sound.wav" type="AudioStream" id=6]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "polySurface2Mesh"
@@ -38,7 +39,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -6.52211 ), Vector3( 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=3]
 resource_name = "basic_gun_reload"
 tracks/0/type = "value"
 tracks/0/path = NodePath("polySurface2:rotation_degrees")
@@ -53,7 +54,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -25.7693 ), Vector3( 0, 0, 0 ) ]
 }
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=4]
 flags_unshaded = true
 vertex_color_use_as_albedo = true
 params_blend_mode = 1
@@ -63,20 +64,20 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 albedo_texture = ExtResource( 4 )
 
-[sub_resource type="Gradient" id=11]
+[sub_resource type="Gradient" id=5]
 offsets = PoolRealArray( 0, 0.0729927, 0.459854, 0.605839, 1 )
 colors = PoolColorArray( 0, 0, 0, 1, 0.0579673, 0.0579673, 0.0579673, 1, 0.0286849, 0.0286849, 0.0286849, 1, 0.20438, 0.20438, 0.20438, 1, 1, 1, 1, 1 )
 
-[sub_resource type="GradientTexture" id=12]
-gradient = SubResource( 11 )
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
 
-[sub_resource type="Curve" id=6]
+[sub_resource type="Curve" id=7]
 _data = [ Vector2( 0, 0 ), 0.0, 4.33226, 0, 0, Vector2( 0.265823, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=7]
-curve = SubResource( 6 )
+[sub_resource type="CurveTexture" id=8]
+curve = SubResource( 7 )
 
-[sub_resource type="ParticlesMaterial" id=8]
+[sub_resource type="ParticlesMaterial" id=9]
 emission_shape = 2
 emission_box_extents = Vector3( 1, 1, 1 )
 gravity = Vector3( 0, -9.81, 0 )
@@ -85,16 +86,12 @@ angular_velocity_random = 1.0
 linear_accel = 4.0
 angle = 360.0
 angle_random = 1.0
-scale_curve = SubResource( 7 )
-color_ramp = SubResource( 12 )
+scale_curve = SubResource( 8 )
+color_ramp = SubResource( 6 )
 
-[sub_resource type="QuadMesh" id=9]
+[sub_resource type="QuadMesh" id=10]
 
-[sub_resource type="SpatialMaterial" id=14]
-albedo_texture = ExtResource( 4 )
-
-[sub_resource type="QuadMesh" id=13]
-material = SubResource( 14 )
+[sub_resource type="QuadMesh" id=11]
 
 [node name="pisto01" type="Spatial"]
 script = ExtResource( 1 )
@@ -107,22 +104,27 @@ material/0 = null
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "basic_gun_recoil"
 anims/basic_gun_recoil = SubResource( 2 )
-anims/basic_gun_reload = SubResource( 10 )
+anims/basic_gun_reload = SubResource( 3 )
 
 [node name="pistol_gun_sound_source" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 
 [node name="smoke_pistol" type="Particles" parent="."]
 transform = Transform( 0.1, -4.86471e-005, -6.96824e-006, -4.8647e-005, -0.1, 2.29089e-006, -6.96934e-006, -2.28755e-006, -0.1, -0.0549698, 0.0185552, 0 )
-material_override = SubResource( 3 )
+material_override = SubResource( 4 )
 emitting = false
 amount = 5
 fract_delta = false
 visibility_aabb = AABB( -4, -10.0732, -4, 8, 20.1464, 8 )
-process_material = SubResource( 8 )
-draw_pass_1 = SubResource( 9 )
+process_material = SubResource( 9 )
+draw_pass_1 = SubResource( 10 )
 
 [node name="smoke_fire" type="Particles" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0197324, 0, 0 )
+amount = 1
 process_material = ExtResource( 5 )
-draw_pass_1 = SubResource( 13 )
+draw_pass_1 = SubResource( 11 )
+
+[node name="pistol_reload_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -6.07

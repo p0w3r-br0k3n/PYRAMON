@@ -41,6 +41,9 @@ func shoot():
 	if(reload == 0):
 		$AnimationPlayer.play("basic_gun_reload")
 		# here we would probably add some reload function
+		#plays pistol reload sound
+		$pistol_reload_sound.play()
+		
 		return
 	# play bullet sound
 	Sound.play()

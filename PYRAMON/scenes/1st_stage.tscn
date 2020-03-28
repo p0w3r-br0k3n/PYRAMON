@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/airship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/games_cursor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/gun.tscn" type="PackedScene" id=3]
-[ext_resource path="res://code/pause_popup.gd" type="Script" id=4]
-[ext_resource path="res://ui/pause_ui.png" type="Texture" id=5]
-[ext_resource path="res://scenes/protagonist.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/protagonist.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/pause.tscn" type="PackedScene" id=5]
 
 [node name="Spatial" type="Spatial"]
 
@@ -103,24 +102,10 @@ transform = Transform( -0.980369, 0, -0.197172, 0, 1, 0, 0.197172, 0, -0.980369,
 
 [node name="pisto01" parent="Spatial" instance=ExtResource( 3 )]
 
-[node name="pause_popup" type="Popup" parent="Spatial"]
-visible = true
-margin_right = 40.0
-margin_bottom = 40.0
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="Spatial/pause_popup"]
-margin_left = 585.194
-margin_top = 114.9
-margin_right = 1385.19
-margin_bottom = 914.9
-texture = ExtResource( 5 )
-
-[node name="Scene Root2" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.00305479, 0, -0.126625, 0, 0.126662, 0, 0.126625, 0, 0.00305479, 5.64544, 3.18608, -1.00346 )
+[node name="Scene Root2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.00387676, 0, -0.160697, 0, 0.174763, 0, 0.181064, 0, 0.00436812, 5.64544, 3.37082, -1.00346 )
 
 [node name="camera_point" type="Spatial" parent="Scene Root2"]
 transform = Transform( 1.10465, -1.2725, 7.7131, -0.113783, 7.78628, 1.30087, -7.81654, -0.293176, 1.0711, 20.8757, 4.52042, 1.51174 )
+
+[node name="pause" parent="." instance=ExtResource( 5 )]
