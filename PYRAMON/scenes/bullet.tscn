@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://code/bullet.gd" type="Script" id=1]
+[ext_resource path="res://sprites/smoke.png" type="Texture" id=2]
 
 [sub_resource type="CylinderShape" id=1]
 radius = 0.93764
@@ -33,6 +34,38 @@ emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
 
+[sub_resource type="SpatialMaterial" id=7]
+flags_transparent = true
+flags_unshaded = true
+flags_no_depth_test = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="Curve" id=10]
+_data = [ Vector2( 0, 0.184091 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=11]
+curve = SubResource( 10 )
+
+[sub_resource type="ParticlesMaterial" id=8]
+lifetime_randomness = 0.25
+gravity = Vector3( 0, 0, 0 )
+tangential_accel = 0.1
+tangential_accel_random = 1.0
+angle = 360.0
+angle_random = 1.0
+scale = 0.05
+scale_random = 0.05
+scale_curve = SubResource( 11 )
+hue_variation = 1.0
+hue_variation_random = 1.0
+
+[sub_resource type="QuadMesh" id=9]
+
 [node name="bullet" type="KinematicBody"]
 script = ExtResource( 1 )
 
@@ -41,7 +74,6 @@ transform = Transform( 0.000348623, -0.00398478, 0, 0.00398478, 0.000348623, 0, 
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="CollisionShape"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
@@ -62,3 +94,16 @@ light_specular = 0.0
 shadow_enabled = true
 shadow_color = Color( 0.52549, 0.027451, 0.027451, 1 )
 shadow_bias = -12.33
+
+[node name="Particles" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00589431, -0.00779157, 0 )
+material_override = SubResource( 7 )
+cast_shadow = 0
+amount = 500
+randomness = 1.0
+fract_delta = false
+visibility_aabb = AABB( -0.0205234, -4, -0.0118873, 0.0410468, 8, 0.0237746 )
+local_coords = false
+draw_order = 1
+process_material = SubResource( 8 )
+draw_pass_1 = SubResource( 9 )

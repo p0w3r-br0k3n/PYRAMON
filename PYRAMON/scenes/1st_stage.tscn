@@ -22,7 +22,7 @@ enabled = true
 [node name="Viewport" type="Viewport" parent="InterpolatedCamera"]
 
 [node name="transporter_light" type="OmniLight" parent="."]
-transform = Transform( 1, 3.30872e-024, -2.98023e-008, -2.32302e-010, -0.99997, -0.00779477, -2.98014e-008, 0.00779477, -0.99997, 6.32474, 11.2917, -0.825538 )
+transform = Transform( 1, 3.30872e-24, -2.98023e-08, -2.32302e-10, -0.99997, -0.00779477, -2.98014e-08, 0.00779477, -0.99997, 6.32474, 11.2917, -0.825538 )
 light_color = Color( 0.0431373, 0.101961, 0.72549, 1 )
 light_energy = 2.6
 light_indirect_energy = 4.4
@@ -34,7 +34,7 @@ shadow_bias = -12.19
 shadow_contact = 13.22
 
 [node name="transporter_light2" type="OmniLight" parent="."]
-transform = Transform( 1, 3.30872e-024, -2.98023e-008, -2.32302e-010, -0.99997, -0.00779477, -2.98014e-008, 0.00779477, -0.99997, 23.8273, 18.32, -0.257821 )
+transform = Transform( 1, 3.30872e-24, -2.98023e-08, -2.32302e-10, -0.99997, -0.00779477, -2.98014e-08, 0.00779477, -0.99997, 23.8273, 18.32, -0.257821 )
 light_color = Color( 0.0431373, 0.101961, 0.72549, 1 )
 light_energy = 3.86
 light_indirect_energy = 0.0
