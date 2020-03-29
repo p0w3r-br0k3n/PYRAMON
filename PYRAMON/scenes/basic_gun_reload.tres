@@ -1,0 +1,29 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "basic_gun_reload"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cube/Cube001:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.95878 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cube/Cube005/Cube006:transform")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Transform( 0.814792, 0, 0, 0, 0.814792, 0, 0, 0, 0.814792, -0.135929, -0.640283, 0.264492 ), Transform( 0.814792, 0, 0, 0, 0.814792, 0, 0, 0, 0.814792, -0.0935513, -7.78344, 2.31026 ), Transform( 0.814792, 0, 0, 0, 0.814792, 0, 0, 0, 0.814792, -0.135929, -0.640283, 0.264492 ) ]
+}
