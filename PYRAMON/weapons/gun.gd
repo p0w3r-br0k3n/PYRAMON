@@ -1,4 +1,4 @@
-extends Spatial
+ extends Spatial
 
 onready var Bullet = preload("res://scenes/bullet.tscn")
 onready var Case = preload("res://scenes/bullet_case.tscn")

@@ -2,6 +2,5 @@
 
 [resource]
 spread = 12.45
-angular_velocity = -309.7
 linear_accel = -25.53
 color = Color( 0.219608, 0.231373, 0.231373, 1 )

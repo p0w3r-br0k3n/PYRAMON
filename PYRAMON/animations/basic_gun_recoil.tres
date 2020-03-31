@@ -2,7 +2,7 @@
 
 [resource]
 resource_name = "basic_gun_recoil"
-length = 0.4
+length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Cube/Cube001:translation")
 tracks/0/interp = 1
@@ -14,4 +14,16 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 1.26242 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cube/Cube007:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 1.49012e-008, 2.86102e-006, 0.174881 ), Vector3( 1.49012e-008, -0.000751495, 0.52227 ), Vector3( 1.49012e-008, 2.86102e-006, 0.174881 ) ]
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://characters/protagonist2.gd" type="Script" id=1]
 [ext_resource path="res://characters/Material_006.material" type="Material" id=2]
@@ -140,7 +140,95 @@ surfaces/0 = {
 
 [sub_resource type="CylinderShape" id=15]
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=16]
+resource_name = "crouching"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("foot_left:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Transform( 0.42428, 0, 0, 0, 0.424279, -0.00140302, 0, 0.0010668, 0.557998, -0.578917, -3.25081, -0.0308651 ), Transform( 0.42428, 0, 0, 0, 0.424279, -0.00140303, 0, 0.0010668, 0.557998, -0.578917, -3.25081, -0.0308651 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("foot_right:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.518656, -3.23355, -0.00965881 ), Vector3( 0.518656, -3.23355, -1.46398 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("hand_left:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.724179, 1.40382, -1.54406 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("head:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.92441, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("body_middle:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("body_up:translation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.0107, 0 ), Vector3( 0, 1.0107, -0.291581 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("body_down:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.998222, 0 ), Vector3( 0, -0.998222, 0.21406 ) ]
+}
+
+[sub_resource type="Animation" id=17]
 resource_name = "walking"
 length = 0.5
 tracks/0/type = "value"
@@ -168,9 +256,9 @@ tracks/1/keys = {
 "values": [ Transform( 0.42428, 0, 0, 0, 0.423807, -0.0192891, 0, 0.0245898, 0.557428, 0.507091, -3.27915, -0.0694542 ), Transform( 0.42428, 0, 0, 0, 0.423807, -0.0192891, 0, 0.0245898, 0.557428, 0.507091, -3.27915, -0.0694542 ), Transform( 0.42428, 0, 0, 0, 0.423807, -0.0192891, 0, 0.0245898, 0.557428, 0.518656, -2.56389, -0.586316 ), Transform( 0.42428, 0, 0, 0, 0.423807, -0.0192891, 0, 0.0245898, 0.557428, 0.518656, -3.23355, -0.586316 ), Transform( 0.42428, 0, 0, 0, 0.423807, -0.0192891, 0, 0.0245898, 0.557428, 0.518656, -3.23355, -0.00965881 ) ]
 }
 
-[sub_resource type="SphereShape" id=16]
+[sub_resource type="SphereShape" id=18]
 
-[sub_resource type="BoxShape" id=17]
+[sub_resource type="BoxShape" id=19]
 
 [node name="Scene Root" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -195,12 +283,12 @@ mesh = SubResource( 4 )
 material/0 = null
 
 [node name="foot_left" type="MeshInstance" parent="."]
-transform = Transform( 0.42428, 0, 0, 0, 0.424279, -0.00140303, 0, 0.0010668, 0.557998, -0.578917, -3.25081, -0.0308651 )
+transform = Transform( 0.42428, 0, 0, 0, 0.424279, -0.00140302, 0, 0.0010668, 0.557998, -0.578917, -3.25081, -0.0308651 )
 mesh = SubResource( 5 )
 material/0 = null
 
 [node name="body_middle" type="MeshInstance" parent="."]
-transform = Transform( -0.998562, 0, -0.0536084, 0, 1, 0, 0.0536084, 0, -0.998562, 0, 0, 0 )
+transform = Transform( -0.998306, 0.0159615, -0.0559433, 0.0159865, 0.999872, 0, 0.0559361, -0.000894339, -0.998434, 0, 0, 0 )
 mesh = SubResource( 6 )
 material/0 = null
 
@@ -243,12 +331,13 @@ transform = Transform( -0.998562, 0, -0.0536084, 0, 1, 0, 0.0536084, 0, -0.99856
 shape = SubResource( 15 )
 
 [node name="walking" type="AnimationPlayer" parent="."]
-anims/walking = SubResource( 18 )
+anims/crouching = SubResource( 16 )
+anims/walking = SubResource( 17 )
 
 [node name="CollisionShape8" type="CollisionShape" parent="."]
 transform = Transform( 0.367551, 0, 0, 0, 0.367551, 5.82077e-011, 0, 5.82077e-011, 0.367551, 0.883651, 1.46266, -1.51063 )
-shape = SubResource( 16 )
+shape = SubResource( 18 )
 
 [node name="CollisionShape9" type="CollisionShape" parent="."]
 transform = Transform( 0.42428, 0, 0, 0, 0.423807, -0.0192891, 0, 0.0245898, 0.557428, 0.507091, -3.03877, -0.0921739 )
-shape = SubResource( 17 )
+shape = SubResource( 19 )
