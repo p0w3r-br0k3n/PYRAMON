@@ -13,9 +13,6 @@
 [ext_resource path="res://scenes/menus_cursor.tscn" type="PackedScene" id=11]
 
 [node name="Node2D" type="Control"]
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="background" type="TextureRect" parent="."]
 margin_right = 2392.0

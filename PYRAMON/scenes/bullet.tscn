@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://code/bullet.gd" type="Script" id=1]
-[ext_resource path="res://sprites/smoke.png" type="Texture" id=2]
 
 [sub_resource type="CylinderShape" id=1]
 radius = 0.93764
@@ -74,6 +73,7 @@ transform = Transform( 0.000348623, -0.00398478, 0, 0.00398478, 0.000348623, 0, 
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="CollisionShape"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 

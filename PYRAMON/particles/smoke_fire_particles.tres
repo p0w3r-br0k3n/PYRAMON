@@ -8,4 +8,8 @@ colors = PoolColorArray( 0.654902, 0.121569, 0.121569, 1, 0.778599, 0.765602, 0.
 gradient = SubResource( 1 )
 
 [resource]
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 60.32
+angular_velocity = 6.30098e-010
 color_ramp = SubResource( 2 )
