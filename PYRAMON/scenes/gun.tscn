@@ -65,7 +65,6 @@ albedo_texture = ExtResource( 4 )
 [sub_resource type="ParticlesMaterial" id=5]
 emission_shape = 1
 emission_sphere_radius = 0.01
-direction = Vector3( 0, 0, 0 )
 gravity = Vector3( 0, 0.25, 0 )
 initial_velocity_random = 1.0
 angular_velocity = 180.0
@@ -95,7 +94,7 @@ anims/basic_gun_reload = SubResource( 3 )
 stream = ExtResource( 3 )
 
 [node name="smoke_pistol" type="Particles" parent="."]
-transform = Transform( -0.1, 4.86384e-05, 6.97692e-06, 4.86383e-05, 0.1, -2.29094e-06, -6.97804e-06, -2.28755e-06, -0.1, -0.0436695, 0.0185552, -0.0305252 )
+transform = Transform( -0.1, 4.86384e-005, 6.97692e-006, 4.86383e-005, 0.1, -2.29094e-006, -6.97804e-006, -2.28755e-006, -0.1, -0.0436695, 0.0185552, -0.0305252 )
 material_override = SubResource( 4 )
 emitting = false
 amount = 25

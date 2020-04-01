@@ -2,7 +2,7 @@
 
 [ext_resource path="res://code/diL_5.gd" type="Script" id=1]
 [ext_resource path="res://fonts/NewShape-Bold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://scenes/dialogue_label.gd" type="Script" id=3]
+[ext_resource path="res://code/dialogue_label.gd" type="Script" id=3]
 [ext_resource path="res://ui/next_button.png" type="Texture" id=4]
 [ext_resource path="res://ui/next_button_pressed.png" type="Texture" id=5]
 [ext_resource path="res://code/next_button.gd" type="Script" id=6]
@@ -12,6 +12,7 @@
 [ext_resource path="res://code/dial_6.gd" type="Script" id=10]
 [ext_resource path="res://code/dial_7.gd" type="Script" id=11]
 [ext_resource path="res://scenes/menus_cursor.tscn" type="PackedScene" id=12]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 58

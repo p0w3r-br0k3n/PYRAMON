@@ -1,0 +1,53 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "basic_gun_reload"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cube/Cube001:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.95878 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cube006:transform")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Transform( 0.814792, 0, 0, 0, 0.814792, 0, 0, 0, 0.814792, -0.135929, -0.640283, 0.264492 ), Transform( 0.814792, 0, 0, 0, 0.814791, 9.31324e-010, 0, -9.31322e-010, 0.814792, -0.135929, -69.2624, 45.6761 ), Transform( 0.814792, 0, 0, 0, 0.814792, 0, 0, 0, 0.814792, -0.135929, -0.640283, 0.264492 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Cube/Cube005:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 2.98023e-008, 0.286066, 0.402878 ), Vector3( 2.98023e-008, -68.2399, 45.6047 ), Vector3( 2.98023e-008, 0.286066, 0.402878 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Cube/Cube007:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 1.49012e-008, 2.86102e-006, 0.174881 ), Vector3( 1.49012e-008, -0.000571251, 0.439262 ), Vector3( 1.49012e-008, 2.86102e-006, 0.174881 ) ]
+}
