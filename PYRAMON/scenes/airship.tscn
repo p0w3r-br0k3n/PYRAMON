@@ -7,7 +7,7 @@ data = PoolVector3Array( 3.8605, -2.336, -4.7742, 3.8605, 0, -4.7742, 3.8026, 0,
 
 [sub_resource type="BoxShape" id=2]
 
-[node name="airship" index="0" instance=ExtResource( 1 )]
+[node name="airship" instance=ExtResource( 1 )]
 
 [node name="StaticBody" type="StaticBody" parent="root" index="0"]
 

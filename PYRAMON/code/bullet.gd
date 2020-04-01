@@ -30,3 +30,7 @@ func _physics_process(delta):
 		
 		if(queue_free):
 			queue_free()
+
+
+		
+		

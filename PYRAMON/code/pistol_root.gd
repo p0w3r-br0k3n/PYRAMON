@@ -82,7 +82,7 @@ func shoot():
 	# we should realistically have two separate nodes for 
 	# bullet translation and case translation so they don't collide as soon as they spawn
 	# temp fix
-	var bullet_translation_vector = Vector3(translation.x + 0.1, translation.y, translation.z)
+	var bullet_translation_vector = Vector3(translation.x + 0.2, translation.y, translation.z)
 	var case_translation_vector = translation
 	
 	var bullet_speed_vector = mouse_position - bullet_spawn_location
