@@ -1,7 +1,8 @@
 extends TextureButton
+onready var dialogue = get_node("/root/dialogue")
 
-onready var next = get_owner().get_node("dialogue_label").get_next()
 func _on_next_button_pressed():
-	next= next+1
-	if next==7:
+	var next = get_owner().get_node("dialogue_label").get_next()
+	if next==8:
 		get_tree().change_scene("res://scenes/1st_stage.tscn")
+		get_tree().root.remove_child(dialogue)

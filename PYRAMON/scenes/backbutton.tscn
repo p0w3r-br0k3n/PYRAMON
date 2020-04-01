@@ -6,11 +6,14 @@
 [node name="backbutton" type="Control"]
 
 [node name="back_button" type="TextureButton" parent="."]
-margin_left = 15.0
+margin_left = 17.3917
 margin_top = 38.0
-margin_right = 410.0
+margin_right = 412.392
 margin_bottom = 281.0
 texture_normal = ExtResource( 1 )
 expand = true
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="back_button" to="back_button" method="_on_back_button_pressed"]

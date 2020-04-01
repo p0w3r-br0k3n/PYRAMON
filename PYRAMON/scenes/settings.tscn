@@ -4,7 +4,10 @@
 [ext_resource path="res://scenes/backbutton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/menus_cursor.tscn" type="PackedScene" id=3]
 
-[node name="Node2D" type="Control"]
+[node name="Settings" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="settings" type="TextureRect" parent="."]
 margin_right = 1922.0
@@ -26,5 +29,8 @@ margin_right = 134.0
 margin_bottom = 309.0
 rect_scale = Vector2( 16.1761, 5.46153 )
 color = Color( 0.231373, 0.231373, 0.231373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="menus_cursor" parent="." instance=ExtResource( 3 )]

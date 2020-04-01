@@ -25,6 +25,9 @@ margin_right = 1102.0
 margin_bottom = 565.0
 flat = true
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="main_menu_button" type="Button" parent="."]
 margin_left = 587.0
@@ -33,6 +36,9 @@ margin_right = 1120.0
 margin_bottom = 730.0
 flat = true
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="popup_hide" from="pause_popup" to="pause_popup" method="_on_pause_popup_popup_hide"]
 [connection signal="pressed" from="PAUSE_SETTINGS_BUTTON" to="PAUSE_SETTINGS_BUTTON" method="_on_PAUSE_SETTINGS_BUTTON_pressed"]
 [connection signal="pressed" from="main_menu_button" to="main_menu_button" method="_on_main_menu_button_pressed"]

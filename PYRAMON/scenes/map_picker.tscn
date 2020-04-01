@@ -17,6 +17,9 @@
 font_data = ExtResource( 6 )
 
 [node name="map_picker" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="map_picker" type="TextureRect" parent="."]
 margin_right = 2169.0

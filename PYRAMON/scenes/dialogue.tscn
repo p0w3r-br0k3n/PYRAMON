@@ -49,6 +49,9 @@ font_data = ExtResource( 2 )
 margin_right = 1920.0
 margin_bottom = 1080.0
 color = Color( 0.305882, 0.270588, 0.270588, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="diL_5" type="Popup" parent="."]
 margin_right = 40.0
@@ -170,11 +173,11 @@ What are you some kind of piratophobic?
  you to the galactic pc police!"
 
 [node name="menus_cursor" parent="." instance=ExtResource( 12 )]
-[connection signal="pressed" from="next_button" to="dial_6" method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="next_button" method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="dialogue_label" method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="dial_4" method="_on_next_button_pressed"]
 [connection signal="pressed" from="next_button" to="dialogue_label_2" method="_on_next_button_pressed"]
 [connection signal="pressed" from="next_button" to="dial_3" method="_on_next_button_pressed"]
 [connection signal="pressed" from="next_button" to="diL_5" method="_on_next_button_pressed"]
-[connection signal="pressed" from="next_button" to="dialogue_label" method="_on_next_button_pressed"]
-[connection signal="pressed" from="next_button" to="dial_4" method="_on_next_button_pressed"]
-[connection signal="pressed" from="next_button" to="next_button" method="_on_next_button_pressed"]
 [connection signal="pressed" from="next_button" to="dial_7" method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="dial_6" method="_on_next_button_pressed"]

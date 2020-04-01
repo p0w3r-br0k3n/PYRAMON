@@ -1,6 +1,6 @@
 extends TextureButton
 onready var lets_a_go = get_node("/root/map_picker/lets_a_go_desc")
-onready var map = preload("res://scenes/dialogue.tscn")
+onready var map = load("res://scenes/dialogue.tscn")
 onready var map_picker = get_node("/root/map_picker")
 
 func _ready():
