@@ -45,13 +45,13 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 albedo_texture = ExtResource( 2 )
 
-[sub_resource type="Curve" id=10]
+[sub_resource type="Curve" id=8]
 _data = [ Vector2( 0, 0.184091 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=11]
-curve = SubResource( 10 )
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
 
-[sub_resource type="ParticlesMaterial" id=8]
+[sub_resource type="ParticlesMaterial" id=10]
 lifetime_randomness = 0.25
 gravity = Vector3( 0, 0, 0 )
 tangential_accel = 0.1
@@ -60,11 +60,11 @@ angle = 360.0
 angle_random = 1.0
 scale = 0.05
 scale_random = 0.05
-scale_curve = SubResource( 11 )
+scale_curve = SubResource( 9 )
 hue_variation = 1.0
 hue_variation_random = 1.0
 
-[sub_resource type="QuadMesh" id=9]
+[sub_resource type="QuadMesh" id=11]
 
 [node name="bullet" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -105,5 +105,5 @@ fract_delta = false
 visibility_aabb = AABB( -0.0205234, -4, -0.0118873, 0.0410468, 8, 0.0237746 )
 local_coords = false
 draw_order = 1
-process_material = SubResource( 8 )
-draw_pass_1 = SubResource( 9 )
+process_material = SubResource( 10 )
+draw_pass_1 = SubResource( 11 )

@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://weapons/gun.gd" type="Script" id=1]
 [ext_resource path="res://weapons/blinn1.material" type="Material" id=2]
 [ext_resource path="res://sounds/pistol_fire_sound.wav" type="AudioStream" id=3]
 [ext_resource path="res://sprites/fire_smoke_sprite.png" type="Texture" id=4]
 [ext_resource path="res://particles/smoke_fire_particles.tres" type="Material" id=5]
+[ext_resource path="res://scenes/Node.gd" type="Script" id=6]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "polySurface2Mesh"
@@ -111,6 +112,9 @@ anims/basic_gun_reload = SubResource( 3 )
 
 [node name="pistol_gun_sound_source" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
+
+[node name="Node" type="Node" parent="pistol_gun_sound_source"]
+script = ExtResource( 6 )
 
 [node name="smoke_pistol" type="Particles" parent="."]
 transform = Transform( 0.1, -4.86471e-05, -6.96824e-06, -4.8647e-05, -0.1, 2.29089e-06, -6.96934e-06, -2.28755e-06, -0.1, -0.0549698, 0.0185552, 0 )
