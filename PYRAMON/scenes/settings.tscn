@@ -13,14 +13,13 @@ __meta__ = {
 margin_right = 1922.0
 margin_bottom = 1082.0
 texture = ExtResource( 1 )
-expand = true
 
 [node name="Node2D" parent="." instance=ExtResource( 2 )]
-margin_left = 55.0082
-margin_top = -35.8749
-margin_right = 55.0082
-margin_bottom = -35.8749
-rect_scale = Vector2( 0.699646, 1.05052 )
+margin_left = 14.0997
+margin_top = -4.70647
+margin_right = 14.0997
+margin_bottom = -4.70647
+rect_scale = Vector2( 0.585432, 0.882024 )
 
 [node name="kribo tin ntropi" type="ColorRect" parent="."]
 margin_left = 94.0001

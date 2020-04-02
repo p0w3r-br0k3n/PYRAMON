@@ -3,7 +3,6 @@
 [ext_resource path="res://code/menus_cursor.gd" type="Script" id=1]
 [ext_resource path="res://sprites/cursor.png" type="Texture" id=2]
 
-
 [node name="menus_cursor" type="Node2D"]
 script = ExtResource( 1 )
 

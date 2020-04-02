@@ -29,20 +29,20 @@ texture = ExtResource( 1 )
 expand = true
 
 [node name="setting_button" type="TextureButton" parent="."]
-margin_left = 1702.59
-margin_top = 73.1949
-margin_right = 1827.59
-margin_bottom = 196.195
+margin_left = 1690.0
+margin_top = 70.0
+margin_right = 1815.0
+margin_bottom = 193.0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 4 )
 script = ExtResource( 5 )
 
 [node name="play_button" type="TextureButton" parent="."]
-margin_left = 826.184
-margin_top = 832.229
-margin_right = 1850.18
-margin_bottom = 1552.23
+margin_left = 886.806
+margin_top = 820.0
+margin_right = 1910.8
+margin_bottom = 1540.0
 rect_scale = Vector2( 0.231257, 0.125068 )
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
@@ -60,10 +60,10 @@ autoplay = true
 [node name="menus_cursor" parent="." instance=ExtResource( 11 )]
 
 [node name="exit_button" type="TextureButton" parent="."]
-margin_left = 110.0
-margin_top = 922.278
-margin_right = 467.0
-margin_bottom = 1038.28
+margin_left = 150.0
+margin_top = 890.0
+margin_right = 507.0
+margin_bottom = 1006.0
 texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 13 )
 texture_hover = ExtResource( 14 )
