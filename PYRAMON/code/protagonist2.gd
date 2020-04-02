@@ -1,6 +1,6 @@
 extends KinematicBody
 
-
+var at = Vector3(6.169,10.134,-1.654)
 var vel = Vector3(0,0,0)
 var accel = 0
 var last_trans = translation
@@ -30,6 +30,7 @@ func _physics_process(delta):
 		vel.x = sp
 		$walking.play("walking")
 	elif Input.is_action_pressed("ui_left"):
+		$walking.play("walking")
 		vel.x = -sp
 	else:
 		vel.x = lerp(vel.x,0,0.1)
@@ -47,3 +48,16 @@ func _physics_process(delta):
 	accel += gravity*delta
 	vel.y += accel
 
+
+
+
+
+
+
+
+
+
+
+
+func _on_Area_body_entered(body):
+	print (1)

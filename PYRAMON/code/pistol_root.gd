@@ -41,6 +41,7 @@ func _process(delta):
 	#reloading
 	if Input.is_action_pressed("ui_rel"):
 		$AnimationPlayer.play("basic_gun_reload")
+		$pistol_reload_sound.play()
 func smoke_timeout_complete():
 	Smoke.set_emitting(false)
 	smoke_timer.stop()
@@ -55,6 +56,7 @@ func shoot():
 	# check if we have ammo
 	if(reload == 0):
 		$AnimationPlayer.play("basic_gun_reload")
+		$pistol_reload_sound.play()
 		# here we would probably add some reload function
 		return
 	
