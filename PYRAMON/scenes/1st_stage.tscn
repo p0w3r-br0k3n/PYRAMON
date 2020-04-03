@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scenes/1st_stage.gd" type="Script" id=1]
+[ext_resource path="res://code/1st_stage.gd" type="Script" id=1]
 [ext_resource path="res://scenes/pistol_root.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/airship.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/games_cursor.tscn" type="PackedScene" id=4]

@@ -60,7 +60,6 @@ func shoot():
 		# here we would probably add some reload function
 		return
 	
-	
 	# play bullet sound
 	Sound.play()
 	Smoke.set_emitting(false)

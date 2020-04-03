@@ -10,8 +10,6 @@ const forward_jump = 300
 
 const gravity = -981
 
-
-
 func get_translation_delta():
 	var delta = last_trans - translation
 	last_trans = translation
@@ -22,7 +20,7 @@ func _ready():
 
 func _process(delta):
 	move_and_slide(vel*delta, Vector3(0, 1, 0), false, 4, 0.785398, true)
-	
+
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_left"):
 		vel.x = 0
@@ -47,17 +45,6 @@ func _physics_process(delta):
 	 
 	accel += gravity*delta
 	vel.y += accel
-
-
-
-
-
-
-
-
-
-
-
 
 func _on_Area_body_entered(body):
 	print (1)

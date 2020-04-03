@@ -1,14 +1,10 @@
 extends KinematicBody
 
-
-
 var speed = 1
 var velocity = Vector3()
 
-
 func _ready():
 	velocity = Vector3(speed, 0, 0)
-
 
 func set_speed(blyat):
 	velocity = blyat.normalized()*speed
@@ -30,4 +26,3 @@ func _physics_process(delta):
 		
 		if(queue_free):
 			queue_free()
-

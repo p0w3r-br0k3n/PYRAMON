@@ -1,9 +1,10 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://weapons/gun.gd" type="Script" id=1]
+[ext_resource path="res://code/gun.gd" type="Script" id=1]
 [ext_resource path="res://weapons/blinn1.material" type="Material" id=2]
 [ext_resource path="res://sounds/pistol_fire_sound.wav" type="AudioStream" id=3]
 [ext_resource path="res://sprites/smoke.png" type="Texture" id=4]
+
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "polySurface2Mesh"
