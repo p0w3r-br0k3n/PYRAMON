@@ -28,16 +28,6 @@ rect_scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
 expand = true
 
-[node name="setting_button" type="TextureButton" parent="."]
-margin_left = 1690.0
-margin_top = 70.0
-margin_right = 1815.0
-margin_bottom = 193.0
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 3 )
-texture_hover = ExtResource( 4 )
-script = ExtResource( 5 )
-
 [node name="play_button" type="TextureButton" parent="."]
 margin_left = 886.806
 margin_top = 820.0
@@ -68,6 +58,19 @@ texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 13 )
 texture_hover = ExtResource( 14 )
 script = ExtResource( 15 )
-[connection signal="pressed" from="setting_button" to="setting_button" method="_on_setting_button_pressed"]
+
+[node name="setting_button" type="TextureButton" parent="."]
+margin_left = 1690.0
+margin_top = 70.0
+margin_right = 1815.0
+margin_bottom = 193.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="play_button" to="play_button" method="_on_play_button_pressed"]
 [connection signal="pressed" from="exit_button" to="exit_button" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="setting_button" to="setting_button" method="_on_setting_button_pressed"]
