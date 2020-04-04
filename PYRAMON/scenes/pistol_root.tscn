@@ -194,7 +194,7 @@ transform = Transform( 0.0110354, 0, 0, 0, 0.00928473, 0, 0, 0, 0.00880395, -0.0
 script = ExtResource( 1 )
 
 [node name="Cube" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.999997, 0.00217381, 0, -0.00241774, 0.999997, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 0.999997, 0.00241774, 0, -0.00241774, 0.999996, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
@@ -234,7 +234,7 @@ mesh = SubResource( 8 )
 material/0 = null
 
 [node name="Cube007" type="MeshInstance" parent="Cube"]
-transform = Transform( 1, 0, 0, 0, 1, -2.32831e-010, 0, 0, 0.999997, 1.49012e-008, -0.000571251, 0.439262 )
+transform = Transform( 1, 0, 0, 0, 1, -2.32831e-010, 0, 0, 0.999997, 1.49012e-008, 2.86102e-006, 0.174881 )
 mesh = SubResource( 9 )
 material/0 = null
 

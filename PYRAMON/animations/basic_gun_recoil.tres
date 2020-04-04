@@ -27,3 +27,15 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector3( 1.49012e-008, 2.86102e-006, 0.174881 ), Vector3( 1.49012e-008, -0.000751495, 0.52227 ), Vector3( 1.49012e-008, 2.86102e-006, 0.174881 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Cube:transform")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Transform( 1, 0, 0, 0, 0.999997, 0.00217381, 0, -0.00241774, 0.999997, 0, 0, 0 ), Transform( 1, 0, 0, 0, 0.996697, -0.0770029, 0, 0.0856427, 0.996697, 0, 0, 0 ), Transform( 1, 0, 0, 0, 0.999997, 0.00217381, 0, -0.00241774, 0.999997, 0, 0, 0 ) ]
+}
