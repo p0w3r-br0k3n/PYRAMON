@@ -10,5 +10,5 @@ func _on_play_map_pressed():
 	var num = lets_a_go.get_let_go()
 	if num == 1:
 		get_tree().root.add_child(map.instance())
-		get_tree().root.remove_child(map_picker)
-		map_picker.queue_free()
+		get_parent().get_parent().remove_child(get_parent())
+		queue_free()

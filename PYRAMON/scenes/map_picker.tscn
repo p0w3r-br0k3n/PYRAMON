@@ -14,8 +14,6 @@
 [ext_resource path="res://sprites/back.png" type="Texture" id=12]
 [ext_resource path="res://code/back_map_picker.gd" type="Script" id=13]
 
-
-
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 5 )
 
