@@ -242,7 +242,7 @@ shape = SubResource( 16 )
 anims/walking = SubResource( 17 )
 
 [node name="CollisionShape8" type="CollisionShape" parent="."]
-transform = Transform( 0.367551, 0, 0, 0, 0.367551, 5.82077e-011, 0, 5.82077e-011, 0.367551, 0.883651, 1.46266, -1.51063 )
+transform = Transform( 0.367551, 0, 0, 0, 0.367551, 5.82077e-11, 0, 5.82077e-11, 0.367551, 0.883651, 1.46266, -1.51063 )
 shape = SubResource( 18 )
 
 [node name="CollisionShape9" type="CollisionShape" parent="."]

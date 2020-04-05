@@ -7,6 +7,7 @@ var last_trans = translation
 const sp = 300
 const leg_force= 500
 const forward_jump = 300
+var physics_delta = 0;
 
 const gravity = -981
 
@@ -18,8 +19,8 @@ func get_translation_delta():
 func _ready():
 	pass
 
-func _process(delta):
-	move_and_slide(vel*delta, Vector3(0, 1, 0), false, 4, 0.785398, true)
+func _process(_delta):
+	move_and_slide(vel*physics_delta, Vector3(0, 1, 0), false, 4, 0.785398, true)
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_left"):
@@ -45,6 +46,8 @@ func _physics_process(delta):
 	 
 	accel += gravity*delta
 	vel.y += accel
+	physics_delta = delta
 
 func _on_Area_body_entered(body):
-	print (1)
+	if(body.name == "Scene Root2"):
+		print("yeet")
