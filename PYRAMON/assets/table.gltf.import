@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Airship.gltf.gltf-d1dbc459f5aee43f5c5105b74f3307ce.scn"
+path="res://.import/table.gltf-2ede06918c17e454a024d1146f4dea78.scn"
 
 [deps]
 
-source_file="res://maps/Airship.gltf.gltf"
-dest_files=[ "res://.import/Airship.gltf.gltf-d1dbc459f5aee43f5c5105b74f3307ce.scn" ]
+source_file="res://assets/table.gltf"
+dest_files=[ "res://.import/table.gltf-2ede06918c17e454a024d1146f4dea78.scn" ]
 
 [params]
 

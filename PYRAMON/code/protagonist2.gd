@@ -1,6 +1,7 @@
 extends KinematicBody
 
-var at = Vector3(6.169,10.134,-1.654)
+var at = Vector3(1,40,-105)
+var to = Vector3(1,-30,105)
 var vel = Vector3(0,0,0)
 var accel = 0
 var last_trans = translation
@@ -49,5 +50,12 @@ func _physics_process(delta):
 	physics_delta = delta
 
 func _on_Area_body_entered(body):
-	if(body.name == "Scene Root2"):
-		print("yeet")
+	if(body.name == "Scene Root2") and is_on_floor():
+		translate(at)
+		print ("yeet1")
+
+
+func _on_Area2_body_entered(body):
+	if(body.name == "Scene Root2") and is_on_floor():
+		translate(to)
+		print("yeet2")
