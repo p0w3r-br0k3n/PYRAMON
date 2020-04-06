@@ -4,3 +4,4 @@ onready var startui = get_node("/root/StartUI")
 
 func _on_play_button_pressed():
 	get_tree().root.add_child(map_picker.instance())
+	get_tree().root.remove_child(get_owner())
