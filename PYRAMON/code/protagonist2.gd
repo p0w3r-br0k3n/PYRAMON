@@ -1,6 +1,7 @@
 extends KinematicBody
 
-var at = Vector3(6.169,10.134,-1.654)
+var at = Vector3(1,40,-105)
+var to = Vector3(1,-30,105)
 var vel = Vector3(0,0,0)
 var accel = 0
 var last_trans = translation
@@ -31,10 +32,14 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("ui_left"):
 		$walking.play("walking")
 		vel.x = -sp
+	elif Input.is_action_just_pressed("ctrl"):
+		$walking.play("crouching")
+	elif Input.is_action_just_released("ctrl"):
+		$walking.play("up")
 	else:
 		vel.x = lerp(vel.x,0,0.1)
 	
-	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_down") and is_on_floor():
 		vel.y=0
 	elif Input.is_action_pressed("ui_up") and is_on_floor():
 		accel = leg_force
@@ -47,7 +52,15 @@ func _physics_process(delta):
 	accel += gravity*delta
 	vel.y += accel
 	physics_delta = delta
+	
 
 func _on_Area_body_entered(body):
-	if(body.name == "Scene Root2"):
-		print("yeet")
+	if(body.name == "Scene Root2") and is_on_floor():
+		translate(at)
+		print ("yeet1")
+
+
+func _on_Area2_body_entered(body):
+	if(body.name == "Scene Root2") and is_on_floor():
+		translate(to)
+		print("yeet2")
