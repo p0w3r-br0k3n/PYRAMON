@@ -47,9 +47,6 @@ shadow_color = Color( 0.113725, 0.0588235, 0.596078, 1 )
 shadow_bias = 0.79
 shadow_contact = 13.22
 
-[node name="games_cursor" parent="." instance=ExtResource( 3 )]
-pause_mode = 2
-
 [node name="engine_light" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3954, 3.43888, -0.789726 )
 light_color = Color( 0.905882, 0.568627, 0.172549, 1 )
@@ -121,3 +118,7 @@ transform = Transform( 0.163664, -0.12586, 0.978453, 0.0118111, 0.992006, 0.1256
 
 [node name="bullet" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.48675, 3.49735, 0.195357 )
+
+[node name="games_cursor" parent="." instance=ExtResource( 3 )]
+pause_mode = 2
+z_index = 1
