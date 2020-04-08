@@ -93,5 +93,8 @@ func shoot():
 	case.global_translate(case_translation_vector)
 	case.apply_impulse(Vector3(0, 0, 0), Vector3(0, 0, 1))
 	
+	
 	reload = reload - 1
 	fire_timer.start()
+
+
