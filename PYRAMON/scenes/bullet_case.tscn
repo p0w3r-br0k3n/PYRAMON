@@ -17,10 +17,10 @@ uv1_triplanar_sharpness = 0.420448
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.090574, 0, 0, 0, 0.090574, 0, 0, 0, 0.090574, 0, 0, 0 )
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 0.005, 0, 0, 0, 0.007, 0, 0, 0, 0.005, 0, 0, 0 )
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )

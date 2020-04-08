@@ -8,7 +8,7 @@ onready var Camera = get_node("/root/level/InterpolatedCamera")
 var clip= 1
 var start = 0
 var stop = 0
-onready var Parent = get_parent()
+onready var Parent = get_parent().get_parent().get_parent()
 
 onready var fire_timer = null
 onready var smoke_timer = null
@@ -36,6 +36,7 @@ func _ready():
 	add_child(fire_timer)
 	add_child(smoke_timer)
 
+# warning-ignore:unused_argument
 func _process(delta):
 	if Input.is_action_just_pressed("mouse_click") and (stop==0 or start == 1):
 		var mouse_pos = get_tree().root.get_mouse_position()
@@ -76,13 +77,10 @@ func shoot():
 		$AnimationPlayer.play("basic_gun_reload")
 		$pistol_reload_sound.play()
 		$fire_pistol.set_emitting(false)
-		bullets_remaining= bullets_remaining-9
+		bullets_remaining= bullets_remaining - 9
 		$empty_mag.start()
 		
-		
-		# here we would probably add some reload function
 		return
-		
 	
 	# play bullet sound
 	Sound.play()
@@ -99,16 +97,15 @@ func shoot():
 	Parent.add_child(case)
 	
 	# get the required positions and translations
-	var pos = Camera.unproject_position(get_global_transform().origin)
-	print(pos)
+	var pos = Camera.unproject_position(global_transform.origin)
 	
 	bullet_spawn_location = Vector3(pos.x, pos.y, 0)
 	
 	# we should realistically have two separate nodes for 
 	# bullet translation and case translation so they don't collide as soon as they spawn
 	# temp fix
-	var bullet_translation_vector = Vector3(translation.x + 0.2, translation.y, translation.z)
-	var case_translation_vector = translation
+	var bullet_translation_vector = Vector3(global_transform.origin.x + 1, global_transform.origin.y, global_transform.origin.z)
+	var case_translation_vector = global_transform.origin
 	
 	var bullet_speed_vector = mouse_position - bullet_spawn_location
 	bullet_speed_vector.y *= -1
@@ -118,11 +115,11 @@ func shoot():
 	bullet.global_translate(bullet_translation_vector)
 	
 	case.global_rotate(Vector3(1,0,0),300)
-	case.global_translate(case_translation_vector.normalized())
+	case.global_translate(case_translation_vector)
 	case.apply_impulse(Vector3(0,0,0), Vector3(0,0,1))
 	reload = reload - 1
 	
-	clip= clip+0.5
+	clip=clip+0.5
 	
 	fire_timer.start()
 	stop = 0
