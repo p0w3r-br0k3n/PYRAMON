@@ -21,7 +21,7 @@ onready var mouse_position = Vector3()
 
 var bullet_spawn_location = Vector3()
 var case_spawn_location = Vector3()
-var reload = 9
+var reload = 2
 
 func _ready():
 	fire_timer = Timer.new()
@@ -44,7 +44,7 @@ func _process(delta):
 		$fire_pistol/fire_pistol_time.start()
 		shoot()
 	#reloading
-	if Input.is_action_just_pressed("ui_rel"):
+	if Input.is_action_just_pressed("ui_rel") and stop==0:
 		$AnimationPlayer.play("basic_gun_reload")
 		$pistol_reload_sound.play()
 		bullets_remaining=bullets_remaining-clip
@@ -52,6 +52,7 @@ func _process(delta):
 		$reload.start()
 		bullets_remaining = bullets_remaining-clip
 		print(bullets_remaining)
+		$empty_mag.start()
 	if reload == 9:
 		clip=0
 func smoke_timeout_complete():
