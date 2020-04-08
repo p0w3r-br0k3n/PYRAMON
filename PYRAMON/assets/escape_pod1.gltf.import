@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/gun.dae-afed5b05bc647b3e3668000f7d7a55ee.scn"
+path="res://.import/escape_pod1.gltf-e85a9e7f1c7a09cbebff443c63fa3f71.scn"
 
 [deps]
 
-source_file="res://weapons/gun.dae"
-dest_files=[ "res://.import/gun.dae-afed5b05bc647b3e3668000f7d7a55ee.scn" ]
+source_file="res://assets/escape_pod1.gltf"
+dest_files=[ "res://.import/escape_pod1.gltf-e85a9e7f1c7a09cbebff443c63fa3f71.scn" ]
 
 [params]
 

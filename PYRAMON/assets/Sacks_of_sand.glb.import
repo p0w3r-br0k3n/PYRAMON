@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/gun.dae-afed5b05bc647b3e3668000f7d7a55ee.scn"
+path="res://.import/Sacks_of_sand.glb-07d014376b16dbcb1415f0c39172187e.scn"
 
 [deps]
 
-source_file="res://weapons/gun.dae"
-dest_files=[ "res://.import/gun.dae-afed5b05bc647b3e3668000f7d7a55ee.scn" ]
+source_file="res://assets/Sacks_of_sand.glb"
+dest_files=[ "res://.import/Sacks_of_sand.glb-07d014376b16dbcb1415f0c39172187e.scn" ]
 
 [params]
 

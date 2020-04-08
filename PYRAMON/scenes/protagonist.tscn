@@ -1,13 +1,14 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://code/protagonist2.gd" type="Script" id=1]
 [ext_resource path="res://characters/Material_002.material" type="Material" id=2]
-[ext_resource path="res://characters/Material_005.material" type="Material" id=3]
-[ext_resource path="res://characters/Material_001.material" type="Material" id=4]
-[ext_resource path="res://characters/Material_007.material" type="Material" id=5]
-[ext_resource path="res://characters/Material_006.material" type="Material" id=6]
-[ext_resource path="res://animations/crouching.tres" type="Animation" id=7]
-[ext_resource path="res://scenes/pistol_root.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/pistol_root.tscn" type="PackedScene" id=3]
+[ext_resource path="res://characters/Material_005.material" type="Material" id=4]
+[ext_resource path="res://characters/Material_001.material" type="Material" id=5]
+[ext_resource path="res://characters/Material_007.material" type="Material" id=6]
+[ext_resource path="res://characters/Material_006.material" type="Material" id=7]
+[ext_resource path="res://animations/crouching.tres" type="Animation" id=8]
+[ext_resource path="res://animations/holster.tres" type="Animation" id=9]
 
 [sub_resource type="ArrayMesh" id=1]
 surfaces/0 = {
@@ -46,7 +47,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 2874,
-"material": ExtResource( 3 ),
+"material": ExtResource( 4 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 1976
@@ -62,7 +63,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 2880,
-"material": ExtResource( 4 ),
+"material": ExtResource( 5 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 1984
@@ -76,7 +77,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 372,
-"material": ExtResource( 5 ),
+"material": ExtResource( 6 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 192
@@ -90,7 +91,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 2880,
-"material": ExtResource( 6 ),
+"material": ExtResource( 7 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 1984
@@ -104,10 +105,38 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 2880,
-"material": ExtResource( 4 ),
+"material": ExtResource( 5 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 1984
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "unhol_pistol"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("hand_right/hand_left:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.602275, -1.18469, -0.130676 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.37444, -0.132091, 0.0809412 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.37444, -0.132091, 0.0809412 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.37444, -0.132091, 0.0809412 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("hand_right:transform")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Transform( 0.367551, 0, 0, 0, 0.367551, 0, 0, 0, 0.367551, 0.883651, 1.45237, -1.57381 ), Transform( 0.367551, 0, 0, 0, 0.367551, 0, 0, 0, 0.367551, 0.883651, 1.45237, -1.57381 ), Transform( 0.367551, 0, 0, 0, 0.367551, 0, 0, 0, 0.367551, 0.883651, -0.369658, 0.070655 ), Transform( 0.367551, 0, 0, 0, 0.367551, 0, 0, 0, 0.367551, 0.883651, 1.45237, -1.57381 ) ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -213,7 +242,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 2880,
-"material": ExtResource( 6 ),
+"material": ExtResource( 7 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 1984
@@ -221,7 +250,7 @@ surfaces/0 = {
 
 [sub_resource type="SphereShape" id=14]
 
-[sub_resource type="CylinderShape" id=15]
+[sub_resource type="BoxShape" id=20]
 
 [sub_resource type="BoxShape" id=16]
 
@@ -235,6 +264,9 @@ surfaces/0 = {
 transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 0, 0 )
 script = ExtResource( 1 )
 
+[node name="AnimationTree" type="AnimationTree" parent="."]
+anim_player = NodePath("../hand_right/scene_root/AnimationPlayer")
+
 [node name="hand_right" type="MeshInstance" parent="."]
 transform = Transform( 0.367551, 0, 0, 0, 0.367551, 0, 0, 0, 0.367551, 0.883651, 1.45237, -1.57381 )
 mesh = SubResource( 1 )
@@ -245,8 +277,22 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.37444, -0.132091, 0.0809412
 mesh = SubResource( 2 )
 material/0 = null
 
-[node name="scene_root" parent="hand_right" instance=ExtResource( 8 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.00138831, -0.103475, -1.63227 )
+[node name="scene_root" parent="hand_right" instance=ExtResource( 3 )]
+editor/display_folded = true
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.00138831, 0.575773, -0.0360565 )
+visible = false
+
+[node name="Torus" parent="hand_right/scene_root/Cube" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, -2.32831e-010, 1, 0, 0, 0 )
+
+[node name="Cube005" parent="hand_right/scene_root/Cube" index="1"]
+transform = Transform( 0.813269, 0, 0, 0, 1, -2.32831e-010, 0, -2.32831e-010, 0.773602, 0, 0.286066, 0.402878 )
+
+[node name="Cube001" parent="hand_right/scene_root/Cube" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 2.32831e-010, 0, -2.32831e-010, 1, -0.0140448, -0.0467701, 0.00427246 )
+
+[node name="Cube007" parent="hand_right/scene_root/Cube" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 2.3283e-010, 0, -2.32831e-010, 0.999997, 0, 1.90735e-006, 0.174881 )
 
 [node name="head" type="MeshInstance" parent="."]
 transform = Transform( 0, 0, 0.812099, 0, 0.812099, 0, -0.812099, 0, 0, 0, 2.92441, 0 )
@@ -275,7 +321,9 @@ mesh = SubResource( 8 )
 material/0 = null
 
 [node name="walking" type="AnimationPlayer" parent="."]
-anims/crouching = ExtResource( 7 )
+anims/crouching = ExtResource( 8 )
+anims/holster = ExtResource( 9 )
+anims/unhol_pistol = SubResource( 22 )
 anims/up = SubResource( 9 )
 anims/walking = SubResource( 10 )
 
@@ -297,7 +345,8 @@ transform = Transform( 0, 0, 0.812099, 0, 0.812099, 0, -0.812099, 0, 0, 0, 2.924
 shape = SubResource( 14 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="."]
-shape = SubResource( 15 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.803197, 0, 0, 0 )
+shape = SubResource( 20 )
 
 [node name="CollisionShape10" type="CollisionShape" parent="."]
 transform = Transform( 0.42428, 0, 0, 0, 1.00869, -0.0459095, 0, 0.0245898, 0.557428, 0.507091, -2.39986, -0.0921739 )
@@ -314,3 +363,21 @@ shape = SubResource( 18 )
 [node name="CollisionShape8" type="CollisionShape" parent="."]
 transform = Transform( 0.998501, 0, 0.0547334, 0, 1, 0, -0.0547334, 0, 0.998501, 0, 1.0107, 0 )
 shape = SubResource( 19 )
+
+[node name="holster_time" type="Timer" parent="."]
+wait_time = 0.6
+
+[node name="unholster_time" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="hide_pistol" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="show_pistol" type="Timer" parent="."]
+wait_time = 0.1
+[connection signal="timeout" from="holster_time" to="." method="_on_holster_time_timeout"]
+[connection signal="timeout" from="unholster_time" to="." method="_on_unholster_time_timeout"]
+[connection signal="timeout" from="hide_pistol" to="." method="_on_hide_pistol_timeout"]
+[connection signal="timeout" from="show_pistol" to="." method="_on_show_pistol_timeout"]
+
+[editable path="hand_right/scene_root"]

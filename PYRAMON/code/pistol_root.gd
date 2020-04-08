@@ -6,7 +6,7 @@ onready var Sound = $pistol_gun_sound_source
 onready var Smoke = $smoke_pistol
 onready var Camera = get_node("/root/level/InterpolatedCamera")
 var clip= 1
-var start = 0
+var start = 1
 var stop = 0
 onready var Parent = get_parent().get_parent().get_parent()
 
@@ -46,6 +46,8 @@ func _process(delta):
 		shoot()
 	#reloading
 	if Input.is_action_just_pressed("ui_rel") and stop==0:
+		start = 0
+		stop=1
 		$AnimationPlayer.play("basic_gun_reload")
 		$pistol_reload_sound.play()
 		bullets_remaining=bullets_remaining-clip
@@ -57,6 +59,8 @@ func _process(delta):
 	
 	if reload == 9:
 		clip=0
+	
+		
 
 func smoke_timeout_complete():
 	Smoke.set_emitting(false)
@@ -71,6 +75,7 @@ func fire_timeout_complete():
 func shoot():
 	# check if we have ammo
 	if(reload == 0 and stop == 0):
+		start = 0
 		stop=1
 		$Cube/Cube005/cube5_time.start()
 		$reload.start()
@@ -118,7 +123,6 @@ func shoot():
 	case.global_translate(case_translation_vector)
 	case.apply_impulse(Vector3(0,0,0), Vector3(0,0,1))
 	reload = reload - 1
-	
 	clip=clip+0.5
 	
 	fire_timer.start()

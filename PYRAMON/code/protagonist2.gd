@@ -1,7 +1,7 @@
 extends KinematicBody
 
-var at = Vector3(1,40,-105)
-var to = Vector3(1,-30,105)
+var at = Vector3(4,35,-80)
+var to = Vector3(-4,-25,80)
 var vel = Vector3(0,0,0)
 var accel = 0
 var last_trans = translation
@@ -9,8 +9,11 @@ const sp = 300
 const leg_force= 500
 const forward_jump = 300
 var physics_delta = 0;
-
+var holster_pistol= 0
+var hol_time_pist=0
 const gravity = -981
+var holster_not_fire = 0
+#the var holster_not_fire should be called from the pistol_root script so as not to fire when you holster/unholster
 
 func get_translation_delta():
 	var delta = last_trans - translation
@@ -22,7 +25,23 @@ func _ready():
 
 func _process(_delta):
 	move_and_slide(vel*physics_delta, Vector3(0, 1, 0), false, 4, 0.785398, true)
-
+	if Input.is_action_just_pressed("run"):
+		pass
+	if Input.is_action_just_pressed("1"):
+		holster_not_fire=1
+		if holster_pistol == 0 and hol_time_pist==0:
+			
+			holster_pistol=1
+			$walking.play("holster")
+			$holster_time.start()
+			$show_pistol.start()
+		elif holster_pistol == 1 and hol_time_pist==1:
+			
+			holster_pistol=0
+			$walking.play("unhol_pistol")
+			$unholster_time.start()
+			$hide_pistol.start()
+			
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_left"):
 		vel.x = 0
@@ -55,12 +74,37 @@ func _physics_process(delta):
 	
 
 func _on_Area_body_entered(body):
-	if(body.name == "Scene Root2") and is_on_floor():
+	if(body.name == "Scene Root") and is_on_floor():
 		translate(at)
 		print ("yeet1")
 
 
-func _on_Area2_body_entered(body):
-	if(body.name == "Scene Root2") and is_on_floor():
+func _on_Area2_body_entered(body):	
+	if(body.name == "Scene Root") and is_on_floor():
 		translate(to)
 		print("yeet2")
+
+
+
+
+
+func _on_holster_time_timeout():
+	hol_time_pist=1
+	holster_not_fire=0
+	$holster_time.stop()
+	
+func _on_unholster_time_timeout():
+	hol_time_pist=0
+
+	holster_not_fire=0
+	$unholster_time.stop()
+
+
+func _on_hide_pistol_timeout():
+	$hand_right/scene_root.hide()
+	$hide_pistol.stop()
+
+
+func _on_show_pistol_timeout():
+	$hand_right/scene_root.show()
+	$show_pistol.stop()
