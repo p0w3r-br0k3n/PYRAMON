@@ -44,7 +44,6 @@ func smoke_timeout_complete():
 	smoke_timer.stop()
 
 func fire_timeout_complete():
-	print("hwat")
 	Smoke.set_emitting(true)
 	smoke_timer.start()
 	fire_timer.stop()
