@@ -1,5 +1,6 @@
 extends KinematicBody
 
+
 var at = Vector3(4,35,-80)
 var to = Vector3(-4,-25,80)
 var vel = Vector3(0,0,0)
@@ -25,7 +26,12 @@ func _ready():
 
 func _process(_delta):
 	move_and_slide(vel*physics_delta, Vector3(0, 1, 0), false, 4, 0.785398, true)
-	if Input.is_action_just_pressed("run"):
+	if Input.is_action_just_pressed("run") and Input.is_action_pressed("ui_left"):
+		pass
+		
+	elif Input.is_action_just_pressed("run") and Input.is_action_just_pressed("ui_right"):
+		pass
+	elif Input.is_action_just_released("run"): 
 		pass
 	if Input.is_action_just_pressed("1"):
 		holster_not_fire=1
@@ -67,12 +73,13 @@ func _physics_process(delta):
 	
 	if get_translation_delta().y == 0:
 		accel = 0
-	 
+	if Input.is_action_just_pressed("ui_rel"):
+		$walking.play("reload_pistol_hands") 
 	accel += gravity*delta
 	vel.y += accel
 	physics_delta = delta
 	
-
+	
 func _on_Area_body_entered(body):
 	if(body.name == "Scene Root") and is_on_floor():
 		translate(at)
