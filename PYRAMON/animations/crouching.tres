@@ -52,7 +52,7 @@ tracks/3/keys = {
 "values": [ Transform( 0, 0, 0.812099, 0, 0.812099, 0, -0.812099, 0, 0, 0, 2.92441, 0 ), Transform( 0, 0, 0.812099, 0, 0.812099, 0, -0.812099, 0, 0, 0, 2.4552, -1.14416 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("hand_right:transform")
+tracks/4/path = NodePath("hand_swervel/hand_right:transform")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false

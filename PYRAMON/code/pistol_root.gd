@@ -17,13 +17,13 @@ onready var smoke_timer = null
 onready var fire_delay = 0.5
 onready var smoke_delay = 2
 onready var can_smoke = false
-var bullets_remaining = 9
+var bullets_remaining = 90
 
 onready var mouse_position = Vector3()
 
 var bullet_spawn_location = Vector3()
 var case_spawn_location = Vector3()
-var reload = 2
+var reload = 9
 
 func _ready():
 	fire_timer = Timer.new()
@@ -38,8 +38,20 @@ func _ready():
 	add_child(fire_timer)
 	add_child(smoke_timer)
 
+
 # warning-ignore:unused_argument
 func _process(delta):
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	if Input.is_action_just_pressed("mouse_click") and (stop==0 or start == 1 and cant_shoot==0 ):
 		var mouse_pos = get_tree().root.get_mouse_position()
 		mouse_position = Vector3(mouse_pos.x, mouse_pos.y, 0)
@@ -67,7 +79,7 @@ func _process(delta):
 	if cant_shoot==1 and cant_shoot_animation_stop==0:
 		$AnimationPlayer.play("pistol_empty")
 		cant_shoot_animation_stop=1
-		
+	
 
 func smoke_timeout_complete():
 	Smoke.set_emitting(false)
@@ -116,7 +128,7 @@ func shoot():
 	# we should realistically have two separate nodes for 
 	# bullet translation and case translation so they don't collide as soon as they spawn
 	# temp fix
-	var bullet_translation_vector = Vector3(global_transform.origin.x + 1, global_transform.origin.y, global_transform.origin.z)
+	var bullet_translation_vector = Vector3(global_transform.origin.x +0.2,global_transform.origin.y, global_transform.origin.z)
 	var case_translation_vector = global_transform.origin
 	
 	var bullet_speed_vector = mouse_position - bullet_spawn_location

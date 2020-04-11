@@ -25,25 +25,25 @@ __meta__ = {
 [node name="map_picker" type="TextureRect" parent="."]
 margin_right = 2169.0
 margin_bottom = 1386.0
-rect_scale = Vector2( 0.884138, 0.795613 )
+rect_scale = Vector2( 0.988118, 0.876233 )
 texture = ExtResource( 1 )
 expand = true
 
 [node name="lets_a_go" type="TextureButton" parent="."]
-margin_left = 693.337
-margin_top = 256.539
-margin_right = 1578.34
-margin_bottom = 837.539
+margin_left = 812.84
+margin_top = 274.243
+margin_right = 1697.84
+margin_bottom = 855.243
 rect_scale = Vector2( 0.441313, 0.215545 )
 texture_normal = ExtResource( 2 )
 expand = true
 
 [node name="lets_a_go_desc" type="Popup" parent="."]
 visible = true
-margin_left = 269.804
-margin_top = 379.466
-margin_right = 309.804
-margin_bottom = 419.466
+margin_left = 327.343
+margin_top = 441.431
+margin_right = 367.343
+margin_bottom = 481.431
 rect_scale = Vector2( 0.432368, 0.45939 )
 script = ExtResource( 3 )
 __meta__ = {
@@ -85,10 +85,10 @@ rect_scale = Vector2( 0.3887, 0.418951 )
 texture = ExtResource( 7 )
 
 [node name="play_map" type="TextureButton" parent="."]
-margin_left = 1346.78
-margin_top = 883.958
-margin_right = 2873.78
-margin_bottom = 1449.96
+margin_left = 1448.58
+margin_top = 999.035
+margin_right = 2975.58
+margin_bottom = 1565.04
 rect_scale = Vector2( 0.29171, 0.327777 )
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 9 )

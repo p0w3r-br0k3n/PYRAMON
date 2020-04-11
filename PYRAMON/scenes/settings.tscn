@@ -13,10 +13,11 @@ __meta__ = {
 }
 
 [node name="settings" type="TextureRect" parent="."]
-margin_left = 22.7208
-margin_top = -6.81622
-margin_right = 1944.72
-margin_bottom = 1075.18
+margin_left = 23.0
+margin_top = -7.0
+margin_right = 2121.0
+margin_bottom = 1287.0
+rect_scale = Vector2( 1.10543, 1.18902 )
 texture = ExtResource( 1 )
 
 [node name="kribo tin ntropi" type="ColorRect" parent="."]

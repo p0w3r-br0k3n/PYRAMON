@@ -22,17 +22,19 @@ __meta__ = {
 }
 
 [node name="background" type="TextureRect" parent="."]
-margin_right = 2392.0
-margin_bottom = 1358.0
+margin_left = -100.0
+margin_top = -110.0
+margin_right = 2675.0
+margin_bottom = 1577.0
 rect_scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
 expand = true
 
 [node name="play_button" type="TextureButton" parent="."]
-margin_left = 886.806
-margin_top = 820.0
-margin_right = 1910.8
-margin_bottom = 1540.0
+margin_left = 920.0
+margin_top = 890.0
+margin_right = 1943.99
+margin_bottom = 1610.0
 rect_scale = Vector2( 0.231257, 0.125068 )
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
@@ -50,10 +52,10 @@ autoplay = true
 [node name="menus_cursor" parent="." instance=ExtResource( 7 )]
 
 [node name="exit_button" type="TextureButton" parent="."]
-margin_left = 150.0
-margin_top = 890.0
-margin_right = 507.0
-margin_bottom = 1006.0
+margin_left = 130.0
+margin_top = 940.0
+margin_right = 487.0
+margin_bottom = 1056.0
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 10 )
@@ -63,10 +65,9 @@ __meta__ = {
 }
 
 [node name="setting_button" type="TextureButton" parent="."]
-margin_left = 1690.0
-margin_top = 70.0
-margin_right = 1815.0
-margin_bottom = 193.0
+margin_left = 1820.0
+margin_right = 1945.0
+margin_bottom = 123.0
 texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 13 )
 texture_hover = ExtResource( 14 )

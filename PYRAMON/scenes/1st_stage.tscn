@@ -12,9 +12,11 @@
 script = ExtResource( 1 )
 
 [node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
-transform = Transform( 0.981992, 0.0677658, -0.176352, 8.88179e-016, 0.933455, 0.358694, 0.188924, -0.352234, 0.916645, 5.29762, 3.76339, 1.77856 )
-fov = 67.0931
-target = NodePath("../Scene Root/Spatial")
+transform = Transform( 1, 0, 0, 0, 0.999117, 0.0420234, 0, -0.0420234, 0.999117, 5.29762, 4.10904, 2.6574 )
+fov = 90.0
+near = 0.01
+far = 160.1
+target = NodePath("../SceneRoot/Spatial")
 speed = 3.0
 enabled = true
 
@@ -110,11 +112,11 @@ transform = Transform( 1, 0, 0, 0, 0.29608, 0, 0, 0, 1, 24.316, 17.0244, -1.4448
 [node name="CollisionShape" type="CollisionShape" parent="Area2"]
 shape = SubResource( 1 )
 
-[node name="Scene Root" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.0142716, 0, -0.19949, -1.49012e-008, 0.2, -1.86265e-009, 0.19949, 0, 0.0142716, 8.03345, 10.7138, -1.24354 )
+[node name="SceneRoot" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.0142716, 0, -0.19949, -1.49012e-008, 0.2, -1.86265e-009, 0.19949, 0, 0.0142716, 5.05769, 3.48444, -1.24354 )
 
-[node name="Spatial" type="Spatial" parent="Scene Root"]
-transform = Transform( 0.163664, -0.12586, 0.978453, 0.0118111, 0.992006, 0.125628, -0.986444, -0.00900407, 0.163842, 21.4886, 6.37514, 1.53731 )
+[node name="Spatial" type="Spatial" parent="SceneRoot"]
+transform = Transform( 0.0452802, 0.082204, 0.995583, 0.00198418, 0.996598, -0.0823773, -0.998969, 0.00570551, 0.044963, 19.3205, 3.14982, 0.15324 )
 
 [node name="bullet" parent="." instance=ExtResource( 4 )]
 transform = Transform( -0.004, 0, -6.03983e-010, 0, 0.004, 0, 6.03983e-010, 0, -0.004, 6.48675, 3.35113, 0.195357 )
@@ -123,5 +125,5 @@ visible = false
 [node name="games_cursor" parent="." instance=ExtResource( 5 )]
 pause_mode = 2
 z_index = 1
-[connection signal="body_entered" from="Area" to="Scene Root" method="_on_Area_body_entered"]
-[connection signal="body_entered" from="Area2" to="Scene Root" method="_on_Area2_body_entered"]
+[connection signal="body_entered" from="Area" to="SceneRoot" method="_on_Area_body_entered"]
+[connection signal="body_entered" from="Area2" to="SceneRoot" method="_on_Area2_body_entered"]

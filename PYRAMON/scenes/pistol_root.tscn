@@ -274,7 +274,6 @@ mesh = SubResource( 5 )
 material/0 = null
 
 [node name="Cube001" type="MeshInstance" parent="Cube"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00675774, 2.79439 )
 mesh = SubResource( 6 )
 material/0 = null
 
@@ -294,7 +293,7 @@ mesh = SubResource( 9 )
 material/0 = null
 
 [node name="Cube007" type="MeshInstance" parent="Cube"]
-transform = Transform( 1, 0, 0, 0, 1, -2.32831e-010, 0, 0, 0.999997, 0, 0.000836372, -0.170185 )
+transform = Transform( 1, 0, 0, 0, 1, -2.32831e-010, 0, 0, 0.999997, 1.49012e-008, 2.86102e-006, 0.174881 )
 mesh = SubResource( 10 )
 material/0 = null
 

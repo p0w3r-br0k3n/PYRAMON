@@ -51,6 +51,7 @@ func _process(_delta):
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_left"):
 		vel.x = 0
+		
 	elif Input.is_action_pressed("ui_right"):
 		vel.x = sp
 		$walking.play("walking")
@@ -84,6 +85,7 @@ func _on_Area_body_entered(body):
 	if(body.name == "Scene Root") and is_on_floor():
 		translate(at)
 		print ("yeet1")
+		print (0)
 
 
 func _on_Area2_body_entered(body):	
@@ -108,10 +110,10 @@ func _on_unholster_time_timeout():
 
 
 func _on_hide_pistol_timeout():
-	$hand_right/scene_root.hide()
+	$hand_swervel/hand_right/scene_root.hide()
 	$hide_pistol.stop()
 
 
 func _on_show_pistol_timeout():
-	$hand_right/scene_root.show()
+	$hand_swervel/hand_right/scene_root.show()
 	$show_pistol.stop()
