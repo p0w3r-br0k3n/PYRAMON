@@ -352,11 +352,11 @@ wait_time = 0.2
 wait_time = 0.1
 
 [node name="hand_swervel" type="Spatial" parent="."]
-transform = Transform( 0.367551, 0, 0, 0, 0.367551, 0, 0, 0, 0.367551, -0.0273955, 1.45237, -0.0657243 )
+transform = Transform( 0.383, 0, 0, 0, 0.383, 0, 0, 0, 0.383, -0.027, 1.452, -0.066 )
 script = ExtResource( 8 )
 
 [node name="hand_right" type="MeshInstance" parent="hand_swervel"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47869, 0, -4.10307 )
+transform = Transform( 0.959663, 0, 0, 0, 0.959663, 0, 0, 0, 0.959663, 2.37768, 0.000966311, -3.93685 )
 mesh = SubResource( 17 )
 material/0 = null
 
@@ -367,6 +367,7 @@ material/0 = null
 
 [node name="scene_root" parent="hand_swervel/hand_right" instance=ExtResource( 10 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.00138831, 0.575773, -0.0360565 )
+visible = false
 [connection signal="timeout" from="holster_time" to="." method="_on_holster_time_timeout"]
 [connection signal="timeout" from="unholster_time" to="." method="_on_unholster_time_timeout"]
 [connection signal="timeout" from="hide_pistol" to="." method="_on_hide_pistol_timeout"]

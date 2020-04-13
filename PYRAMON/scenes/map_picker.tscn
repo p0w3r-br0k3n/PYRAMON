@@ -85,11 +85,11 @@ rect_scale = Vector2( 0.3887, 0.418951 )
 texture = ExtResource( 7 )
 
 [node name="play_map" type="TextureButton" parent="."]
-margin_left = 1448.58
-margin_top = 999.035
-margin_right = 2975.58
-margin_bottom = 1565.04
-rect_scale = Vector2( 0.29171, 0.327777 )
+margin_left = 1496.05
+margin_top = 984.97
+margin_right = 3023.05
+margin_bottom = 1550.98
+rect_scale = Vector2( 0.251284, 0.224165 )
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 9 )
 script = ExtResource( 10 )

@@ -17,14 +17,13 @@ onready var smoke_timer = null
 onready var fire_delay = 0.5
 onready var smoke_delay = 2
 onready var can_smoke = false
-var bullets_remaining = 90
-
+var bullets_remaining = 9
 onready var mouse_position = Vector3()
 
 var bullet_spawn_location = Vector3()
 var case_spawn_location = Vector3()
 var reload = 9
-
+var no_ammo=0
 func _ready():
 	fire_timer = Timer.new()
 	smoke_timer = Timer.new()
@@ -48,18 +47,20 @@ func _process(delta):
 	
 	
 	
+	if Input.is_action_just_pressed("mouse_click") and no_ammo==1:
+			$no_more_ammo.play(true)
 	
 	
 	
-	
-	if Input.is_action_just_pressed("mouse_click") and (stop==0 or start == 1 and cant_shoot==0 ):
+	if Input.is_action_just_pressed("mouse_click") and (stop==0 or start == 1 and cant_shoot==0 and bullets_remaining!=0):
 		var mouse_pos = get_tree().root.get_mouse_position()
 		mouse_position = Vector3(mouse_pos.x, mouse_pos.y, 0)
+		
 		$fire_pistol.set_emitting(true)
 		$fire_pistol/fire_pistol_time.start()
 		shoot()
 	#reloading
-	if Input.is_action_just_pressed("ui_rel") and (stop==0 and cant_shoot==0):
+	if Input.is_action_just_pressed("ui_rel") and (stop==0 and cant_shoot==0 and no_ammo == 0):
 		start = 0
 		stop=1
 		$AnimationPlayer.play("basic_gun_reload")
@@ -73,13 +74,17 @@ func _process(delta):
 	
 	if reload == 9:
 		clip=0
-	if  bullets_remaining<=0:
-		cant_shoot=1
+	if  bullets_remaining==0:
 		
-	if cant_shoot==1 and cant_shoot_animation_stop==0:
+		no_ammo=1
+		
+		
+		
+	if (cant_shoot==1 and cant_shoot_animation_stop==0 ):
 		$AnimationPlayer.play("pistol_empty")
 		cant_shoot_animation_stop=1
-	
+		
+		
 
 func smoke_timeout_complete():
 	Smoke.set_emitting(false)
@@ -93,13 +98,19 @@ func fire_timeout_complete():
 
 func shoot():
 	# check if we have ammo
-	if(reload == 0 and stop == 0 and cant_shoot==0):
+	if(reload == 0 and stop == 0 and cant_shoot==0 ):
 		start = 0
 		stop=1
+		if no_ammo==0:
+				$pistol_reload_sound.play()
+				
+		elif no_ammo==1:
+			cant_shoot =1
+			
 		$Cube/Cube005/cube5_time.start()
 		$reload.start()
 		$AnimationPlayer.play("basic_gun_reload")
-		$pistol_reload_sound.play()
+		
 		$fire_pistol.set_emitting(false)
 		bullets_remaining= bullets_remaining - 9
 		$empty_mag.start()
@@ -169,3 +180,5 @@ func _on_reload_timeout():
 func _on_empty_mag_timeout():
 	start = 1
 	$empty_mag.stop()
+
+

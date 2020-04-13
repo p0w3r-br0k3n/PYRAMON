@@ -1,6 +1,6 @@
 extends KinematicBody
 
-
+var scal = Vector3 (1,1,1)
 var at = Vector3(4,35,-80)
 var to = Vector3(-4,-25,80)
 var vel = Vector3(0,0,0)
@@ -82,14 +82,13 @@ func _physics_process(delta):
 	
 	
 func _on_Area_body_entered(body):
-	if(body.name == "Scene Root") and is_on_floor():
+	if(body.name == "prot") and is_on_floor():
 		translate(at)
 		print ("yeet1")
-		print (0)
 
 
 func _on_Area2_body_entered(body):	
-	if(body.name == "Scene Root") and is_on_floor():
+	if(body.name == "prot") and is_on_floor():
 		translate(to)
 		print("yeet2")
 
@@ -101,12 +100,14 @@ func _on_holster_time_timeout():
 	hol_time_pist=1
 	holster_not_fire=0
 	$holster_time.stop()
+	$hand_swervel/hand_right.scale(scal)
 	
 func _on_unholster_time_timeout():
 	hol_time_pist=0
 
 	holster_not_fire=0
 	$unholster_time.stop()
+	$hand_swervel/hand_right.scale(scal)
 
 
 func _on_hide_pistol_timeout():

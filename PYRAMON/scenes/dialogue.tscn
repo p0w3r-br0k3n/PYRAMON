@@ -1,17 +1,18 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://code/diL_5.gd" type="Script" id=1]
 [ext_resource path="res://fonts/NewShape-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://code/dialogue_label.gd" type="Script" id=3]
-[ext_resource path="res://sprites/next_button.png" type="Texture" id=4]
-[ext_resource path="res://sprites/next_button_pressed.png" type="Texture" id=5]
-[ext_resource path="res://code/next_button.gd" type="Script" id=6]
-[ext_resource path="res://code/dialogue_label_2.gd" type="Script" id=7]
-[ext_resource path="res://code/dial_3.gd" type="Script" id=8]
-[ext_resource path="res://code/dial_4.gd" type="Script" id=9]
-[ext_resource path="res://code/dial_6.gd" type="Script" id=10]
-[ext_resource path="res://code/dial_7.gd" type="Script" id=11]
-[ext_resource path="res://scenes/menus_cursor.tscn" type="PackedScene" id=12]
+[ext_resource path="res://ui/dialogue1_1ststage.png" type="Texture" id=4]
+[ext_resource path="res://sprites/next_button.png" type="Texture" id=5]
+[ext_resource path="res://sprites/next_button_pressed.png" type="Texture" id=6]
+[ext_resource path="res://code/next_button.gd" type="Script" id=7]
+[ext_resource path="res://code/dialogue_label_2.gd" type="Script" id=8]
+[ext_resource path="res://code/dial_3.gd" type="Script" id=9]
+[ext_resource path="res://code/dial_4.gd" type="Script" id=10]
+[ext_resource path="res://code/dial_6.gd" type="Script" id=11]
+[ext_resource path="res://code/dial_7.gd" type="Script" id=12]
+[ext_resource path="res://scenes/menus_cursor.tscn" type="PackedScene" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 58
@@ -75,9 +76,16 @@ Well anyways, there is still scum on this ship
  and i have a big mop to clean it up. You can have this pistol."
 
 [node name="dialogue_label" type="Popup" parent="."]
+visible = true
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="dialogue_label"]
+margin_right = 1297.0
+margin_bottom = 835.0
+rect_scale = Vector2( 1.67459, 1.57574 )
+texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="dialogue_label"]
 margin_right = 221.0
@@ -94,14 +102,18 @@ margin_top = 870.559
 margin_right = 2081.86
 margin_bottom = 1126.56
 rect_scale = Vector2( 0.456159, 0.526214 )
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-script = ExtResource( 6 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="dialogue_label_2" type="Popup" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 7 )
+script = ExtResource( 8 )
+
+[node name="TextureRect" type="TextureRect" parent="dialogue_label_2"]
+margin_right = 1297.0
+margin_bottom = 835.0
 
 [node name="Label" type="Label" parent="dialogue_label_2"]
 margin_left = -1.15561
@@ -115,7 +127,11 @@ text = "-you: Wha... What's going on?"
 [node name="dial_3" type="Popup" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 8 )
+script = ExtResource( 9 )
+
+[node name="TextureRect" type="TextureRect" parent="dial_3"]
+margin_right = 1297.0
+margin_bottom = 835.0
 
 [node name="Label" type="Label" parent="dial_3"]
 margin_right = 40.0
@@ -132,7 +148,7 @@ Looks like not only those scums are as tough as a radroach."
 [node name="dial_4" type="Popup" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="dial_4"]
 margin_right = 40.0
@@ -146,7 +162,7 @@ Do you have any insta healer? "
 [node name="dial_6" type="Popup" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 
 [node name="Label" type="Label" parent="dial_6"]
 margin_right = 40.0
@@ -159,7 +175,7 @@ They look nothing like pirates."
 [node name="dial_7" type="Popup" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="dial_7"]
 margin_right = 40.0
@@ -173,12 +189,12 @@ What are you some kind of piratophobic?
  Move on soldier or else I will report
  you to the galactic pc police!"
 
-[node name="menus_cursor" parent="." instance=ExtResource( 12 )]
-[connection signal="pressed" from="next_button" to="dialogue_label" method="_on_next_button_pressed"]
-[connection signal="pressed" from="next_button" to="diL_5" method="_on_next_button_pressed"]
-[connection signal="pressed" from="next_button" to="dial_3" method="_on_next_button_pressed"]
-[connection signal="pressed" from="next_button" to="dial_6" method="_on_next_button_pressed"]
-[connection signal="pressed" from="next_button" to="dial_7" method="_on_next_button_pressed"]
-[connection signal="pressed" from="next_button" to="dialogue_label_2" method="_on_next_button_pressed"]
-[connection signal="pressed" from="next_button" to="dial_4" method="_on_next_button_pressed"]
+[node name="menus_cursor" parent="." instance=ExtResource( 13 )]
 [connection signal="pressed" from="next_button" to="next_button" method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="dial_6" method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="dial_3" method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="dial_4" method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="diL_5" method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="dialogue_label" method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="dialogue_label_2" method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="dial_7" method="_on_next_button_pressed"]
