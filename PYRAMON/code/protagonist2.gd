@@ -1,6 +1,5 @@
 extends KinematicBody
 
-var scal = Vector3 (1,1,1)
 var at = Vector3(4,35,-80)
 var to = Vector3(-4,-25,80)
 var vel = Vector3(0,0,0)
@@ -14,6 +13,7 @@ var holster_pistol= 0
 var hol_time_pist=0
 const gravity = -981
 var holster_not_fire = 0
+var reload_hands=0
 #the var holster_not_fire should be called from the pistol_root script so as not to fire when you holster/unholster
 
 func get_translation_delta():
@@ -41,6 +41,7 @@ func _process(_delta):
 			$walking.play("holster")
 			$holster_time.start()
 			$show_pistol.start()
+			
 		elif holster_pistol == 1 and hol_time_pist==1:
 			
 			holster_pistol=0
@@ -74,7 +75,7 @@ func _physics_process(delta):
 	
 	if get_translation_delta().y == 0:
 		accel = 0
-	if Input.is_action_just_pressed("ui_rel"):
+	if Input.is_action_just_pressed("ui_rel") and reload_hands==0:
 		$walking.play("reload_pistol_hands") 
 	accel += gravity*delta
 	vel.y += accel
@@ -100,14 +101,14 @@ func _on_holster_time_timeout():
 	hol_time_pist=1
 	holster_not_fire=0
 	$holster_time.stop()
-	$hand_swervel/hand_right.scale(scal)
+	
 	
 func _on_unholster_time_timeout():
 	hol_time_pist=0
 
 	holster_not_fire=0
 	$unholster_time.stop()
-	$hand_swervel/hand_right.scale(scal)
+	
 
 
 func _on_hide_pistol_timeout():
@@ -118,3 +119,7 @@ func _on_hide_pistol_timeout():
 func _on_show_pistol_timeout():
 	$hand_swervel/hand_right/scene_root.show()
 	$show_pistol.stop()
+
+
+func _on_empty_mag_timeout():
+	reload_hands=1

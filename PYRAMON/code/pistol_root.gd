@@ -11,7 +11,8 @@ var stop = 0
 var cant_shoot= 0
 var cant_shoot_animation_stop=0
 onready var Parent = get_parent().get_parent().get_parent()
-
+var stop_fire_holster=0
+var stop_click_holster = 0
 onready var fire_timer = null
 onready var smoke_timer = null
 onready var fire_delay = 0.5
@@ -41,13 +42,42 @@ func _ready():
 # warning-ignore:unused_argument
 func _process(delta):
 	
+	if (stop_fire_holster == 0 and bullets_remaining>0):
+			
+			stop =1
+			start = 0
+			cant_shoot =1
+	
+			
+	
+			
+	if Input.is_action_just_pressed("1"):
+		if stop_fire_holster == 0 and bullets_remaining>0:
+					
+					stop =0
+					start = 1
+					cant_shoot =0
+					stop_fire_holster=1
+					stop_click_holster=1
+		elif stop_fire_holster == 0 and bullets_remaining<=0:
+				$no_more_ammo.play()
+				stop_click_holster =0
+				stop_fire_holster =1
+		elif stop_fire_holster == 1 and bullets_remaining>0:
+				stop = 0
+				start =1 
+				
+				stop_fire_holster=0
+				stop_click_holster=0
+		
+		elif stop_fire_holster == 1 and bullets_remaining<=0:
+			stop_click_holster=1
+			stop_fire_holster=0
+	
+		
 	
 	
-	
-	
-	
-	
-	if Input.is_action_just_pressed("mouse_click") and no_ammo==1:
+	if Input.is_action_just_pressed("mouse_click") and no_ammo==1 and stop_click_holster==0:
 			$no_more_ammo.play(true)
 	
 	

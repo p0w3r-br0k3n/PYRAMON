@@ -123,7 +123,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Transform( 0.367551, 0, 0, 0, 0.367551, 0, 0, 0, 0.367551, 0.883651, 1.45237, -1.57381 ), Transform( 0.367551, 0, 0, 0, 0.367551, 0, 0, 0, 0.367551, 0.883651, 1.45237, -1.57381 ), Transform( 0.367551, 0, 0, 0, 0.367551, 0, 0, 0, 0.367551, 0.883651, -0.369658, 0.070655 ), Transform( 0.367551, 0, 0, 0, 0.367551, 0, 0, 0, 0.367551, 0.883651, 1.45237, -1.57381 ) ]
+"values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61002, 0.757795, -3.31129 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44345, 0.541, -3.311 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14184, -3.53051, 0.070655 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44345, 0.541, -3.311 ) ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -356,7 +356,7 @@ transform = Transform( 0.383, 0, 0, 0, 0.383, 0, 0, 0, 0.383, -0.027, 1.452, -0.
 script = ExtResource( 8 )
 
 [node name="hand_right" type="MeshInstance" parent="hand_swervel"]
-transform = Transform( 0.959663, 0, 0, 0, 0.959663, 0, 0, 0, 0.959663, 2.37768, 0.000966311, -3.93685 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35973, -0.0589781, -4.01904 )
 mesh = SubResource( 17 )
 material/0 = null
 
@@ -368,7 +368,16 @@ material/0 = null
 [node name="scene_root" parent="hand_swervel/hand_right" instance=ExtResource( 10 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.00138831, 0.575773, -0.0360565 )
 visible = false
+
+[node name="Cube001" parent="hand_swervel/hand_right/scene_root/Cube" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 2.32831e-010, 0, -2.32831e-010, 1, -0.0140448, -0.0467701, 0.00427246 )
+
+[node name="Cube007" parent="hand_swervel/hand_right/scene_root/Cube" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 2.3283e-010, 0, -2.32831e-010, 0.999997, 0, 1.90735e-006, 0.174881 )
 [connection signal="timeout" from="holster_time" to="." method="_on_holster_time_timeout"]
 [connection signal="timeout" from="unholster_time" to="." method="_on_unholster_time_timeout"]
 [connection signal="timeout" from="hide_pistol" to="." method="_on_hide_pistol_timeout"]
 [connection signal="timeout" from="show_pistol" to="." method="_on_show_pistol_timeout"]
+[connection signal="timeout" from="hand_swervel/hand_right/scene_root/empty_mag" to="." method="_on_empty_mag_timeout"]
+
+[editable path="hand_swervel/hand_right/scene_root"]
