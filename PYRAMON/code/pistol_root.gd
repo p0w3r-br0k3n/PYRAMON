@@ -42,7 +42,7 @@ func _ready():
 # warning-ignore:unused_argument
 func _process(delta):
 	
-	if (stop_fire_holster == 0 and bullets_remaining>0):
+	if (stop_fire_holster == 0 and bullets_remaining>-9):
 			
 			stop =1
 			start = 0
@@ -52,37 +52,38 @@ func _process(delta):
 	
 			
 	if Input.is_action_just_pressed("1"):
-		if stop_fire_holster == 0 and bullets_remaining>0:
+		if stop_fire_holster == 0 and bullets_remaining>-9:
 					
 					stop =0
 					start = 1
 					cant_shoot =0
 					stop_fire_holster=1
 					stop_click_holster=1
-		elif stop_fire_holster == 0 and bullets_remaining<=0:
+		elif stop_fire_holster == 0 and bullets_remaining<=-9:
 				$no_more_ammo.play()
 				stop_click_holster =0
 				stop_fire_holster =1
-		elif stop_fire_holster == 1 and bullets_remaining>0:
+		elif stop_fire_holster == 1 and bullets_remaining>-9:
 				stop = 0
 				start =1 
+				
 				
 				stop_fire_holster=0
 				stop_click_holster=0
 		
-		elif stop_fire_holster == 1 and bullets_remaining<=0:
+		elif stop_fire_holster == 1 and bullets_remaining<=-9:
 			stop_click_holster=1
 			stop_fire_holster=0
 	
 		
 	
 	
-	if Input.is_action_just_pressed("mouse_click") and no_ammo==1 and stop_click_holster==0:
+	if Input.is_action_just_pressed("mouse_click") and no_ammo==1 and stop_click_holster==0 and stop_fire_holster ==1:
 			$no_more_ammo.play(true)
 	
 	
 	
-	if Input.is_action_just_pressed("mouse_click") and (stop==0 or start == 1 and cant_shoot==0 and bullets_remaining!=0):
+	if Input.is_action_just_pressed("mouse_click") and (stop==0 or start == 1 and cant_shoot==0 and bullets_remaining>-9):
 		var mouse_pos = get_tree().root.get_mouse_position()
 		mouse_position = Vector3(mouse_pos.x, mouse_pos.y, 0)
 		
@@ -101,10 +102,11 @@ func _process(delta):
 		bullets_remaining = bullets_remaining-clip
 		print(bullets_remaining)
 		$empty_mag.start()
+		print (bullets_remaining)
 	
 	if reload == 9:
 		clip=0
-	if  bullets_remaining==0:
+	if  bullets_remaining==-9:
 		
 		no_ammo=1
 		
@@ -183,7 +185,7 @@ func shoot():
 	case.global_translate(case_translation_vector)
 	case.apply_impulse(Vector3(0,0,0), Vector3(0,0,1))
 	reload = reload - 1
-	clip=clip+0.5
+	clip=clip+1
 	
 	fire_timer.start()
 	stop = 0
