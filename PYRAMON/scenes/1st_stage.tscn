@@ -4,10 +4,10 @@
 [ext_resource path="res://scenes/airship.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/protagonist.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/bullet.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/games_cursor.tscn" type="PackedScene" id=5]
-[ext_resource path="res://code/secondary_ammo_remaining_display.gd" type="Script" id=6]
-[ext_resource path="res://fonts/NewShape-Bold.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://code/bullets_remaining.gd" type="Script" id=8]
+[ext_resource path="res://code/secondary_ammo_remaining_display.gd" type="Script" id=5]
+[ext_resource path="res://fonts/NewShape-Bold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://code/bullets_remaining.gd" type="Script" id=7]
+[ext_resource path="res://scenes/games_cursor.tscn" type="PackedScene" id=8]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -16,7 +16,7 @@
 [sub_resource type="BoxShape" id=3]
 
 [sub_resource type="DynamicFont" id=4]
-font_data = ExtResource( 7 )
+font_data = ExtResource( 6 )
 
 [node name="level" type="Spatial"]
 script = ExtResource( 1 )
@@ -138,16 +138,12 @@ transform = Transform( 0.0452802, 0.082204, 0.995583, 0.00198418, 0.996598, -0.0
 transform = Transform( -0.004, 0, -6.03983e-010, 0, 0.004, 0, 6.03983e-010, 0, -0.004, 6.48675, 3.35113, 0.195357 )
 visible = false
 
-[node name="games_cursor" parent="." instance=ExtResource( 5 )]
-pause_mode = 2
-z_index = 1
-
 [node name="bullets" type="Control" parent="."]
 margin_left = 952.003
 margin_top = 12.6934
 margin_right = 992.003
 margin_bottom = 52.6934
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="bullets"]
 visible = false
@@ -165,7 +161,7 @@ margin_right = 3.46936
 margin_bottom = 52.249
 custom_fonts/font = SubResource( 4 )
 text = "a"
-script = ExtResource( 8 )
+script = ExtResource( 7 )
 
 [node name="Label2" type="Label" parent="bullets"]
 margin_left = -131.158
@@ -178,6 +174,8 @@ wait_time = 0.01
 
 [node name="Timer2" type="Timer" parent="bullets"]
 wait_time = 0.01
+
+[node name="games_cursor" parent="." instance=ExtResource( 8 )]
 [connection signal="body_entered" from="Area" to="prot" method="_on_Area_body_entered"]
 [connection signal="body_entered" from="Area2" to="prot" method="_on_Area2_body_entered"]
 [connection signal="timeout" from="bullets/Timer" to="bullets" method="_on_Timer_timeout"]

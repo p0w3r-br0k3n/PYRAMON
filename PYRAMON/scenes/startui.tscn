@@ -6,15 +6,15 @@
 [ext_resource path="res://sprites/Play_button_hover.png" type="Texture" id=4]
 [ext_resource path="res://code/play_button.gd" type="Script" id=5]
 [ext_resource path="res://music/startui_music.wav" type="AudioStream" id=6]
-[ext_resource path="res://scenes/menus_cursor.tscn" type="PackedScene" id=7]
-[ext_resource path="res://sprites/exit_game.png" type="Texture" id=8]
-[ext_resource path="res://sprites/exit_game_pressed.png" type="Texture" id=9]
-[ext_resource path="res://sprites/exit_game_hover.png" type="Texture" id=10]
-[ext_resource path="res://code/exit_game.gd" type="Script" id=11]
-[ext_resource path="res://sprites/settingsui_released.png" type="Texture" id=12]
-[ext_resource path="res://sprites/settingsui.png" type="Texture" id=13]
-[ext_resource path="res://sprites/settingsui_pressed.png" type="Texture" id=14]
-[ext_resource path="res://code/setting_button.gd" type="Script" id=15]
+[ext_resource path="res://sprites/exit_game.png" type="Texture" id=7]
+[ext_resource path="res://sprites/exit_game_pressed.png" type="Texture" id=8]
+[ext_resource path="res://sprites/exit_game_hover.png" type="Texture" id=9]
+[ext_resource path="res://code/exit_game.gd" type="Script" id=10]
+[ext_resource path="res://sprites/settingsui_released.png" type="Texture" id=11]
+[ext_resource path="res://sprites/settingsui.png" type="Texture" id=12]
+[ext_resource path="res://sprites/settingsui_pressed.png" type="Texture" id=13]
+[ext_resource path="res://code/setting_button.gd" type="Script" id=14]
+[ext_resource path="res://scenes/menus_curs.tscn" type="PackedScene" id=15]
 
 [node name="StartUI" type="Control"]
 __meta__ = {
@@ -49,32 +49,33 @@ __meta__ = {
 stream = ExtResource( 6 )
 autoplay = true
 
-[node name="menus_cursor" parent="." instance=ExtResource( 7 )]
-
 [node name="exit_button" type="TextureButton" parent="."]
 margin_left = 130.0
 margin_top = 940.0
 margin_right = 487.0
 margin_bottom = 1056.0
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 9 )
-texture_hover = ExtResource( 10 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="setting_button" type="TextureButton" parent="."]
-margin_left = 1820.0
-margin_right = 1945.0
-margin_bottom = 123.0
-texture_normal = ExtResource( 12 )
-texture_pressed = ExtResource( 13 )
-texture_hover = ExtResource( 14 )
-script = ExtResource( 15 )
+margin_left = 1770.0
+margin_top = 10.0
+margin_right = 1895.0
+margin_bottom = 133.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 13 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Node2D" parent="." instance=ExtResource( 15 )]
 [connection signal="pressed" from="play_button" to="play_button" method="_on_play_button_pressed"]
 [connection signal="pressed" from="exit_button" to="exit_button" method="_on_exit_button_pressed"]
 [connection signal="pressed" from="setting_button" to="setting_button" method="_on_setting_button_pressed"]
