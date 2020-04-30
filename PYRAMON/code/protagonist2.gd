@@ -1,5 +1,5 @@
 extends KinematicBody
-
+onready var pistol = get_tree().get_root().get_node("/root/level/prot/hand_swervel/hand_right/scene_root")
 var at = Vector3(4,35,-80)
 var to = Vector3(-4,-25,80)
 var vel = Vector3(0,0,0)
@@ -23,7 +23,7 @@ func get_translation_delta():
 
 func _ready():
 	$walking.play("holster")
-
+	$holster_time.start()
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_left"):
 		left_right=1
@@ -74,7 +74,7 @@ func _physics_process(delta):
 	
 	if get_translation_delta().y == 0:
 		accel = 0
-	if Input.is_action_just_pressed("ui_rel") and reload_hands==0:
+	if Input.is_action_just_pressed("ui_rel") and pistol.stop==0 and pistol.cant_shoot==0 and pistol.no_ammo == 0:
 		$walking.play("reload_pistol_hands") 
 	accel += gravity*delta
 	vel.y += accel
@@ -97,8 +97,7 @@ func _on_Area2_body_entered(body):
 
 
 func _on_holster_time_timeout():
-	hol_time_pist=1
-	holster_not_fire=0
+	pistol.start=1
 	$holster_time.stop()
 	
 

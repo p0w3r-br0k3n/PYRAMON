@@ -1,22 +1,17 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://code/1st_stage.gd" type="Script" id=1]
 [ext_resource path="res://scenes/airship.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/protagonist.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/bullet.tscn" type="PackedScene" id=4]
-[ext_resource path="res://code/secondary_ammo_remaining_display.gd" type="Script" id=5]
-[ext_resource path="res://fonts/NewShape-Bold.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://code/bullets_remaining.gd" type="Script" id=7]
-[ext_resource path="res://scenes/games_cursor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/games_cursor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/ENEMY_1.tscn" type="PackedScene" id=6]
 
 [sub_resource type="SpatialMaterial" id=1]
 
 [sub_resource type="PlaneMesh" id=2]
 
 [sub_resource type="BoxShape" id=3]
-
-[sub_resource type="DynamicFont" id=4]
-font_data = ExtResource( 6 )
 
 [node name="level" type="Spatial"]
 script = ExtResource( 1 )
@@ -138,45 +133,9 @@ transform = Transform( 0.0452802, 0.082204, 0.995583, 0.00198418, 0.996598, -0.0
 transform = Transform( -0.004, 0, -6.03983e-010, 0, 0.004, 0, 6.03983e-010, 0, -0.004, 6.48675, 3.35113, 0.195357 )
 visible = false
 
-[node name="bullets" type="Control" parent="."]
-margin_left = 952.003
-margin_top = 12.6934
-margin_right = 992.003
-margin_bottom = 52.6934
-script = ExtResource( 5 )
+[node name="games_cursor" parent="." instance=ExtResource( 5 )]
 
-[node name="Label" type="Label" parent="bullets"]
-visible = false
-margin_left = -71.7406
-margin_top = 5.72164
-margin_right = -65.7306
-margin_bottom = 19.7216
-rect_scale = Vector2( 6.51978, 5.24323 )
-text = "/"
-
-[node name="bullets_remaining" type="Label" parent="bullets"]
-margin_left = -36.5306
-margin_top = 31.249
-margin_right = 3.46936
-margin_bottom = 52.249
-custom_fonts/font = SubResource( 4 )
-text = "a"
-script = ExtResource( 7 )
-
-[node name="Label2" type="Label" parent="bullets"]
-margin_left = -131.158
-margin_top = 35.6502
-margin_right = -91.1577
-margin_bottom = 49.6502
-
-[node name="Timer" type="Timer" parent="bullets"]
-wait_time = 0.01
-
-[node name="Timer2" type="Timer" parent="bullets"]
-wait_time = 0.01
-
-[node name="games_cursor" parent="." instance=ExtResource( 8 )]
+[node name="Scene Root" parent="." instance=ExtResource( 6 )]
+transform = Transform( -8.74228e-009, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-009, 12.3335, 4.73591, -1.24818 )
 [connection signal="body_entered" from="Area" to="prot" method="_on_Area_body_entered"]
 [connection signal="body_entered" from="Area2" to="prot" method="_on_Area2_body_entered"]
-[connection signal="timeout" from="bullets/Timer" to="bullets" method="_on_Timer_timeout"]
-[connection signal="timeout" from="bullets/Timer2" to="bullets" method="_on_Timer2_timeout"]

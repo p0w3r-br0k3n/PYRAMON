@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://code/pistol_root.gd" type="Script" id=1]
 [ext_resource path="res://weapons/Material_004.material" type="Material" id=2]
@@ -13,7 +13,8 @@
 [ext_resource path="res://animations/basic_gun_recoil.tres" type="Animation" id=11]
 [ext_resource path="res://animations/basic_gun_reload.tres" type="Animation" id=12]
 [ext_resource path="res://sounds/no_more_ammo.wav" type="AudioStream" id=13]
-[ext_resource path="res://code/bullets_remaining_label.gd" type="Script" id=14]
+[ext_resource path="res://code/bullets_until_reload.gd" type="Script" id=14]
+[ext_resource path="res://code/bullets_remaining_label.gd" type="Script" id=15]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube"
@@ -345,14 +346,42 @@ wait_time = 0.5
 [node name="no_more_ammo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = 92.0
-margin_top = 2.0
-margin_right = 99.0
-margin_bottom = 16.0
-rect_scale = Vector2( 19.4343, 26.6265 )
+[node name="Control" type="Control" parent="."]
+margin_left = 952.381
+margin_top = 654.079
+margin_right = 952.381
+margin_bottom = 654.079
+rect_scale = Vector2( 0.49, 0.73 )
+
+[node name="Label2" type="Label" parent="Control"]
+margin_left = 713.74
+margin_top = 387.908
+margin_right = 753.74
+margin_bottom = 401.908
+rect_scale = Vector2( 8.19075, 13.7806 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "/"
+
+[node name="Label3" type="Label" parent="Control"]
+margin_left = 528.004
+margin_top = 359.286
+margin_right = 568.004
+margin_bottom = 373.286
+rect_scale = Vector2( 27.8286, 16.1728 )
+custom_colors/font_color = Color( 0.521569, 1, 0, 1 )
 text = "a"
 script = ExtResource( 14 )
+
+[node name="Label" type="Label" parent="Control"]
+anchor_right = 0.98
+margin_left = 757.0
+margin_top = 358.667
+margin_right = 764.0
+margin_bottom = 372.667
+rect_scale = Vector2( 27.829, 16.173 )
+custom_colors/font_color = Color( 0, 0.529412, 1, 1 )
+text = "a"
+script = ExtResource( 15 )
 [connection signal="timeout" from="Cube/Cube005/cube5_time" to="." method="_on_cube5_time_timeout"]
 [connection signal="timeout" from="Cube/Cube005/cube5_time_2" to="." method="_on_cube5_time_2_timeout"]
 [connection signal="timeout" from="fire_pistol/fire_pistol_time" to="." method="_on_fire_pistol_time_timeout"]

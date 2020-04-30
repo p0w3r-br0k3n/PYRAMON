@@ -1,32 +1,36 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://ui/map_picker.png" type="Texture" id=1]
-[ext_resource path="res://sprites/lets_a_go.png" type="Texture" id=2]
-[ext_resource path="res://code/lets_a_go_popup.gd" type="Script" id=3]
-[ext_resource path="res://ui/1st_stage_preview.png" type="Texture" id=4]
-[ext_resource path="res://fonts/NewShape-Bold.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://sprites/choose.png" type="Texture" id=6]
-[ext_resource path="res://sprites/map.png" type="Texture" id=7]
-[ext_resource path="res://sprites/Play_map_pressed.png" type="Texture" id=8]
-[ext_resource path="res://sprites/play_map.png" type="Texture" id=9]
-[ext_resource path="res://code/play_map.gd" type="Script" id=10]
-[ext_resource path="res://scenes/menus_cursor.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/menus_cursor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui/map_picker.png" type="Texture" id=2]
+[ext_resource path="res://sprites/lets_a_go.png" type="Texture" id=3]
+[ext_resource path="res://code/lets_a_go_popup.gd" type="Script" id=4]
+[ext_resource path="res://ui/1st_stage_preview.png" type="Texture" id=5]
+[ext_resource path="res://fonts/NewShape-Bold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://sprites/choose.png" type="Texture" id=7]
+[ext_resource path="res://sprites/map.png" type="Texture" id=8]
+[ext_resource path="res://sprites/Play_map_pressed.png" type="Texture" id=9]
+[ext_resource path="res://sprites/play_map.png" type="Texture" id=10]
+[ext_resource path="res://code/play_map.gd" type="Script" id=11]
 [ext_resource path="res://sprites/back.png" type="Texture" id=12]
 [ext_resource path="res://code/back_map_picker.gd" type="Script" id=13]
 
 [sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 5 )
+font_data = ExtResource( 6 )
 
 [node name="map_picker" type="Control"]
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="menus_cursor" parent="." instance=ExtResource( 1 )]
+position = Vector2( 66.4821, 95.291 )
+scale = Vector2( 0.06466, 0.0702146 )
+
 [node name="map_picker" type="TextureRect" parent="."]
 margin_right = 2169.0
 margin_bottom = 1386.0
 rect_scale = Vector2( 0.988118, 0.876233 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 expand = true
 
 [node name="lets_a_go" type="TextureButton" parent="."]
@@ -35,7 +39,7 @@ margin_top = 274.243
 margin_right = 1697.84
 margin_bottom = 855.243
 rect_scale = Vector2( 0.441313, 0.215545 )
-texture_normal = ExtResource( 2 )
+texture_normal = ExtResource( 3 )
 expand = true
 
 [node name="lets_a_go_desc" type="Popup" parent="."]
@@ -45,13 +49,13 @@ margin_top = 441.431
 margin_right = 367.343
 margin_bottom = 481.431
 rect_scale = Vector2( 0.432368, 0.45939 )
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Sprite" type="Sprite" parent="lets_a_go_desc"]
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="lets_a_go_desc"]
 margin_left = -601.439
@@ -74,7 +78,7 @@ margin_top = 31.6456
 margin_right = 1826.19
 margin_bottom = 395.646
 rect_scale = Vector2( 0.304939, 0.357875 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="map_text" type="TextureRect" parent="."]
 margin_left = 1049.2
@@ -82,7 +86,7 @@ margin_top = 31.8355
 margin_right = 1665.2
 margin_bottom = 351.835
 rect_scale = Vector2( 0.3887, 0.418951 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="play_map" type="TextureButton" parent="."]
 margin_left = 1496.05
@@ -90,11 +94,9 @@ margin_top = 984.97
 margin_right = 3023.05
 margin_bottom = 1550.98
 rect_scale = Vector2( 0.251284, 0.224165 )
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 9 )
-script = ExtResource( 10 )
-
-[node name="menus_cursor" parent="." instance=ExtResource( 11 )]
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
+script = ExtResource( 11 )
 
 [node name="back_map_picker" type="TextureButton" parent="."]
 margin_left = 85.1533

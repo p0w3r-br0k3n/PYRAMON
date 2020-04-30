@@ -71,7 +71,8 @@ func _process(delta):
 		print(bullets_remaining)
 		$empty_mag.start()
 		print (bullets_remaining)
-	
+	if Input.is_action_just_pressed("ui_rel") and (stop==0 and cant_shoot==0 and no_ammo == 0 and bullets_remaining<=0):
+		reload= reload+bullets_remaining
 	if reload == 9:
 		clip=0
 	if  bullets_remaining==-9:
