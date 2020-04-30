@@ -1,4 +1,5 @@
 extends Label
-onready var bullets_rem = get_node("/root/pistol_root") 
+
+onready var bullets_rem = get_node("/root/pistol_root")
 func _ready():
-	pass
+   print(bullets_rem."bullets_remaining")

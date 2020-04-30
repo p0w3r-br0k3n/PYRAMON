@@ -22,7 +22,7 @@ func get_translation_delta():
 	return delta
 
 func _ready():
-	pass
+	$walking.play("holster")
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_left"):
@@ -37,27 +37,8 @@ func _process(_delta):
 		pass
 	elif Input.is_action_just_released("run"): 
 		pass
-	if Input.is_action_just_pressed("1"):
-		holster_not_fire=1
-		if holster_pistol == 0 and hol_time_pist==0 :
-			
-			holster_pistol=1
-			
-			$holster_time.start()
-			$show_pistol.start()
-			if left_right==0:
-				$walking.play("holster")
-				
-			elif left_right==1:
-				$walking.play("holster_left")
-				
-		elif holster_pistol == 1 and hol_time_pist==1:
-			
-			holster_pistol=0
-			$walking.play("unhol_pistol")
-			$unholster_time.start()
-			$hide_pistol.start()
-			
+	
+
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_left"):
 		vel.x = 0
@@ -120,23 +101,8 @@ func _on_holster_time_timeout():
 	holster_not_fire=0
 	$holster_time.stop()
 	
-	
-func _on_unholster_time_timeout():
-	hol_time_pist=0
-
-	holster_not_fire=0
-	$unholster_time.stop()
-	
 
 
-func _on_hide_pistol_timeout():
-	$hand_swervel/hand_right/BoneAttachment/scene_root.hide()
-	$hide_pistol.stop()
-
-
-func _on_show_pistol_timeout():
-	$hand_swervel/hand_right/BoneAttachment/scene_root.show()
-	$show_pistol.stop()
 
 
 func _on_empty_mag_timeout():

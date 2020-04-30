@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://code/pistol_root.gd" type="Script" id=1]
 [ext_resource path="res://weapons/Material_004.material" type="Material" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://animations/basic_gun_recoil.tres" type="Animation" id=11]
 [ext_resource path="res://animations/basic_gun_reload.tres" type="Animation" id=12]
 [ext_resource path="res://sounds/no_more_ammo.wav" type="AudioStream" id=13]
+[ext_resource path="res://code/bullets_remaining_label.gd" type="Script" id=14]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube"
@@ -343,6 +344,15 @@ wait_time = 0.5
 
 [node name="no_more_ammo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 92.0
+margin_top = 2.0
+margin_right = 99.0
+margin_bottom = 16.0
+rect_scale = Vector2( 19.4343, 26.6265 )
+text = "a"
+script = ExtResource( 14 )
 [connection signal="timeout" from="Cube/Cube005/cube5_time" to="." method="_on_cube5_time_timeout"]
 [connection signal="timeout" from="Cube/Cube005/cube5_time_2" to="." method="_on_cube5_time_2_timeout"]
 [connection signal="timeout" from="fire_pistol/fire_pistol_time" to="." method="_on_fire_pistol_time_timeout"]
