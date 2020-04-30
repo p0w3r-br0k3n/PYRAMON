@@ -240,7 +240,7 @@ tracks/1/keys = {
 "values": [ Transform( 1, 0, 0, 0, 1, -2.32831e-010, 0, 0, 0.999997, 1.49012e-008, 2.86102e-006, 0.174881 ), Transform( 1, 0, 0, 0, 1, -2.32831e-010, 0, 0, 0.999997, 0, 0.000836372, -0.170185 ) ]
 }
 
-[node name="scene_root" type="Spatial"]
+[node name="pistol_root" type="Spatial"]
 transform = Transform( 0.0110354, 0, 0, 0, 0.00928473, 0, 0, 0, 0.00880395, -0.00138825, -0.103475, 0.289388 )
 script = ExtResource( 1 )
 
@@ -254,7 +254,7 @@ mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Cube005" type="MeshInstance" parent="Cube"]
-transform = Transform( 0.813269, 0, 0, 0, 1, -2.32831e-010, 0, 0, 0.773602, 2.98023e-008, 0.286066, 0.402878 )
+transform = Transform( 0.813269, 0, 0, 0, 1, -2.32831e-010, 0, 0, 0.773602, 2.98023e-008, 0.916453, 0.404396 )
 mesh = SubResource( 3 )
 material/0 = null
 
@@ -294,7 +294,7 @@ mesh = SubResource( 9 )
 material/0 = null
 
 [node name="Cube007" type="MeshInstance" parent="Cube"]
-transform = Transform( 1, 0, 0, 0, 1, -2.32831e-010, 0, 0, 0.999997, 1.49012e-008, 2.86102e-006, 0.174881 )
+transform = Transform( 1, 0, 0, 0, 1, -2.32831e-010, 0, 0, 0.999997, 0, 1.90735e-006, 0.174881 )
 mesh = SubResource( 10 )
 material/0 = null
 

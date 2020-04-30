@@ -2,7 +2,7 @@
 
 [resource]
 resource_name = "holster"
-length = 0.6
+length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("hand_swervel/hand_right/hand_left:translation")
 tracks/0/interp = 1
@@ -10,10 +10,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( -4.37444, -0.132091, 0.0809412 ), Vector3( -4.37444, -0.132091, 0.0809412 ), Vector3( -4.37444, -0.132091, 0.0809412 ), Vector3( -0.602275, 1.55298, -0.493112 ), Vector3( -0.602275, 1.55298, 0.167739 ), Vector3( -0.602275, 1.55298, -0.493112 ), Vector3( -0.602275, -1.18469, -0.130676 ) ]
+"values": [ Vector3( -4.37444, -0.132091, 0.0809412 ), Vector3( -4.37444, -0.132091, 0.0809412 ), Vector3( -4.37444, -0.132091, 0.0809412 ), Vector3( -0.602275, 1.55298, -0.493112 ), Vector3( -0.602275, 1.55298, 0.167739 ), Vector3( -0.602275, -1.18469, -0.130676 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("hand_swervel/hand_right:transform")
@@ -28,7 +28,7 @@ tracks/1/keys = {
 "values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35973, -0.0589781, -4.01904 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36811, -3.79496, 0.070655 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35973, -0.0589781, -4.01904 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("hand_swervel/hand_right/scene_root/Cube/Cube001:transform")
+tracks/2/path = NodePath("hand_swervel/hand_right/BoneAttachment/scene_root/Cube/Cube001:transform")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -40,7 +40,7 @@ tracks/2/keys = {
 "values": [ Transform( 1, 0, 0, 0, 1, 0, 0, -2.32831e-010, 1, -0.0140448, -0.0467701, 0.00427246 ), Transform( 1, 0, 0, 0, 1, 0, 0, -2.32831e-010, 1, -0.0140448, -0.0467701, 0.00427246 ), Transform( 1, 0, 0, 0, 1, 0, 0, -2.32831e-010, 1, -0.0140448, -0.0534897, 2.78187 ), Transform( 1, 0, 0, 0, 1, 0, 0, -2.32831e-010, 1, -0.0140448, -0.0467701, 0.00427246 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("hand_swervel/hand_right/scene_root/Cube/Cube007:transform")
+tracks/3/path = NodePath("hand_swervel/hand_right/BoneAttachment/scene_root/Cube/Cube007:transform")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false

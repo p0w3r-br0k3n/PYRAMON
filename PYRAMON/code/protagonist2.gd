@@ -15,7 +15,7 @@ const gravity = -981
 var holster_not_fire = 0
 var reload_hands=0
 #the var holster_not_fire should be called from the pistol_root script so as not to fire when you holster/unholster
-
+var left_right=0
 func get_translation_delta():
 	var delta = last_trans - translation
 	last_trans = translation
@@ -25,6 +25,10 @@ func _ready():
 	pass
 
 func _process(_delta):
+	if Input.is_action_just_pressed("ui_left"):
+		left_right=1
+	if Input.is_action_just_pressed("ui_right"):
+		left_right = 0
 	move_and_slide(vel*physics_delta, Vector3(0, 1, 0), false, 4, 0.785398, true)
 	if Input.is_action_just_pressed("run") and Input.is_action_pressed("ui_left"):
 		pass
@@ -35,13 +39,18 @@ func _process(_delta):
 		pass
 	if Input.is_action_just_pressed("1"):
 		holster_not_fire=1
-		if holster_pistol == 0 and hol_time_pist==0:
+		if holster_pistol == 0 and hol_time_pist==0 :
 			
 			holster_pistol=1
-			$walking.play("holster")
+			
 			$holster_time.start()
 			$show_pistol.start()
-			
+			if left_right==0:
+				$walking.play("holster")
+				
+			elif left_right==1:
+				$walking.play("holster_left")
+				
 		elif holster_pistol == 1 and hol_time_pist==1:
 			
 			holster_pistol=0
@@ -55,12 +64,21 @@ func _physics_process(delta):
 		
 	elif Input.is_action_pressed("ui_right"):
 		vel.x = sp
+	
 		$walking.play("walking")
-	elif Input.is_action_pressed("ui_left"):
-		$walking.play("walking")
+		
+	elif Input.is_action_pressed("ui_left"): 
+		
+		
+		$walking.play("walking_left")
+		
 		vel.x = -sp
+	
 	elif Input.is_action_just_pressed("ctrl"):
-		$walking.play("crouching")
+		if left_right==0:
+			$walking.play("crouching")
+		elif left_right==1:
+			pass
 	elif Input.is_action_just_released("ctrl"):
 		$walking.play("up")
 	else:
@@ -112,12 +130,12 @@ func _on_unholster_time_timeout():
 
 
 func _on_hide_pistol_timeout():
-	$hand_swervel/hand_right/scene_root.hide()
+	$hand_swervel/hand_right/BoneAttachment/scene_root.hide()
 	$hide_pistol.stop()
 
 
 func _on_show_pistol_timeout():
-	$hand_swervel/hand_right/scene_root.show()
+	$hand_swervel/hand_right/BoneAttachment/scene_root.show()
 	$show_pistol.stop()
 
 

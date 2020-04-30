@@ -18,13 +18,17 @@ onready var smoke_timer = null
 onready var fire_delay = 0.5
 onready var smoke_delay = 2
 onready var can_smoke = false
-var bullets_remaining = 9
+
+
 onready var mouse_position = Vector3()
 
 var bullet_spawn_location = Vector3()
 var case_spawn_location = Vector3()
 var reload = 9
 var no_ammo=0
+
+var bullets_remaining = 9
+	
 func _ready():
 	fire_timer = Timer.new()
 	smoke_timer = Timer.new()
