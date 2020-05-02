@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://code/protagonist2.gd" type="Script" id=1]
 [ext_resource path="res://characters/Material_005.material" type="Material" id=2]
@@ -81,6 +81,9 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 1984
 }
+
+[sub_resource type="Animation" id=23]
+resource_name = "death"
 
 [sub_resource type="Animation" id=6]
 resource_name = "holster_left"
@@ -526,17 +529,17 @@ transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 0, 0 )
 script = ExtResource( 1 )
 
 [node name="head" type="MeshInstance" parent="."]
-transform = Transform( 9.68418e-009, 0, -0.812099, 0, 0.812099, 0, 0.812099, 0, 9.68418e-009, 0, 2.92441, 0 )
+transform = Transform( 0, 0, 0.812099, 0, 0.812099, 0, -0.812099, 0, 0, 0, 2.92441, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
 [node name="foot_left" type="MeshInstance" parent="."]
-transform = Transform( -0.42428, -9.32217e-011, -4.87817e-008, 0, 0.424279, -0.0014024, 3.70917e-008, -0.00106633, -0.557998, -0.578917, -3.27409, -0.122786 )
+transform = Transform( 0.42428, 0, 0, 0, 0.424279, -0.00140302, 0, 0.0010668, 0.557998, -0.578917, -3.2611, -0.094048 )
 mesh = SubResource( 2 )
 material/0 = null
 
 [node name="body_middle" type="MeshInstance" parent="."]
-transform = Transform( 0.998562, 0, 0.0536078, 0, 1, 0, -0.0536078, 0, 0.998562, 0, 0, 0 )
+transform = Transform( -0.998562, 0, -0.0536084, 0, 1, 0, 0.0536084, 0, -0.998562, 0, 0, 0 )
 mesh = SubResource( 3 )
 material/0 = null
 
@@ -546,12 +549,13 @@ mesh = SubResource( 4 )
 material/0 = null
 
 [node name="foot_right" type="MeshInstance" parent="."]
-transform = Transform( -0.42428, -2.14994e-009, -4.86792e-008, 0, 0.423807, -0.0323111, 3.70917e-008, -0.0245924, -0.556825, 0.518656, -3.23355, -0.00965881 )
+transform = Transform( 0.42428, 0, 0, 0, 0.423807, -0.0323077, 0, 0.0245898, 0.556825, 0.507091, -3.27915, -0.0694542 )
 mesh = SubResource( 5 )
 material/0 = null
 
 [node name="walking" type="AnimationPlayer" parent="."]
 anims/crouching = ExtResource( 6 )
+anims/death = SubResource( 23 )
 anims/holster = ExtResource( 7 )
 anims/holster_left = SubResource( 6 )
 anims/left = SubResource( 7 )
@@ -599,7 +603,7 @@ transform = Transform( 0.383, 0, 0, 0, 0.383, 0, 0, 0, 0.383, -0.027, 1.452, -0.
 script = ExtResource( 8 )
 
 [node name="hand_right" type="MeshInstance" parent="hand_swervel"]
-transform = Transform( -1, 8.74228e-008, 0, -8.74228e-008, -1, 0, 0, 0, 1, -2.36, -0.059, -4.019 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35973, -0.0589781, -4.01904 )
 mesh = SubResource( 21 )
 material/0 = null
 
@@ -610,4 +614,24 @@ material/0 = null
 
 [node name="scene_root" parent="hand_swervel/hand_right" instance=ExtResource( 10 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.00138831, 0.575773, -0.0360565 )
+
+[node name="hide" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="hide2" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="hide3" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="hide4" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="die" type="Timer" parent="."]
+wait_time = 0.2
 [connection signal="timeout" from="holster_time" to="." method="_on_holster_time_timeout"]
+[connection signal="timeout" from="hide" to="." method="_on_hide_timeout"]
+[connection signal="timeout" from="hide2" to="." method="_on_hide2_timeout"]
+[connection signal="timeout" from="hide3" to="." method="_on_hide3_timeout"]
+[connection signal="timeout" from="hide4" to="." method="_on_hide4_timeout"]
+[connection signal="timeout" from="die" to="." method="_on_die_timeout"]

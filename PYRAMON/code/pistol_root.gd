@@ -1,5 +1,5 @@
 extends Spatial
-
+onready var Mag = preload("res://scenes/pistol_magazine.tscn")
 onready var Bullet = preload("res://scenes/bullet.tscn")
 onready var Case = preload("res://scenes/bullet_case.tscn")
 onready var Sound = $pistol_gun_sound_source
@@ -48,6 +48,7 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("mouse_click") and no_ammo==1:
 			$no_more_ammo.play(true)
+			
 	
 	
 	
@@ -60,17 +61,26 @@ func _process(delta):
 		shoot()
 	#reloading
 	if Input.is_action_just_pressed("ui_rel") and (stop==0 and cant_shoot==0 and no_ammo == 0):
+		var mag= Mag.instance()
+	
+	
+		Parent.add_child(mag)
+		var mag_translation_vector = global_transform.origin
 		start = 0
 		stop=1
 		$AnimationPlayer.play("basic_gun_reload")
 		$pistol_reload_sound.play()
 		bullets_remaining=bullets_remaining-clip
-		$Cube/Cube005/cube5_time.start()
+		
 		$reload.start()
 		bullets_remaining = bullets_remaining-clip
 		print(bullets_remaining)
 		$empty_mag.start()
 		print (bullets_remaining)
+		mag.global_rotate(Vector3(1,0,0),300)
+		mag.global_translate(mag_translation_vector)
+		mag.apply_impulse(Vector3(0,0,0), Vector3(0,0,1))
+		
 	if Input.is_action_just_pressed("ui_rel") and (stop==0 and cant_shoot==0 and no_ammo == 0 and bullets_remaining<=0):
 		reload= reload+bullets_remaining
 	if reload == 9:
@@ -108,7 +118,7 @@ func shoot():
 		elif no_ammo==1:
 			cant_shoot =1
 			
-		$Cube/Cube005/cube5_time.start()
+	
 		$reload.start()
 		$AnimationPlayer.play("basic_gun_reload")
 		
@@ -163,15 +173,6 @@ func _on_fire_pistol_time_timeout():
 	$fire_pistol.set_emitting(false)
 	$fire_pistol/fire_pistol_time.stop()
 
-func _on_cube5_time_timeout():
-	$Cube/Cube005.hide()
-	$Cube/Cube005/cube5_time_2.start()
-	$Cube/Cube005/cube5_time.stop()
-	
-
-func _on_cube5_time_2_timeout():
-	$Cube/Cube005.show()
-	$Cube/Cube005/cube5_time_2.stop()
 
 func _on_reload_timeout():
 	reload = 9

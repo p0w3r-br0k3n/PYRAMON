@@ -256,7 +256,7 @@ mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Cube005" type="MeshInstance" parent="Cube"]
-transform = Transform( 0.813269, 0, 0, 0, 1, -2.32831e-010, 0, 0, 0.773602, 2.98023e-008, 0.916453, 0.404396 )
+transform = Transform( 0.813269, 0, 0, 0, 0.992808, 0.0880008, 0, -0.126518, 0.767991, 2.98023e-008, 0.349876, 0.00241089 )
 mesh = SubResource( 3 )
 material/0 = null
 
@@ -264,12 +264,6 @@ material/0 = null
 transform = Transform( 0.814792, 0, 0, 0, 0.814792, 0, 0, 0, 0.814792, -0.135929, -0.640283, 0.264492 )
 mesh = SubResource( 4 )
 material/0 = null
-
-[node name="cube5_time" type="Timer" parent="Cube/Cube005"]
-wait_time = 0.4
-
-[node name="cube5_time_2" type="Timer" parent="Cube/Cube005"]
-wait_time = 0.15
 
 [node name="Cylinder" type="MeshInstance" parent="Cube"]
 transform = Transform( 0.583326, 0.022982, 0.209572, 0.209588, 0.0417734, -0.583105, -0.00643688, 3.44286, 0.00567608, -0.0386341, 2.85352, -6.17864 )
@@ -281,7 +275,7 @@ mesh = SubResource( 6 )
 material/0 = null
 
 [node name="Cube002" type="MeshInstance" parent="Cube/Cube001"]
-transform = Transform( 0.749504, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.666723 )
+transform = Transform( 0.749504, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.666721 )
 mesh = SubResource( 7 )
 material/0 = null
 
@@ -296,7 +290,7 @@ mesh = SubResource( 9 )
 material/0 = null
 
 [node name="Cube007" type="MeshInstance" parent="Cube"]
-transform = Transform( 1, 0, 0, 0, 1, -2.32831e-010, 0, 0, 0.999997, 0, 1.90735e-006, 0.174881 )
+transform = Transform( 1, 0, 0, 0, 1, -2.32831e-010, 0, 0, 0.999997, 1.49012e-008, 2.86102e-006, 0.174881 )
 mesh = SubResource( 10 )
 material/0 = null
 
@@ -382,8 +376,6 @@ rect_scale = Vector2( 27.829, 16.173 )
 custom_colors/font_color = Color( 0, 0.529412, 1, 1 )
 text = "a"
 script = ExtResource( 15 )
-[connection signal="timeout" from="Cube/Cube005/cube5_time" to="." method="_on_cube5_time_timeout"]
-[connection signal="timeout" from="Cube/Cube005/cube5_time_2" to="." method="_on_cube5_time_2_timeout"]
 [connection signal="timeout" from="fire_pistol/fire_pistol_time" to="." method="_on_fire_pistol_time_timeout"]
 [connection signal="timeout" from="reload" to="." method="_on_reload_timeout"]
 [connection signal="timeout" from="empty_mag" to="." method="_on_empty_mag_timeout"]

@@ -1,8 +1,9 @@
 extends KinematicBody
+var damage=10
 
 var speed = 8
 var velocity = Vector3()
-
+onready var healt=get_tree().get_root().get_node("/root/level/prot")
 func _ready():
 	velocity = Vector3(speed, 0, 0)
 
@@ -21,6 +22,7 @@ func _physics_process(delta):
 				if(g == "enemy"):
 					col.collider.apply_central_impulse(-col.normal*3)
 					col.collider.hurt()
+					healt.health=healt.health-damage
 				if(g == "case"):
 					queue_free = false
 		

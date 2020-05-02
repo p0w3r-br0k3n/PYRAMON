@@ -4,6 +4,8 @@ var at = Vector3(4,35,-80)
 var to = Vector3(-4,-25,80)
 var vel = Vector3(0,0,0)
 var accel = 0
+var health = 0
+
 var last_trans = translation
 const sp = 300
 const leg_force= 500
@@ -16,15 +18,24 @@ var holster_not_fire = 0
 var reload_hands=0
 #the var holster_not_fire should be called from the pistol_root script so as not to fire when you holster/unholster
 var left_right=0
+var ok_die=0
 func get_translation_delta():
 	var delta = last_trans - translation
 	last_trans = translation
 	return delta
 
+	
+
 func _ready():
+
+	add_to_group("enemy")
+	add_to_group("Player")
 	$walking.play("holster")
 	$holster_time.start()
 func _process(_delta):
+	
+	if health ==0:
+		$hide.start()
 	if Input.is_action_just_pressed("ui_left"):
 		left_right=1
 	if Input.is_action_just_pressed("ui_right"):
@@ -106,3 +117,61 @@ func _on_holster_time_timeout():
 
 func _on_empty_mag_timeout():
 	reload_hands=1
+
+
+func _on_hide_timeout():
+	$head.hide()
+	$foot_left.hide()
+	$foot_right.hide()
+	$body_middle.hide()
+	$body_up.hide()
+	$body_down.hide()
+	$hand_swervel.hide()
+	$hide.stop()
+	$hide2.start()
+
+
+func _on_hide2_timeout():
+	$head.show()
+	$foot_left.show()
+	$foot_right.show()
+	$body_middle.show()
+	$body_up.show()
+	$body_down.show()
+	$hand_swervel.show()
+	$hide2.stop()
+	$hide3.start()
+
+func _on_hide3_timeout():
+	$head.hide()
+	$foot_left.hide()
+	$foot_right.hide()
+	$body_middle.hide()
+	$body_up.hide()
+	$body_down.hide()
+	$hand_swervel.hide()
+	$hide3.stop()
+	$hide4.start()
+
+
+
+func _on_hide4_timeout():
+	$head.show()
+	$foot_left.show()
+	$foot_right.show()
+	$body_middle.show()
+	$body_up.show()
+	$body_down.show()
+	$hand_swervel.show()
+	
+	$hide.stop()
+	$die.start()
+	
+	
+
+
+func _on_die_timeout():
+	ok_die=1
+	queue_free()
+
+
