@@ -130,7 +130,7 @@ transform = Transform( 0.0142716, 0, -0.19949, -1.49012e-008, 0.2, -1.86265e-009
 transform = Transform( 0.0452802, 0.082204, 0.995583, 0.00198418, 0.996598, -0.0823773, -0.998969, 0.00570551, 0.044963, 19.3205, 3.14982, 0.15324 )
 
 [node name="bullet" parent="." instance=ExtResource( 4 )]
-transform = Transform( -0.004, 0, -6.03983e-010, 0, 0.004, 0, 6.03983e-010, 0, -0.004, 6.48675, 3.35113, 0.195357 )
+transform = Transform( -0.705, 0, -8.81815e-008, 0, 0.784, 0, 1.06452e-007, 0, -0.584, 6.08465, 0.00452328, -0.97144 )
 visible = false
 
 [node name="games_cursor" parent="." instance=ExtResource( 5 )]

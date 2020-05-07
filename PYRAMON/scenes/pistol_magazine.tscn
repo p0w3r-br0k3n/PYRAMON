@@ -3,7 +3,7 @@
 [ext_resource path="res://code/pistol_magazine.gd" type="Script" id=1]
 [ext_resource path="res://weapons/Material_003.material" type="Material" id=2]
 
-[sub_resource type="ArrayMesh" id=7]
+[sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube.006"
 surfaces/0 = {
 "aabb": AABB( -0.896411, -2.69454, -1.67639, 1.96038, 5.89363, 3.42954 ),
@@ -18,7 +18,7 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[sub_resource type="ArrayMesh" id=8]
+[sub_resource type="ArrayMesh" id=2]
 resource_name = "Cube.005"
 surfaces/0 = {
 "aabb": AABB( -1.4862, -3.69368, -0.95186, 2.94649, 1.36803, 3.39095 ),
@@ -33,21 +33,22 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[sub_resource type="ConcavePolygonShape" id=9]
+[sub_resource type="ConcavePolygonShape" id=3]
 
 [node name="Scene Root" type="RigidBody"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
 script = ExtResource( 1 )
 
 [node name="Cube006" type="MeshInstance" parent="."]
 transform = Transform( 0.814792, 0, 0, 0, 0.814792, 0, 0, 0, 0.814792, -0.135929, -0.640282, 0.264493 )
-mesh = SubResource( 7 )
+mesh = SubResource( 1 )
 material/0 = null
 
 [node name="Cube005" type="MeshInstance" parent="Cube006"]
 transform = Transform( 0.99813, 0, 0, 0, 1.22731, 0, 0, 0, 0.949446, 0.166827, 1.13691, 0.169843 )
-mesh = SubResource( 8 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="CollisionPolygon" type="CollisionShape" parent="."]
 transform = Transform( 5.54928, 0, 0, 0, 11.3653, 0.738345, 0, -2.99441, 2.8024, 0, -0.518768, 0.303462 )
-shape = SubResource( 9 )
+shape = SubResource( 3 )

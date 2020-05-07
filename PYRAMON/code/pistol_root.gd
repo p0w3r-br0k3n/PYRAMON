@@ -9,16 +9,17 @@ var clip= 1
 var start = 1
 var stop = 0
 var cant_shoot= 0
+var rel=0
 var cant_shoot_animation_stop=0
 onready var Parent = get_parent().get_parent().get_parent()
 var stop_fire_holster=0
 var stop_click_holster = 0
+var ninebultodie = 0
 onready var fire_timer = null
 onready var smoke_timer = null
 onready var fire_delay = 0.5
 onready var smoke_delay = 2
 onready var can_smoke = false
-
 
 onready var mouse_position = Vector3()
 
@@ -30,6 +31,7 @@ var no_ammo=0
 var bullets_remaining = 9
 	
 func _ready():
+	
 	fire_timer = Timer.new()
 	smoke_timer = Timer.new()
 	
@@ -50,30 +52,33 @@ func _process(delta):
 			$no_more_ammo.play(true)
 			
 	
-	
+	if no_ammo==1:
+		$AnimationPlayer.play("pistol_empty")
 	
 	if Input.is_action_just_pressed("mouse_click") and (stop==0 or start == 1 and cant_shoot==0 and bullets_remaining>-9):
 		var mouse_pos = get_tree().root.get_mouse_position()
 		mouse_position = Vector3(mouse_pos.x, mouse_pos.y, 0)
-		
+		print (bullets_remaining)
+		print (bullet_spawn_location)
+		print (clip)
 		$fire_pistol.set_emitting(true)
 		$fire_pistol/fire_pistol_time.start()
+		
 		shoot()
 	#reloading
-	if Input.is_action_just_pressed("ui_rel") and (stop==0 and cant_shoot==0 and no_ammo == 0):
+	if Input.is_action_just_pressed("ui_rel") and (stop==0 and cant_shoot==0 and no_ammo == 0 and bullets_remaining>0):
+		rel =1
 		var mag= Mag.instance()
-	
-	
 		Parent.add_child(mag)
 		var mag_translation_vector = global_transform.origin
 		start = 0
 		stop=1
 		$AnimationPlayer.play("basic_gun_reload")
 		$pistol_reload_sound.play()
-		bullets_remaining=bullets_remaining-clip
+		
 		
 		$reload.start()
-		bullets_remaining = bullets_remaining-clip
+		bullets_remaining=bullets_remaining-clip
 		print(bullets_remaining)
 		$empty_mag.start()
 		print (bullets_remaining)
@@ -81,19 +86,11 @@ func _process(delta):
 		mag.global_translate(mag_translation_vector)
 		mag.apply_impulse(Vector3(0,0,0), Vector3(0,0,1))
 		
-	if Input.is_action_just_pressed("ui_rel") and (stop==0 and cant_shoot==0 and no_ammo == 0 and bullets_remaining<=0):
-		reload= reload+bullets_remaining
 	if reload == 9:
 		clip=0
-	if  bullets_remaining==-9:
-		
+	if  bullets_remaining<=-9:
+		reload=0
 		no_ammo=1
-		
-		
-		
-	if (cant_shoot==1 and cant_shoot_animation_stop==0 ):
-		$AnimationPlayer.play("pistol_empty")
-		cant_shoot_animation_stop=1
 		
 		
 
@@ -144,8 +141,9 @@ func shoot():
 	
 	# get the required positions and translations
 	var pos = Camera.unproject_position(global_transform.origin)
-	
-	bullet_spawn_location = Vector3(pos.x, pos.y, 0)
+	var spat = get_node("/root/level/prot/hand_swervel/hand_right/scene_root/Area")
+	var spatial_pos=spat.global_position
+	bullet_spawn_location = Vector3(spatial_pos.x,spatial_pos.y, 0)
 	
 	# we should realistically have two separate nodes for 
 	# bullet translation and case translation so they don't collide as soon as they spawn
@@ -175,7 +173,12 @@ func _on_fire_pistol_time_timeout():
 
 
 func _on_reload_timeout():
-	reload = 9
+	if clip==8:
+		reload=9
+	elif bullets_remaining+reload<9:
+			reload=reload+clip-1
+
+	else: reload = 9
 	print(reload)
 	$reload.stop()
 

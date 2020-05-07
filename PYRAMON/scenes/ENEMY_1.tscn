@@ -5,9 +5,8 @@
 [ext_resource path="res://characters/Material_010.material" type="Material" id=3]
 [ext_resource path="res://characters/Material_008.material" type="Material" id=4]
 [ext_resource path="res://characters/Material_009.material" type="Material" id=5]
-[ext_resource path="res://animations/crouching.tres" type="Animation" id=6]
-[ext_resource path="res://characters/Material_006.material" type="Material" id=7]
-[ext_resource path="res://characters/Material_002.material" type="Material" id=8]
+[ext_resource path="res://characters/Material_006.material" type="Material" id=6]
+[ext_resource path="res://characters/Material_002.material" type="Material" id=7]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "head"
@@ -80,6 +79,70 @@ surfaces/0 = {
 
 [sub_resource type="BoxShape" id=10]
 
+[sub_resource type="Animation" id=15]
+resource_name = "crouching"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("body_middle:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Transform( -0.998562, 0, -0.0536084, 0, 1, 0, 0.0536084, 0, -0.998562, 0, 0, 0 ), Transform( -0.998562, 0, -0.0536084, 0.0195582, 0.931072, -0.364311, 0.0499133, -0.364835, -0.929733, 0, -0.271603, -0.408432 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body_down:transform")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Transform( 0.0536085, 0, -0.998562, 0, 1, 0, 0.998562, 0, 0.0536085, 0, -0.998222, 0 ), Transform( 0.0536085, 0, -0.998562, 0, 1, 0, 0.998562, 0, 0.0536085, 0, -1.28405, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body_up:transform")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Transform( 0.998501, 0, 0.0547334, 0, 1, 0, -0.0547334, 0, 0.998501, 0, 1.0107, 0 ), Transform( 0.998501, 0, 0.0547334, 0, 1, 0, -0.0547334, 0, 0.998501, 0, 0.645879, -0.760717 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("head:transform")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Transform( 0, 0, 0.812099, 0, 0.812099, 0, -0.812099, 0, 0, 0, 2.92441, 0 ), Transform( 0, 0, 0.812099, 0, 0.812099, 0, -0.812099, 0, 0, 0, 2.4552, -1.14416 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("hand_swervel/hand_right:transform")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35973, -0.0589781, -4.01904 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35973, -2.58651, -6.77222 ) ]
+}
+
 [sub_resource type="ArrayMesh" id=11]
 surfaces/0 = {
 "aabb": AABB( -1, -1, -1, 2, 2.00001, 2 ),
@@ -102,7 +165,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 2880,
-"material": ExtResource( 7 ),
+"material": ExtResource( 6 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 1984
@@ -116,7 +179,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 2880,
-"material": ExtResource( 8 ),
+"material": ExtResource( 7 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 1984
@@ -130,7 +193,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 2880,
-"material": ExtResource( 8 ),
+"material": ExtResource( 7 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 1984
@@ -184,7 +247,7 @@ transform = Transform( 0.42428, 0, 0, 0, 0.780917, -0.00258238, 0, 0.0010668, 0.
 shape = SubResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/crouching = ExtResource( 6 )
+anims/crouching = SubResource( 15 )
 
 [node name="body_middle" type="MeshInstance" parent="."]
 transform = Transform( -0.998562, 0, -0.0536084, 0, 1, 0, 0.0536084, 0, -0.998562, 0, 0, 0 )
