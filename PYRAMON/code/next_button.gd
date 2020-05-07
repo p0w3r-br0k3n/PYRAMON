@@ -1,4 +1,4 @@
-extends TextureButton
+extends Button
 onready var dialogue = get_node("/root/dialogue")
 
 func _on_next_button_pressed():
