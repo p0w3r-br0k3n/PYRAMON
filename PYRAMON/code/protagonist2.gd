@@ -1,11 +1,12 @@
 extends KinematicBody
 onready var pistol = get_tree().get_root().get_node("/root/level/prot/hand_swervel/hand_right/scene_root")
 var at = Vector3(4,35,-80)
-var to = Vector3(-4,-25,80)
+var to = Vector3(-4,-35,80)
 var vel = Vector3(0,0,0)
 var accel = 0
 var health = 28
-
+onready var part = get_tree().get_root().get_node("/root/level/Area/Particles")
+onready var part2 = get_tree().get_root().get_node("/root/level/Area2/Particles2")
 var last_trans = translation
 const sp = 300
 const leg_force= 500
@@ -63,6 +64,7 @@ func _physics_process(delta):
 		$walking.play("walking_left")
 		
 		vel.x = -sp
+	else: vel.x = lerp(vel.x,0,0.05)
 	
 	
 	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_down") and is_on_floor():
@@ -83,12 +85,14 @@ func _physics_process(delta):
 	
 func _on_Area_body_entered(body):
 	if(body.name == "prot") and is_on_floor():
+		part.set_emitting(true)
 		translate(at)
 		print ("yeet1")
 
 
 func _on_Area2_body_entered(body):	
 	if(body.name == "prot") and is_on_floor():
+		part2.set_emitting(true)
 		translate(to)
 		print("yeet2")
 
