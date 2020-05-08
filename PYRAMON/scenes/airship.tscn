@@ -47,10 +47,12 @@ uv1_triplanar = true
 emission_shape = 1
 emission_sphere_radius = 2.0
 spread = 0.0
-gravity = Vector3( 0, -9.95, -10.92 )
+gravity = Vector3( 0, -9.95, -44.03 )
 initial_velocity_random = 0.06
 angular_velocity = -720.0
 angular_velocity_random = 1.0
+angle = -483.0
+angle_random = 1.0
 scale = 0.05
 color = Color( 0.803922, 0.0745098, 0.0745098, 1 )
 
@@ -63,6 +65,7 @@ albedo_color = Color( 0, 0.647059, 1, 1 )
 emission_shape = 2
 emission_box_extents = Vector3( 8.07, 1, 1 )
 gravity = Vector3( 0, -13.56, 0 )
+angular_velocity = 1.14333e+027
 scale = 0.08
 
 [sub_resource type="CapsuleMesh" id=15]
@@ -140,9 +143,12 @@ material/0 = SubResource( 9 )
 transform = Transform( 0.144329, 0, 0, 0, 0.144329, 0, 0, 0, 0.144329, 17.3184, 16.9527, -1.12597 )
 
 [node name="Particles" type="Particles" parent="." index="13"]
-transform = Transform( 0.152619, 0, 0, 0, -0.0222512, 0.427541, 0, -0.228328, -0.041665, 4.61774, 5.36536, -3.04469 )
+transform = Transform( 0.152619, 0, 0, 0, -0.0222512, 0.427541, 0, -0.228328, -0.041665, 4.60794, 5.36129, -3.04146 )
 material_override = SubResource( 10 )
 amount = 21
+lifetime = 0.5
+speed_scale = 0.7
+randomness = 1.0
 visibility_aabb = AABB( -4, -4, -6.98486, 8, 8, 8 )
 process_material = SubResource( 11 )
 draw_pass_1 = SubResource( 12 )
@@ -158,18 +164,21 @@ shadow_enabled = true
 transform = Transform( 0.158297, 0, 0, 0, 0.285687, 0, 0, 0, 0.11682, 6.55361, 18.3655, -2.9139 )
 material_override = SubResource( 13 )
 amount = 13
+speed_scale = 0.9
+randomness = 1.0
 process_material = SubResource( 14 )
 draw_pass_1 = SubResource( 15 )
 
 [node name="Particles3" type="Particles" parent="." index="15"]
-transform = Transform( 0.158297, 0, 0, 0, 0.285687, 0, 0, 0, 0.11682, 15.7512, 18.3655, -2.9139 )
+transform = Transform( 0.158297, 0, 0, 0, 0.285687, 0, 0, 0, 0.11682, 15.7512, 19.2732, -2.9139 )
 material_override = SubResource( 13 )
 amount = 13
+randomness = 1.0
 process_material = SubResource( 14 )
 draw_pass_1 = SubResource( 15 )
 
 [node name="Particles4" type="Particles" parent="." index="16"]
-transform = Transform( 0.158297, 0, 0, 0, 0.285687, 0, 0, 0, 0.11682, 19.1044, 18.3655, -2.9139 )
+transform = Transform( 0.158297, 0, 0, 0, 0.285687, 0, 0, 0, 0.11682, 19.1044, 19.2076, -2.9139 )
 material_override = SubResource( 13 )
 amount = 13
 process_material = SubResource( 14 )

@@ -5,7 +5,7 @@ onready var Case = preload("res://scenes/bullet_case.tscn")
 onready var Sound = $pistol_gun_sound_source
 onready var Smoke = $smoke_pistol
 onready var Camera = get_node("/root/level/InterpolatedCamera")
-var clip= 1
+var clip= 0
 var start = 1
 var stop = 0
 var cant_shoot= 0
@@ -14,7 +14,6 @@ var cant_shoot_animation_stop=0
 onready var Parent = get_parent().get_parent().get_parent()
 var stop_fire_holster=0
 var stop_click_holster = 0
-var ninebultodie = 0
 onready var fire_timer = null
 onready var smoke_timer = null
 onready var fire_delay = 0.5
@@ -79,6 +78,7 @@ func _process(delta):
 		
 		$reload.start()
 		bullets_remaining=bullets_remaining-clip
+		clip = 1
 		print(bullets_remaining)
 		$empty_mag.start()
 		print (bullets_remaining)
@@ -86,8 +86,7 @@ func _process(delta):
 		mag.global_translate(mag_translation_vector)
 		mag.apply_impulse(Vector3(0,0,0), Vector3(0,0,1))
 		
-	if reload == 9:
-		clip=0
+	
 	if  bullets_remaining<=-9:
 		reload=0
 		no_ammo=1
@@ -121,29 +120,27 @@ func shoot():
 		
 		$fire_pistol.set_emitting(false)
 		bullets_remaining= bullets_remaining - 9
+		
 		$empty_mag.start()
 		
 		return
-	
-	# play bullet sound
-	Sound.play()
-	Smoke.set_emitting(false)
-	
-	# plays recoil animation
-	$AnimationPlayer.play("basic_gun_recoil")
-	
-	# spawn bullet and case
+		# spawn bullet and case
 	var bullet = Bullet.instance()
 	var case = Case.instance()
-	
+		
 	Parent.add_child(bullet)
 	Parent.add_child(case)
+	
 	
 	# get the required positions and translations
 	var pos = Camera.unproject_position(global_transform.origin)
 	var spat = get_node("/root/level/prot/hand_swervel/hand_right/scene_root/Area")
-	var spatial_pos=spat.global_position
+	var spatial_pos=spat.global_transform.origin
 	bullet_spawn_location = Vector3(spatial_pos.x,spatial_pos.y, 0)
+	
+    
+
+
 	
 	# we should realistically have two separate nodes for 
 	# bullet translation and case translation so they don't collide as soon as they spawn
@@ -161,6 +158,14 @@ func shoot():
 	case.global_rotate(Vector3(1,0,0),300)
 	case.global_translate(case_translation_vector)
 	case.apply_impulse(Vector3(0,0,0), Vector3(0,0,1))
+	# play bullet sound
+	Sound.play()
+	Smoke.set_emitting(false)
+	
+	# plays recoil animation
+	$AnimationPlayer.play("basic_gun_recoil")
+	
+
 	reload = reload - 1
 	clip=clip+1
 	
@@ -173,12 +178,13 @@ func _on_fire_pistol_time_timeout():
 
 
 func _on_reload_timeout():
-	if clip==8:
-		reload=9
-	elif bullets_remaining+reload<9:
-			reload=reload+clip-1
+	
+	if bullets_remaining+reload<9:
+			reload=reload+clip
+			clip=0
 
-	else: reload = 9
+	else: reload = 9     
+	clip=0
 	print(reload)
 	$reload.stop()
 

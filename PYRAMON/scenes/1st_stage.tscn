@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://code/1st_stage.gd" type="Script" id=1]
 [ext_resource path="res://scenes/airship.tscn" type="PackedScene" id=2]
@@ -6,10 +6,6 @@
 [ext_resource path="res://scenes/bullet.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/games_cursor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/ENEMY_1.tscn" type="PackedScene" id=6]
-
-[sub_resource type="SpatialMaterial" id=1]
-
-[sub_resource type="PlaneMesh" id=2]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.376471, 0.388235, 0.52549, 1 )
@@ -75,12 +71,6 @@ speed = 3.0
 enabled = true
 
 [node name="Viewport" type="Viewport" parent="InterpolatedCamera"]
-
-[node name="MeshInstance" type="MeshInstance" parent="InterpolatedCamera"]
-transform = Transform( 1, 0, 0, 0, -4.09782e-008, 1, 0, -1, -4.09782e-008, 0, 0.0207572, -0.493504 )
-material_override = SubResource( 1 )
-mesh = SubResource( 2 )
-material/0 = null
 
 [node name="airship" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00618362, 0, -0.00956249 )
