@@ -194,7 +194,7 @@ visible = false
 
 [node name="games_cursor" parent="." instance=ExtResource( 5 )]
 
-[node name="Scene Root" parent="." instance=ExtResource( 6 )]
-transform = Transform( -8.74228e-009, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-009, 12.333, 4.75228, -1.42109 )
+[node name="enem" parent="." instance=ExtResource( 6 )]
+transform = Transform( -8.74228e-009, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-009, 12.3507, 4.73488, -1.41321 )
 [connection signal="body_entered" from="Area" to="prot" method="_on_Area_body_entered"]
 [connection signal="body_entered" from="Area2" to="prot" method="_on_Area2_body_entered"]

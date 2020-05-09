@@ -66,7 +66,9 @@ func _process(_delta):
 		$health/Label5.hide()
 
 	
-
+	if health<=0:
+		ok_die = 1
+		
 	
 	if Input.is_action_just_pressed("ui_left"):
 		left_right=1
