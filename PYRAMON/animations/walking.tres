@@ -1,0 +1,64 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("foot_left:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Transform( 0.42428, 0, 0, 0, 0.424279, -0.00140303, 0, 0.0010668, 0.557998, -0.578917, -3.2611, -0.094048 ), Transform( 0.42428, 0, 0, 0, 0.424279, -0.00140303, 0, 0.0010668, 0.557998, -0.578917, -2.83554, -0.698521 ), Transform( 0.42428, 0, 0, 0, 0.424279, -0.00140303, 0, 0.0010668, 0.557998, -0.578917, -3.25081, -0.698521 ), Transform( 0.42428, 0, 0, 0, 0.424279, -0.00140303, 0, 0.0010668, 0.557998, -0.578917, -3.25081, -0.0308651 ), Transform( 0.42428, 0, 0, 0, 0.424279, -0.00140303, 0, 0.0010668, 0.557998, -0.578917, -3.25081, -0.0308651 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("foot_right:transform")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Transform( 0.42428, 0, 0, 0, 0.423807, -0.0192891, 0, 0.0245898, 0.557428, 0.507091, -3.27915, -0.0694542 ), Transform( 0.42428, 0, 0, 0, 0.423807, -0.0192891, 0, 0.0245898, 0.557428, 0.507091, -3.27915, -0.0694542 ), Transform( 0.42428, 0, 0, 0, 0.423807, -0.0192891, 0, 0.0245898, 0.557428, 0.518656, -2.56389, -0.586316 ), Transform( 0.42428, 0, 0, 0, 0.423807, -0.0192891, 0, 0.0245898, 0.557428, 0.518656, -3.23355, -0.586316 ), Transform( 0.42428, 0, 0, 0, 0.423807, -0.0192891, 0, 0.0245898, 0.557428, 0.518656, -3.23355, -0.00965881 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body_middle:transform")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Transform( -0.998562, 0, -0.0536081, 0, 1, 0, 0.0536081, 0, -0.998562, 0, 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("head:transform")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Transform( -3.5498e-008, 0, 0.812099, 0, 0.812099, 0, -0.812099, 0, -3.5498e-008, 0, 2.92441, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("hand_swervel/hand_right:transform")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35973, -0.0589781, -4.01904 ) ]
+}

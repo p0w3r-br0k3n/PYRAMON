@@ -7,7 +7,7 @@
 [ext_resource path="res://scenes/games_cursor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/ENEMY_1.tscn" type="PackedScene" id=6]
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.376471, 0.388235, 0.52549, 1 )
 metallic = 0.5
 metallic_specular = 0.0
@@ -33,7 +33,7 @@ detail_enabled = true
 detail_blend_mode = 3
 detail_uv_layer = 0
 
-[sub_resource type="ParticlesMaterial" id=4]
+[sub_resource type="ParticlesMaterial" id=2]
 emission_shape = 2
 emission_box_extents = Vector3( 2.12, 1.74, 2.41 )
 spread = 103.9
@@ -45,7 +45,7 @@ linear_accel_random = 1.0
 radial_accel = 38.64
 color = Color( 0.235294, 0.105882, 0.105882, 1 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.180392, 0.184314, 0.47451, 1 )
 emission_enabled = true
 emission = Color( 0.803922, 0.117647, 0.117647, 1 )
@@ -53,10 +53,10 @@ emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="QuadMesh" id=6]
-material = SubResource( 5 )
+[sub_resource type="QuadMesh" id=4]
+material = SubResource( 3 )
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=5]
 
 [node name="level" type="Spatial"]
 script = ExtResource( 1 )
@@ -155,32 +155,32 @@ transform = Transform( 1, 0, 0, 0, 0.24795, 0, 0, 0, 1, 6.06869, 10.2238, -1.444
 
 [node name="Particles" type="Particles" parent="Area"]
 transform = Transform( -0.352247, 1.24196e-007, 0, -3.07944e-008, -1.42063, 0, 0, 0, 0.352247, 0.0733333, 4.0042, -0.257031 )
-material_override = SubResource( 3 )
+material_override = SubResource( 1 )
 emitting = false
 amount = 50
 lifetime = 0.01
 one_shot = true
-process_material = SubResource( 4 )
-draw_pass_1 = SubResource( 6 )
+process_material = SubResource( 2 )
+draw_pass_1 = SubResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 
 [node name="Area2" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.29608, 0, 0, 0, 1, 24.316, 17.0244, -1.44484 )
 
 [node name="Particles2" type="Particles" parent="Area2"]
 transform = Transform( -0.352247, 1.24196e-007, 0, -2.57885e-008, -1.1897, 0, 0, 0, 0.352247, 0.0445461, 2.62988, -0.257031 )
-material_override = SubResource( 3 )
+material_override = SubResource( 1 )
 emitting = false
 amount = 50
 lifetime = 0.01
 one_shot = true
-process_material = SubResource( 4 )
-draw_pass_1 = SubResource( 6 )
+process_material = SubResource( 2 )
+draw_pass_1 = SubResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area2"]
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 
 [node name="prot" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.0142716, 0, -0.19949, -1.49012e-008, 0.2, -1.86265e-009, 0.19949, 0, 0.0142716, 5.05769, 3.48444, -1.24354 )

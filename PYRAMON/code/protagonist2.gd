@@ -4,7 +4,7 @@ var at = Vector3(4,35,-80)
 var to = Vector3(-4,-35,80)
 var vel = Vector3(0,0,0)
 var accel = 0
-var health = 28
+var health = 100
 onready var part = get_tree().get_root().get_node("/root/level/Area/Particles")
 onready var part2 = get_tree().get_root().get_node("/root/level/Area2/Particles2")
 var last_trans = translation
@@ -32,9 +32,42 @@ func _ready():
 	$walking.play("holster")
 	$holster_time.start()
 func _process(_delta):
+	health=health-1
 	
-	if health ==0:
-		pass
+	if health<=100 and health>=81:
+		$health/Label.show()
+		
+	elif health<=80 and health>=61:
+		$health/Label.hide()
+		$health/Label2.show()
+	
+	elif health<=60 and health>=41:
+		$health/Label.hide()
+		$health/Label2.hide()
+		$health/Label3.show()
+	elif health<=40 and health>=21:
+		$health/Label.hide()
+		$health/Label2.hide()
+		$health/Label3.hide()
+		$health/Label4.show()
+		
+	elif health<=20 and health>=1:
+		$health/Label.hide()
+		$health/Label2.hide()
+		$health/Label3.hide()
+		$health/Label4.hide()
+		$health/Label5.show()
+		
+	elif health<=0:
+		$health/Label.hide()
+		$health/Label2.hide()
+		$health/Label3.hide()
+		$health/Label4.hide()
+		$health/Label5.hide()
+
+	
+
+	
 	if Input.is_action_just_pressed("ui_left"):
 		left_right=1
 	if Input.is_action_just_pressed("ui_right"):
@@ -113,7 +146,7 @@ func _on_empty_mag_timeout():
 
 
 
-	
+
 
 
 

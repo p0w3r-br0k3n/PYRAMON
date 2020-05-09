@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://code/protagonist2.gd" type="Script" id=1]
 [ext_resource path="res://characters/Material_005.material" type="Material" id=2]
@@ -6,16 +6,17 @@
 [ext_resource path="res://characters/Material_007.material" type="Material" id=4]
 [ext_resource path="res://characters/Material_006.material" type="Material" id=5]
 [ext_resource path="res://animations/holster.tres" type="Animation" id=6]
-[ext_resource path="res://code/hand_swervel.gd" type="Script" id=7]
-[ext_resource path="res://characters/Material_002.material" type="Material" id=8]
-[ext_resource path="res://scenes/pistol_root.tscn" type="PackedScene" id=9]
-[ext_resource path="res://code/health_label.gd" type="Script" id=10]
-[ext_resource path="res://sprites/full_health.png" type="Texture" id=11]
-[ext_resource path="res://sprites/80_health.png" type="Texture" id=12]
-[ext_resource path="res://sprites/60_health.png" type="Texture" id=13]
-[ext_resource path="res://sprites/40_health.png" type="Texture" id=14]
-[ext_resource path="res://sprites/20_health.png" type="Texture" id=15]
-[ext_resource path="res://scenes/health_text.gd" type="Script" id=16]
+[ext_resource path="res://animations/walking.tres" type="Animation" id=7]
+[ext_resource path="res://animations/walking_left.tres" type="Animation" id=8]
+[ext_resource path="res://code/hand_swervel.gd" type="Script" id=9]
+[ext_resource path="res://characters/Material_002.material" type="Material" id=10]
+[ext_resource path="res://scenes/pistol_root.tscn" type="PackedScene" id=11]
+[ext_resource path="res://sprites/40_health.png" type="Texture" id=12]
+[ext_resource path="res://sprites/20_health.png" type="Texture" id=13]
+[ext_resource path="res://sprites/60_health.png" type="Texture" id=14]
+[ext_resource path="res://sprites/full_health.png" type="Texture" id=15]
+[ext_resource path="res://sprites/80_health.png" type="Texture" id=16]
+[ext_resource path="res://scenes/health_text.gd" type="Script" id=17]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "head"
@@ -349,132 +350,6 @@ tracks/4/keys = {
 "values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35973, -2.58651, -6.77222 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35973, -0.0589781, -4.01904 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35973, -0.0589781, -4.01904 ) ]
 }
 
-[sub_resource type="Animation" id=13]
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("foot_left:transform")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Transform( 0.42428, 0, 0, 0, 0.424279, -0.00140303, 0, 0.0010668, 0.557998, -0.578917, -3.2611, -0.094048 ), Transform( 0.42428, 0, 0, 0, 0.424279, -0.00140303, 0, 0.0010668, 0.557998, -0.578917, -2.83554, -0.698521 ), Transform( 0.42428, 0, 0, 0, 0.424279, -0.00140303, 0, 0.0010668, 0.557998, -0.578917, -3.25081, -0.698521 ), Transform( 0.42428, 0, 0, 0, 0.424279, -0.00140303, 0, 0.0010668, 0.557998, -0.578917, -3.25081, -0.0308651 ), Transform( 0.42428, 0, 0, 0, 0.424279, -0.00140303, 0, 0.0010668, 0.557998, -0.578917, -3.25081, -0.0308651 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("foot_right:transform")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Transform( 0.42428, 0, 0, 0, 0.423807, -0.0192891, 0, 0.0245898, 0.557428, 0.507091, -3.27915, -0.0694542 ), Transform( 0.42428, 0, 0, 0, 0.423807, -0.0192891, 0, 0.0245898, 0.557428, 0.507091, -3.27915, -0.0694542 ), Transform( 0.42428, 0, 0, 0, 0.423807, -0.0192891, 0, 0.0245898, 0.557428, 0.518656, -2.56389, -0.586316 ), Transform( 0.42428, 0, 0, 0, 0.423807, -0.0192891, 0, 0.0245898, 0.557428, 0.518656, -3.23355, -0.586316 ), Transform( 0.42428, 0, 0, 0, 0.423807, -0.0192891, 0, 0.0245898, 0.557428, 0.518656, -3.23355, -0.00965881 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("body_middle:transform")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Transform( -0.998562, 0, -0.0536081, 0, 1, 0, 0.0536081, 0, -0.998562, 0, 0, 0 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("head:transform")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Transform( -3.5498e-008, 0, 0.812099, 0, 0.812099, 0, -0.812099, 0, -3.5498e-008, 0, 2.92441, 0 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("hand_swervel/hand_right:transform")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35973, -0.0589781, -4.01904 ) ]
-}
-
-[sub_resource type="Animation" id=14]
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("foot_left:transform")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Transform( -0.42428, -9.32217e-011, -4.87817e-008, 0, 0.424279, -0.0014024, 3.70917e-008, -0.00106633, -0.557998, -0.578917, -3.25081, -0.0308651 ), Transform( -0.42428, -9.32217e-011, -4.87817e-008, 0, 0.424279, -0.0014024, 3.70917e-008, -0.00106633, -0.557998, -0.578917, -3.25081, -0.0308651 ), Transform( -0.42428, -9.32214e-011, -4.87817e-008, 0, 0.424279, -0.0014024, 3.70917e-008, -0.00106633, -0.557998, -0.578917, -2.63712, 0.395987 ), Transform( -0.42428, -9.32215e-011, -4.87817e-008, 5.88807e-018, 0.424279, -0.0014024, 3.70917e-008, -0.00106633, -0.557998, -0.578917, -2.8918, 0.7394 ), Transform( -0.42428, -9.32215e-011, -4.87817e-008, 2.94403e-018, 0.424279, -0.0014024, 3.70917e-008, -0.00106633, -0.557998, -0.578917, -3.25081, 0.394123 ), Transform( -0.42428, -9.32217e-011, -4.87817e-008, 0, 0.424279, -0.0014024, 3.70917e-008, -0.00106633, -0.557998, -0.578917, -3.27409, -0.122786 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("foot_right:transform")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Transform( -0.42428, -2.14994e-009, -4.86792e-008, 0, 0.423807, -0.0323111, 3.70917e-008, -0.0245924, -0.556825, 0.518656, -3.23355, -0.00965881 ), Transform( -0.42428, -2.14993e-009, -4.86791e-008, -9.42091e-017, 0.423807, -0.0323111, 3.70917e-008, -0.0245924, -0.556825, 0.518656, -2.86475, 0.471644 ), Transform( -0.42428, -2.14993e-009, -4.86791e-008, -9.42091e-017, 0.423807, -0.0323111, 3.70917e-008, -0.0245924, -0.556825, 0.518656, -3.27817, 0.74727 ), Transform( -0.42428, -2.14993e-009, -4.86791e-008, 0, 0.423807, -0.0323111, 3.70917e-008, -0.0245924, -0.556825, 0.518656, -3.24776, 0.37679 ), Transform( -0.42428, -2.14994e-009, -4.86792e-008, 0, 0.423807, -0.0323111, 3.70917e-008, -0.0245924, -0.556825, 0.518656, -3.23355, -0.00965881 ), Transform( -0.42428, -2.14994e-009, -4.86792e-008, 0, 0.423807, -0.0323111, 3.70917e-008, -0.0245924, -0.556825, 0.518656, -3.23355, -0.00965881 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("head:transform")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Transform( 9.68418e-009, 0, -0.812099, 0, 0.812099, 0, 0.812099, 0, 9.68418e-009, 0, 2.92441, 0 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("body_middle:transform")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Transform( 0.998562, 0, 0.0536078, 0, 1, 0, -0.0536078, 0, 0.998562, 0, 0, 0 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("hand_swervel/hand_right:transform")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Transform( -1, 8.74228e-008, 0, -8.74228e-008, -1, 0, 0, 0, 1, -2.36, -0.059, -4.019 ) ]
-}
-
 [sub_resource type="BoxShape" id=15]
 
 [sub_resource type="ArrayMesh" id=16]
@@ -509,7 +384,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 2880,
-"material": ExtResource( 8 ),
+"material": ExtResource( 10 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 1984
@@ -523,7 +398,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 2880,
-"material": ExtResource( 8 ),
+"material": ExtResource( 10 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 1984
@@ -534,17 +409,17 @@ transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 0, 0 )
 script = ExtResource( 1 )
 
 [node name="head" type="MeshInstance" parent="."]
-transform = Transform( 0, 0, 0.812099, 0, 0.812099, 0, -0.812099, 0, 0, 0, 2.92441, 0 )
+transform = Transform( 9.68418e-009, 0, -0.812099, 0, 0.812099, 0, 0.812099, 0, 9.68418e-009, 0, 2.92441, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
 [node name="foot_left" type="MeshInstance" parent="."]
-transform = Transform( 0.42428, 0, 0, 0, 0.424279, -0.00140302, 0, 0.0010668, 0.557998, -0.578917, -3.2611, -0.094048 )
+transform = Transform( -0.42428, -9.32215e-011, -4.87817e-008, 2.94403e-018, 0.424279, -0.0014024, 3.70917e-008, -0.00106633, -0.557998, -0.578917, -3.25081, -0.0308651 )
 mesh = SubResource( 2 )
 material/0 = null
 
 [node name="body_middle" type="MeshInstance" parent="."]
-transform = Transform( -0.998562, 0, -0.0536084, 0, 1, 0, 0.0536084, 0, -0.998562, 0, 0, 0 )
+transform = Transform( 0.998562, 0, 0.0536078, 0, 1, 0, -0.0536078, 0, 0.998562, 0, 0, 0 )
 mesh = SubResource( 3 )
 material/0 = null
 
@@ -554,7 +429,7 @@ mesh = SubResource( 4 )
 material/0 = null
 
 [node name="foot_right" type="MeshInstance" parent="."]
-transform = Transform( 0.42428, 0, 0, 0, 0.423807, -0.0323077, 0, 0.0245898, 0.556825, 0.507091, -3.27915, -0.0694542 )
+transform = Transform( -0.42428, -2.14993e-009, -4.86791e-008, -9.42091e-017, 0.423807, -0.0323111, 3.70917e-008, -0.0245924, -0.556825, 0.518656, -3.23355, -0.00965881 )
 mesh = SubResource( 5 )
 material/0 = null
 
@@ -567,8 +442,8 @@ anims/reload_pistol_hands = SubResource( 9 )
 anims/right = SubResource( 10 )
 anims/unhol_pistol = SubResource( 11 )
 anims/up = SubResource( 12 )
-anims/walking = SubResource( 13 )
-anims/walking_left = SubResource( 14 )
+anims/walking = ExtResource( 7 )
+anims/walking_left = ExtResource( 8 )
 
 [node name="CollisionShape6" type="CollisionShape" parent="."]
 transform = Transform( 0.42428, 0, 0, 0, 1.16559, -0.00385445, 0, 0.0010668, 0.557999, -0.578917, -2.28034, -0.10322 )
@@ -604,10 +479,10 @@ wait_time = 0.6
 
 [node name="hand_swervel" type="Spatial" parent="."]
 transform = Transform( 0.383, 0, 0, 0, 0.383, 0, 0, 0, 0.383, -0.027, 1.452, -0.066 )
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 
 [node name="hand_right" type="MeshInstance" parent="hand_swervel"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35973, -0.0589781, -4.01904 )
+transform = Transform( -1, 8.74228e-008, 0, -8.74228e-008, -1, 0, 0, 0, 1, -2.36, -0.059, -4.019 )
 mesh = SubResource( 22 )
 material/0 = null
 
@@ -616,8 +491,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.602275, -1.18469, -0.130676
 mesh = SubResource( 23 )
 material/0 = null
 
-[node name="scene_root" parent="hand_swervel/hand_right" instance=ExtResource( 9 )]
+[node name="scene_root" parent="hand_swervel/hand_right" instance=ExtResource( 11 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.00138831, 0.575773, -0.0360565 )
+
+[node name="Control" parent="hand_swervel/hand_right/scene_root" index="9"]
+margin_left = 1063.93
+margin_top = 659.52
+margin_right = 1063.93
+margin_bottom = 659.52
 
 [node name="health" type="Control" parent="."]
 margin_left = 1066.68
@@ -625,30 +506,56 @@ margin_top = 1114.51
 margin_right = 1106.68
 margin_bottom = 1154.51
 rect_scale = Vector2( 0.595925, 0.524406 )
-script = ExtResource( 10 )
 
-[node name="Label" type="Sprite" parent="health"]
-texture = ExtResource( 11 )
-
-[node name="Label2" type="Sprite" parent="health"]
+[node name="Label4" type="TextureRect" parent="health"]
+visible = false
+margin_left = -958.772
+margin_top = -529.2
+margin_right = 961.228
+margin_bottom = 550.8
 texture = ExtResource( 12 )
 
-[node name="Label3" type="Sprite" parent="health"]
+[node name="Label5" type="TextureRect" parent="health"]
+visible = false
+margin_left = -958.772
+margin_top = -529.2
+margin_right = 961.228
+margin_bottom = 550.8
 texture = ExtResource( 13 )
 
-[node name="Label4" type="Sprite" parent="health"]
+[node name="Label3" type="TextureRect" parent="health"]
+visible = false
+margin_left = -958.772
+margin_top = -529.2
+margin_right = 961.228
+margin_bottom = 550.8
 texture = ExtResource( 14 )
 
-[node name="Label5" type="Sprite" parent="health"]
+[node name="Label" type="TextureRect" parent="health"]
+visible = false
+margin_left = -958.772
+margin_top = -529.2
+margin_right = 961.228
+margin_bottom = 550.8
 texture = ExtResource( 15 )
 
+[node name="Label2" type="TextureRect" parent="health"]
+visible = false
+margin_left = -958.772
+margin_top = -529.2
+margin_right = 961.228
+margin_bottom = 550.8
+texture = ExtResource( 16 )
+
 [node name="Label" type="Label" parent="."]
-margin_left = 748.392
-margin_top = 920.334
-margin_right = 755.392
-margin_bottom = 934.334
+margin_left = 692.617
+margin_top = 928.496
+margin_right = 699.617
+margin_bottom = 942.496
 rect_scale = Vector2( 10.2776, 10.2183 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "a"
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 [connection signal="timeout" from="holster_time" to="." method="_on_holster_time_timeout"]
+
+[editable path="hand_swervel/hand_right/scene_root"]

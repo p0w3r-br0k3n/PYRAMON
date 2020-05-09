@@ -1,47 +1,52 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://code/diL_5.gd" type="Script" id=1]
-[ext_resource path="res://fonts/NewShape-Bold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://code/dialogue_label.gd" type="Script" id=3]
-[ext_resource path="res://ui/dialogue1_1ststage.png" type="Texture" id=4]
-[ext_resource path="res://code/dialogue_label_2.gd" type="Script" id=5]
-[ext_resource path="res://ui/dialogue2d_1st_stage.png" type="Texture" id=6]
-[ext_resource path="res://code/dial_3.gd" type="Script" id=7]
-[ext_resource path="res://code/dial_4.gd" type="Script" id=8]
-[ext_resource path="res://code/dial_6.gd" type="Script" id=9]
-[ext_resource path="res://code/dial_7.gd" type="Script" id=10]
-[ext_resource path="res://code/next_button.gd" type="Script" id=11]
-[ext_resource path="res://scenes/menus_curs.tscn" type="PackedScene" id=12]
+[ext_resource path="res://ui/dialogue_5th_1st_scene (2).png" type="Texture" id=2]
+[ext_resource path="res://fonts/NewShape-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://code/dialogue_label.gd" type="Script" id=4]
+[ext_resource path="res://ui/dialogue1_1ststage.png" type="Texture" id=5]
+[ext_resource path="res://code/dialogue_label_2.gd" type="Script" id=6]
+[ext_resource path="res://ui/dialogue2d_1st_stage.png" type="Texture" id=7]
+[ext_resource path="res://code/dial_3.gd" type="Script" id=8]
+[ext_resource path="res://ui/dialogue3rd_1stscen.png" type="Texture" id=9]
+[ext_resource path="res://code/dial_4.gd" type="Script" id=10]
+[ext_resource path="res://ui/dialogue4th_1st_scene.png" type="Texture" id=11]
+[ext_resource path="res://code/dial_6.gd" type="Script" id=12]
+[ext_resource path="res://ui/dialogue_6th_1st_scene (3).png" type="Texture" id=13]
+[ext_resource path="res://code/dial_7.gd" type="Script" id=14]
+[ext_resource path="res://ui/dialogue_7th_1st_scene.png" type="Texture" id=15]
+[ext_resource path="res://code/next_button.gd" type="Script" id=16]
+[ext_resource path="res://scenes/menus_curs.tscn" type="PackedScene" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 58
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 58
 outline_color = Color( 0.0313726, 0.168627, 0.521569, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 58
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 58
 outline_color = Color( 0.0313726, 0.168627, 0.521569, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 58
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 58
 outline_color = Color( 0.196078, 1, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [node name="dialogue" type="Control"]
 
@@ -58,6 +63,12 @@ __meta__ = {
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="diL_5"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 2.38898, 2.53334 )
+texture = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="diL_5"]
 margin_right = 10610.0
@@ -77,13 +88,13 @@ Well anyways, there is still scum on this ship
 [node name="dialogue_label" type="Popup" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="dialogue_label"]
 margin_right = 1297.0
 margin_bottom = 835.0
 rect_scale = Vector2( 1.67459, 1.57574 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="dialogue_label"]
 margin_right = 221.0
@@ -95,16 +106,15 @@ custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "-npc: Hey! Are you alive?"
 
 [node name="dialogue_label_2" type="Popup" parent="."]
-visible = true
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
 [node name="TextureRect" type="TextureRect" parent="dialogue_label_2"]
 margin_right = 1297.0
 margin_bottom = 835.0
 rect_scale = Vector2( 1.13035, 1.22685 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="dialogue_label_2"]
 margin_left = -1.15561
@@ -118,11 +128,13 @@ text = "-you: Wha... What's going on?"
 [node name="dial_3" type="Popup" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
 [node name="TextureRect" type="TextureRect" parent="dial_3"]
-margin_right = 1297.0
-margin_bottom = 835.0
+margin_right = 1123.0
+margin_bottom = 630.0
+rect_scale = Vector2( 1.93366, 2.14104 )
+texture = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="dial_3"]
 margin_right = 40.0
@@ -139,7 +151,13 @@ Looks like not only those scums are as tough as a radroach."
 [node name="dial_4" type="Popup" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 8 )
+script = ExtResource( 10 )
+
+[node name="TextureRect" type="TextureRect" parent="dial_4"]
+margin_right = 992.0
+margin_bottom = 623.0
+rect_scale = Vector2( 2.17815, 2.12304 )
+texture = ExtResource( 11 )
 
 [node name="Label" type="Label" parent="dial_4"]
 margin_right = 40.0
@@ -153,7 +171,13 @@ Do you have any insta healer? "
 [node name="dial_6" type="Popup" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 9 )
+script = ExtResource( 12 )
+
+[node name="TextureRect" type="TextureRect" parent="dial_6"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 2.04261, 2.06705 )
+texture = ExtResource( 13 )
 
 [node name="Label" type="Label" parent="dial_6"]
 margin_right = 40.0
@@ -166,7 +190,13 @@ They look nothing like pirates."
 [node name="dial_7" type="Popup" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 10 )
+script = ExtResource( 14 )
+
+[node name="TextureRect" type="TextureRect" parent="dial_7"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 1.98815, 2.12777 )
+texture = ExtResource( 15 )
 
 [node name="Label" type="Label" parent="dial_7"]
 margin_right = 40.0
@@ -185,14 +215,14 @@ margin_right = 4800.0
 margin_bottom = 2500.0
 rect_scale = Vector2( 0.456159, 0.526214 )
 flat = true
-script = ExtResource( 11 )
+script = ExtResource( 16 )
 
-[node name="Node2D" parent="." instance=ExtResource( 12 )]
-[connection signal="pressed" from="next_button" to="dialogue_label_2" method="_on_next_button_pressed"]
-[connection signal="pressed" from="next_button" to="diL_5" method="_on_next_button_pressed"]
-[connection signal="pressed" from="next_button" to="dialogue_label" method="_on_next_button_pressed"]
-[connection signal="pressed" from="next_button" to="dial_4" method="_on_next_button_pressed"]
-[connection signal="pressed" from="next_button" to="dial_6" method="_on_next_button_pressed"]
-[connection signal="pressed" from="next_button" to="dial_7" method="_on_next_button_pressed"]
+[node name="Node2D" parent="." instance=ExtResource( 17 )]
 [connection signal="pressed" from="next_button" to="dial_3" method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="dialogue_label" method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="dialogue_label_2" method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="dial_4" method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="dial_7" method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="dial_6" method="_on_next_button_pressed"]
+[connection signal="pressed" from="next_button" to="diL_5" method="_on_next_button_pressed"]
 [connection signal="pressed" from="next_button" to="next_button" method="_on_next_button_pressed"]
