@@ -11,7 +11,6 @@ const forward_jump = 300
 var physics_delta = 0;
 var vel= Vector3(0,0,0)
 func _ready():
-	print(sho.reload)
 	space_state = get_world().direct_space_state
 func get_translation_delta():
 	var delta = last_trans - translation

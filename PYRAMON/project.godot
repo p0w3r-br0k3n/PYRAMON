@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="PYRAMON"
-run/main_scene="res://scenes/startui.tscn"
+run/main_scene="res://scenes/start.tscn"
 
 [autoload]
 
@@ -107,7 +107,7 @@ quality/shading/force_blinn_over_ggx=true
 quality/subsurface_scattering/quality=2
 quality/subsurface_scattering/scale=8
 quality/subsurface_scattering/follow_surface=true
-environment/default_clear_color=Color( 0.301961, 0.301961, 0.301961, 1 )
+environment/default_clear_color=Color( 1, 1, 1, 1 )
 quality/reflections/atlas_size=8192
 quality/reflections/atlas_subdiv=32
 quality/filters/msaa=3

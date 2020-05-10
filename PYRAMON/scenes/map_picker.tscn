@@ -24,7 +24,6 @@ __meta__ = {
 
 [node name="menus_cursor" parent="." instance=ExtResource( 1 )]
 position = Vector2( 66.4821, 95.291 )
-scale = Vector2( 0.06466, 0.0702146 )
 
 [node name="map_picker" type="TextureRect" parent="."]
 margin_right = 2169.0
