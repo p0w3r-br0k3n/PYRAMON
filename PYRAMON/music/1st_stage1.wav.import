@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/1st_stage1.wav-46d200a3b22994001fe89508a1a319aa.sample"
+
+[deps]
+
+source_file="res://music/1st_stage1.wav"
+dest_files=[ "res://.import/1st_stage1.wav-46d200a3b22994001fe89508a1a319aa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

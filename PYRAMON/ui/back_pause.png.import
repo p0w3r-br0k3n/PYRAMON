@@ -2,25 +2,25 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cursor.png-ab659432fe95e81e8963a978cc7193a5.stex"
+path="res://.import/back_pause.png-1a224e932ba458f3074eefd2f77b2720.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/cursor.png"
-dest_files=[ "res://.import/cursor.png-ab659432fe95e81e8963a978cc7193a5.stex" ]
+source_file="res://ui/back_pause.png"
+dest_files=[ "res://.import/back_pause.png-1a224e932ba458f3074eefd2f77b2720.stex" ]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -1,13 +1,17 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ui/settings.png" type="Texture" id=1]
-[ext_resource path="res://scenes/menus_cursor.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/backbutton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://code/fullscreen.gd" type="Script" id=4]
-[ext_resource path="res://scenes/OptionButton.gd" type="Script" id=5]
+[ext_resource path="res://scenes/backbutton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://code/fullscreen.gd" type="Script" id=3]
+[ext_resource path="res://scenes/OptionButton.gd" type="Script" id=4]
+[ext_resource path="res://scenes/menus_curs.tscn" type="PackedScene" id=5]
 
 [node name="Settings" type="Control"]
 pause_mode = 2
+margin_left = -22.6101
+margin_top = 1.50735
+margin_right = -22.6101
+margin_bottom = 1.50735
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -31,9 +35,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="menus_cursor" parent="." instance=ExtResource( 2 )]
-
-[node name="Node2D" parent="." instance=ExtResource( 3 )]
+[node name="Node2D" parent="." instance=ExtResource( 2 )]
 margin_left = 14.0997
 margin_top = -4.70647
 margin_right = 14.0997
@@ -50,7 +52,7 @@ custom_colors/font_color_disabled = Color( 0.466667, 0.0470588, 0.0470588, 1 )
 custom_colors/font_color_hover_pressed = Color( 0.486275, 0.0470588, 0.0470588, 1 )
 custom_colors/font_color = Color( 0.556863, 0.0823529, 0.0823529, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="CheckButton"]
 margin_left = -284.038
@@ -66,7 +68,7 @@ margin_left = 1197.51
 margin_top = 510.735
 margin_right = 1314.51
 margin_bottom = 548.735
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="OptionButton"]
 margin_left = -817.949
@@ -76,5 +78,7 @@ margin_bottom = -47.3462
 rect_scale = Vector2( 4.70521, 6.99911 )
 custom_colors/font_color = Color( 0.776471, 0.529412, 0.529412, 1 )
 text = "Resolution"
+
+[node name="Node2D2" parent="." instance=ExtResource( 5 )]
 [connection signal="pressed" from="CheckButton" to="CheckButton" method="_on_CheckButton_pressed"]
 [connection signal="item_selected" from="OptionButton" to="OptionButton" method="_on_OptionButton_item_selected"]
