@@ -1,0 +1,29 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "pistol_empty"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cube/Cube001:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00675774, 2.79439 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cube/Cube007:transform")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Transform( 1, 0, 0, 0, 1, -2.32831e-010, 0, 0, 0.999997, 0, 0.000836372, -0.170185 ) ]
+}

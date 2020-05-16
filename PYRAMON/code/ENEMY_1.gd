@@ -5,7 +5,7 @@ const speed = 300
 const gravity = 981
 var last_trans = translation
 var accel = 0
-onready var sho = get_tree().get_root().get_node("/root/level/enem/hand_swevel/hand_right/scene_root")
+onready var sho = get_tree().get_root().get_node("/root/level/enem/hand_swervel/hand_right/scene_root")
 const leg_force= 500
 const forward_jump = 300
 var physics_delta = 0;
@@ -23,6 +23,7 @@ func _process(delta):
 	if target:
 		var result = space_state.intersect_ray(global_transform.origin, target.global_transform.origin)
 		if result.collider.is_in_group("Player"):
+			sho.shoot()
 		
 			move_to_target(delta)
 			print("fire")

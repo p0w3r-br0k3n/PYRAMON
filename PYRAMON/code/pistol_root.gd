@@ -10,6 +10,7 @@ var start = 1
 var stop = 0
 var cant_shoot= 0
 var rel=0
+var rec_cant_shoot=0
 var cant_shoot_animation_stop=0
 onready var Parent = get_parent().get_parent().get_parent()
 var stop_fire_holster=0
@@ -54,7 +55,7 @@ func _process(delta):
 	if no_ammo==1:
 		$AnimationPlayer.play("pistol_empty")
 	
-	if Input.is_action_just_pressed("mouse_click") and (stop==0 or start == 1 and cant_shoot==0 and bullets_remaining>-9):
+	if Input.is_action_just_pressed("mouse_click") and (rec_cant_shoot==0 and  stop==0 or start == 1 and cant_shoot==0 and bullets_remaining>-9):
 		var mouse_pos = get_tree().root.get_mouse_position()
 		mouse_position = Vector3(mouse_pos.x, mouse_pos.y, 0)
 		print (bullets_remaining)
@@ -105,6 +106,8 @@ func fire_timeout_complete():
 
 func shoot():
 	# check if we have ammo
+	$recoil.start()
+	rec_cant_shoot=1
 	if(reload == 0 and stop == 0 and cant_shoot==0 ):
 		start = 0
 		stop=1
@@ -193,3 +196,8 @@ func _on_empty_mag_timeout():
 	$empty_mag.stop()
 
 
+
+
+func _on_recoil_timeout():
+	rec_cant_shoot=0
+	$recoil.stop()

@@ -12,9 +12,10 @@
 [ext_resource path="res://particles/smoke_fire_particles.tres" type="Material" id=10]
 [ext_resource path="res://animations/basic_gun_recoil.tres" type="Animation" id=11]
 [ext_resource path="res://animations/basic_gun_reload.tres" type="Animation" id=12]
-[ext_resource path="res://sounds/no_more_ammo.wav" type="AudioStream" id=13]
-[ext_resource path="res://code/bullets_until_reload.gd" type="Script" id=14]
-[ext_resource path="res://code/bullets_remaining_label.gd" type="Script" id=15]
+[ext_resource path="res://animations/pistol_empty.tres" type="Animation" id=13]
+[ext_resource path="res://sounds/no_more_ammo.wav" type="AudioStream" id=14]
+[ext_resource path="res://code/bullets_until_reload.gd" type="Script" id=15]
+[ext_resource path="res://code/bullets_remaining_label.gd" type="Script" id=16]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube"
@@ -199,34 +200,6 @@ uv1_offset = Vector3( 1.61, 0, 0 )
 
 [sub_resource type="PlaneMesh" id=14]
 
-[sub_resource type="Animation" id=15]
-resource_name = "pistol_empty"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Cube/Cube001:transform")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.2 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00675774, 2.79439 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Cube/Cube007:transform")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.2 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Transform( 1, 0, 0, 0, 1, -2.32831e-010, 0, 0, 0.999997, 0, 0.000836372, -0.170185 ) ]
-}
-
 [node name="pistol_root" type="Spatial"]
 transform = Transform( 0.0110354, 0, 0, 0, 0.00928473, 0, 0, 0, 0.00880395, -0.00138825, -0.103475, 0.289388 )
 script = ExtResource( 1 )
@@ -314,7 +287,7 @@ wait_time = 0.04
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/basic_gun_recoil = ExtResource( 11 )
 anims/basic_gun_reload = ExtResource( 12 )
-anims/pistol_empty = SubResource( 15 )
+anims/pistol_empty = ExtResource( 13 )
 
 [node name="reload" type="Timer" parent="."]
 wait_time = 0.5
@@ -323,7 +296,7 @@ wait_time = 0.5
 wait_time = 0.5
 
 [node name="no_more_ammo" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 13 )
+stream = ExtResource( 14 )
 
 [node name="Control" type="Control" parent="."]
 margin_left = 952.381
@@ -349,7 +322,7 @@ margin_bottom = 373.0
 rect_scale = Vector2( 27.8286, 16.1728 )
 custom_colors/font_color = Color( 0.521569, 1, 0, 1 )
 text = "a"
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 
 [node name="Label" type="Label" parent="Control"]
 anchor_right = 0.98
@@ -360,10 +333,14 @@ margin_bottom = 372.667
 rect_scale = Vector2( 27.829, 16.173 )
 custom_colors/font_color = Color( 0, 0.529412, 1, 1 )
 text = "a"
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 
 [node name="Area" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.999999, -0.144714, 2.76372, -10.1685 )
+
+[node name="recoil" type="Timer" parent="."]
+wait_time = 0.2
 [connection signal="timeout" from="fire_pistol/fire_pistol_time" to="." method="_on_fire_pistol_time_timeout"]
 [connection signal="timeout" from="reload" to="." method="_on_reload_timeout"]
 [connection signal="timeout" from="empty_mag" to="." method="_on_empty_mag_timeout"]
+[connection signal="timeout" from="recoil" to="." method="_on_recoil_timeout"]
