@@ -76,7 +76,7 @@ enabled = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00618362, 0, -0.00956249 )
 
 [node name="transporter_light" type="OmniLight" parent="."]
-transform = Transform( 1, 2.77556e-017, -2.98023e-008, -2.32302e-010, -0.99997, -0.00779477, -2.98014e-008, 0.00779477, -0.99997, 6.28137, 11.2917, -0.825538 )
+transform = Transform( 1, 2.77556e-17, -2.98023e-08, -2.32302e-10, -0.99997, -0.00779477, -2.98014e-08, 0.00779477, -0.99997, 6.28137, 11.2917, -0.825538 )
 light_color = Color( 0.0431373, 0.101961, 0.72549, 1 )
 light_energy = 2.38
 light_indirect_energy = 0.0
@@ -88,7 +88,7 @@ shadow_bias = -12.19
 shadow_contact = 13.22
 
 [node name="transporter_light2" type="OmniLight" parent="."]
-transform = Transform( 1, 3.30872e-024, -2.98023e-008, -2.32302e-010, -0.99997, -0.00779477, -2.98014e-008, 0.00779477, -0.99997, 23.8273, 18.32, -0.257821 )
+transform = Transform( 1, 3.30872e-24, -2.98023e-08, -2.32302e-10, -0.99997, -0.00779477, -2.98014e-08, 0.00779477, -0.99997, 23.8273, 18.32, -0.257821 )
 light_color = Color( 0.0431373, 0.101961, 0.72549, 1 )
 light_energy = 3.86
 light_indirect_energy = 0.0
@@ -154,7 +154,7 @@ light_energy = 16.0
 transform = Transform( 1, 0, 0, 0, 0.24795, 0, 0, 0, 1, 6.06869, 10.2238, -1.44484 )
 
 [node name="Particles" type="Particles" parent="Area"]
-transform = Transform( -0.352247, 1.24196e-007, 0, -3.07944e-008, -1.42063, 0, 0, 0, 0.352247, 0.0733333, 4.0042, -0.257031 )
+transform = Transform( -0.352247, 1.24196e-07, 0, -3.07944e-08, -1.42063, 0, 0, 0, 0.352247, 0.0733333, 4.0042, -0.257031 )
 material_override = SubResource( 1 )
 emitting = false
 amount = 50
@@ -170,7 +170,7 @@ shape = SubResource( 5 )
 transform = Transform( 1, 0, 0, 0, 0.29608, 0, 0, 0, 1, 24.316, 17.0244, -1.44484 )
 
 [node name="Particles2" type="Particles" parent="Area2"]
-transform = Transform( -0.352247, 1.24196e-007, 0, -2.57885e-008, -1.1897, 0, 0, 0, 0.352247, 0.0445461, 2.62988, -0.257031 )
+transform = Transform( -0.352247, 1.24196e-07, 0, -2.57885e-08, -1.1897, 0, 0, 0, 0.352247, 0.0445461, 2.62988, -0.257031 )
 material_override = SubResource( 1 )
 emitting = false
 amount = 50
@@ -183,18 +183,18 @@ draw_pass_1 = SubResource( 4 )
 shape = SubResource( 5 )
 
 [node name="prot" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.0142716, 0, -0.19949, -1.49012e-008, 0.2, -1.86265e-009, 0.19949, 0, 0.0142716, 5.05769, 3.48444, -1.24354 )
+transform = Transform( 0.0142716, 0, -0.19949, -1.49012e-08, 0.2, -1.86265e-09, 0.19949, 0, 0.0142716, 5.05769, 3.48444, -1.24354 )
 
 [node name="Spatial" type="Spatial" parent="prot"]
 transform = Transform( 0.0452802, 0.082204, 0.995583, 0.00198418, 0.996598, -0.0823773, -0.998969, 0.00570551, 0.044963, 19.3205, 3.14982, 0.15324 )
 
 [node name="bullet" parent="." instance=ExtResource( 4 )]
-transform = Transform( -0.705, 0, -8.81815e-008, 0, 0.784, 0, 1.06452e-007, 0, -0.584, 6.08465, 0.00452328, -0.97144 )
+transform = Transform( -0.705, 0, -8.81815e-08, 0, 0.784, 0, 1.06452e-07, 0, -0.584, 6.08465, 0.00452328, -0.97144 )
 visible = false
 
 [node name="games_cursor" parent="." instance=ExtResource( 5 )]
 
 [node name="enem" parent="." instance=ExtResource( 6 )]
-transform = Transform( -8.74228e-009, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-009, 12.3507, 4.73488, -1.41321 )
+transform = Transform( -8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 12.3507, 4.73488, -1.41321 )
 [connection signal="body_entered" from="Area" to="prot" method="_on_Area_body_entered"]
 [connection signal="body_entered" from="Area2" to="prot" method="_on_Area2_body_entered"]

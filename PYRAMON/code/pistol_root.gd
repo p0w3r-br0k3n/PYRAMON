@@ -12,7 +12,7 @@ var cant_shoot= 0
 var rel=0
 var rec_cant_shoot=0
 var cant_shoot_animation_stop=0
-onready var Parent = get_parent().get_parent().get_parent()
+onready var Parent = get_node("/root/level")
 var stop_fire_holster=0
 var stop_click_holster = 0
 onready var fire_timer = null
@@ -57,7 +57,7 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("mouse_click") and (rec_cant_shoot==0 and  stop==0 or start == 1 and cant_shoot==0 and bullets_remaining>-9):
 		var mouse_pos = get_tree().root.get_mouse_position()
-		mouse_position = Vector3(mouse_pos.x, mouse_pos.y, 0)
+		mouse_position = mouse_pos #Vector3(mouse_pos.x, mouse_pos.y, 0)
 		print (bullets_remaining)
 		print (bullet_spawn_location)
 		print (clip)
@@ -113,7 +113,7 @@ func shoot():
 		stop=1
 		if no_ammo==0:
 				$pistol_reload_sound.play()
-				
+		
 		elif no_ammo==1:
 			cant_shoot =1
 			
@@ -137,13 +137,6 @@ func shoot():
 	
 	# get the required positions and translations
 	var pos = Camera.unproject_position(global_transform.origin)
-	var spat = get_node("/root/level/prot/hand_swervel/hand_right/scene_root/Area")
-	var spatial_pos=spat.global_transform.origin
-	bullet_spawn_location = Vector3(spatial_pos.x,spatial_pos.y, 0)
-	
-    
-
-
 	
 	# we should realistically have two separate nodes for 
 	# bullet translation and case translation so they don't collide as soon as they spawn
@@ -151,15 +144,17 @@ func shoot():
 	var bullet_translation_vector = Vector3(global_transform.origin.x +0.2,global_transform.origin.y, global_transform.origin.z)
 	var case_translation_vector = global_transform.origin
 	
-	var bullet_speed_vector = mouse_position - bullet_spawn_location
+	var bs_vc = mouse_position - pos
+	var bullet_speed_vector = Vector3(bs_vc.x, bs_vc.y, 0)
 	bullet_speed_vector.y *= -1
 	
 	bullet.global_rotate(Vector3(1, 0, 0), 300)
 	bullet.set_speed(bullet_speed_vector.normalized())
-	bullet.global_translate(bullet_translation_vector)
+	bullet.global_transform.origin = bullet_translation_vector
 	
 	case.global_rotate(Vector3(1,0,0),300)
-	case.global_translate(case_translation_vector)
+	case.global_transform.origin = case_translation_vector
+	print(case_translation_vector)
 	case.apply_impulse(Vector3(0,0,0), Vector3(0,0,1))
 	# play bullet sound
 	Sound.play()

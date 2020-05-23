@@ -3,7 +3,7 @@ var damage=10
 
 var speed = 8
 var velocity = Vector3()
-onready var healt=get_tree().get_root().get_node("/root/level/prot")
+onready var healt=  get_node("/root/level/prot")
 func _ready():
 	velocity = Vector3(speed, 0, 0)
 
