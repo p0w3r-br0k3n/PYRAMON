@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/airship.gltf.gltf-5639ac51b348ad898b36112adef1b9f3.scn"
+path="res://.import/Airship.gltf.gltf-d1dbc459f5aee43f5c5105b74f3307ce.scn"
 
 [deps]
 
-source_file="res://maps/airship.gltf.gltf"
-dest_files=[ "res://.import/airship.gltf.gltf-5639ac51b348ad898b36112adef1b9f3.scn" ]
+source_file="res://maps/Airship.gltf.gltf"
+dest_files=[ "res://.import/Airship.gltf.gltf-d1dbc459f5aee43f5c5105b74f3307ce.scn" ]
 
 [params]
 
@@ -24,7 +24,6 @@ meshes/ensure_tangents=true
 meshes/storage=0
 meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
-skins/use_named_skins=true
 external_files/store_in_subdir=false
 animation/import=true
 animation/fps=15

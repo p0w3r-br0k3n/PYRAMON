@@ -83,9 +83,9 @@ func _process(delta):
 		print(bullets_remaining)
 		$empty_mag.start()
 		print (bullets_remaining)
-		mag.global_rotate(Vector3(1,0,0),300)
+
 		mag.global_translate(mag_translation_vector)
-		mag.apply_impulse(Vector3(0,0,0), Vector3(0,0,1))
+		mag.apply_impulse(Vector3(0,0,0), Vector3(0,0,.1))
 		
 	
 	if  bullets_remaining<=-9:
@@ -116,8 +116,14 @@ func shoot():
 		
 		elif no_ammo==1:
 			cant_shoot =1
-			
-	
+		var mag= Mag.instance()
+		Parent.add_child(mag)
+		var mag_translation_vector = global_transform.origin
+		start = 0
+
+		mag.global_translate(mag_translation_vector)
+		mag.apply_impulse(Vector3(0,0,0), Vector3(0,0,0.1))	
+		
 		$reload.start()
 		$AnimationPlayer.play("basic_gun_reload")
 		
@@ -130,7 +136,7 @@ func shoot():
 		# spawn bullet and case
 	var bullet = Bullet.instance()
 	var case = Case.instance()
-		
+
 	Parent.add_child(bullet)
 	Parent.add_child(case)
 	

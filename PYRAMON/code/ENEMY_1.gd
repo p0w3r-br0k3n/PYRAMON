@@ -5,6 +5,7 @@ const speed = 300
 const gravity = 981
 var last_trans = translation
 var accel = 0
+var health=10
 onready var sho = get_tree().get_root().get_node("/root/level/enem/hand_swervel/hand_right/scene_root")
 const leg_force= 500
 const forward_jump = 300
@@ -19,6 +20,9 @@ func get_translation_delta():
 func _physics_process(delta):
 	vel.x=speed
 func _process(delta):
+	print ("enemy_health",health)
+	if health==0:
+		queue_free()
 	move_and_slide(vel*physics_delta, Vector3(0, 1, 0), false, 4, 0.785398, true)
 	if target:
 		var result = space_state.intersect_ray(global_transform.origin, target.global_transform.origin)

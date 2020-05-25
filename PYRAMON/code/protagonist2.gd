@@ -27,7 +27,6 @@ func get_translation_delta():
 
 func _ready():
 
-	add_to_group("enemy")
 	add_to_group("Player")
 	$walking.play("holster")
 	$holster_time.start()
