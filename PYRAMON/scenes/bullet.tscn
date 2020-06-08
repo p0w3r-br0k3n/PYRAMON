@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://code/bullet.gd" type="Script" id=1]
 
@@ -25,6 +25,8 @@ emission_on_uv2 = false
 [sub_resource type="SpatialMaterial" id=6]
 albedo_color = Color( 0.65098, 0.133333, 0.133333, 1 )
 roughness = 0.49
+
+[sub_resource type="CapsuleShape" id=7]
 
 [node name="bullet" type="KinematicBody"]
 transform = Transform( -0.1, 0, -1.50996e-008, 0, 0.1, 0, 1.50996e-008, 0, -0.1, -0.000975363, 0, -1.25617e-005 )
@@ -60,3 +62,10 @@ material/0 = SubResource( 6 )
 [node name="CollisionShape3" type="CollisionShape" parent="."]
 transform = Transform( -1.62921e-008, -0.1, 0, 0.1, -1.62921e-008, 0, 0, 0, 0.1, 0, 0, 0 )
 shape = SubResource( 4 )
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( -4.37114e-009, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-009, -0.0503684, 0, -7.58155e-009 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 7 )
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

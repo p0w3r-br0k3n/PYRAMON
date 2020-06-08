@@ -1,0 +1,16 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("hand_swervel/hand_right/hand_left:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.602275, -1.18469, -0.130676 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.26775, -3.57003, 3.52485 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.202685, 1.74326, -0.726387 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.202685, 1.74326, 0.692308 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.602275, -1.18469, -0.130676 ) ]
+}

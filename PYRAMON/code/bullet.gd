@@ -35,3 +35,7 @@ func _physics_process(delta):
 		
 		if(queue_free):
 			queue_free()
+
+
+func _on_Area_body_entered(body):
+	print(1)
