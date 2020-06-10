@@ -159,7 +159,7 @@ surfaces/0 = {
 }
 
 [sub_resource type="ParticlesMaterial" id=11]
-angular_velocity = -1.11461e+015
+angular_velocity = -1.11461e+15
 
 [sub_resource type="QuadMesh" id=12]
 
@@ -189,12 +189,12 @@ mesh = SubResource( 5 )
 material/0 = null
 
 [node name="Cube003" type="MeshInstance" parent="Cube/Cube001"]
-transform = Transform( -0.555699, 0.034516, -5.69927e-009, 0.0194513, 0.986077, 9.97162e-011, 3.16902e-009, -9.8388e-011, -1, -0.694493, -0.0913033, -6.20752 )
+transform = Transform( -0.555699, 0.034516, -5.69927e-09, 0.0194513, 0.986077, 9.97162e-11, 3.16902e-09, -9.8388e-11, -1, -0.694493, -0.0913033, -6.20752 )
 mesh = SubResource( 6 )
 material/0 = null
 
 [node name="Cube004" type="MeshInstance" parent="Cube/Cube001"]
-transform = Transform( -0.555699, 0.034516, -5.69927e-009, 0.0194513, 0.986077, 9.97162e-011, 3.16902e-009, -9.8388e-011, -1, 0.444923, -0.0913033, -6.20752 )
+transform = Transform( -0.555699, 0.034516, -5.69927e-09, 0.0194513, 0.986077, 9.97162e-11, 3.16902e-09, -9.8388e-11, -1, 0.444923, -0.0913033, -6.20752 )
 mesh = SubResource( 7 )
 material/0 = null
 
@@ -209,7 +209,7 @@ mesh = SubResource( 9 )
 material/0 = null
 
 [node name="Cube007" type="MeshInstance" parent="Cube"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49012e-008, 2.86102e-006, 0.174881 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49012e-08, 2.86102e-06, 0.174881 )
 mesh = SubResource( 10 )
 material/0 = null
 
@@ -234,7 +234,7 @@ anims/pistol_empty = ExtResource( 11 )
 [node name="empty_mag" type="Timer" parent="."]
 
 [node name="smoke_pistol" type="Particles" parent="."]
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0, 3.30862, -10.9195 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 3.30862, -10.9195 )
 material_override = ExtResource( 12 )
 emitting = false
 amount = 50
@@ -243,7 +243,7 @@ process_material = SubResource( 11 )
 draw_pass_1 = SubResource( 12 )
 
 [node name="fire_pistol" type="Particles" parent="."]
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0, 3.30862, -10.9195 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 3.30862, -10.9195 )
 material_override = ExtResource( 12 )
 emitting = false
 amount = 50

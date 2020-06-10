@@ -29,6 +29,12 @@ var reload = 9
 var no_ammo=0
 
 var bullets_remaining = 9
+
+func smoke_timeout_complete():
+	pass
+
+func fire_timeout_complete():
+	pass
 	
 func _ready():
 	
@@ -84,7 +90,7 @@ func shoot():
 		var spatial_pos=spat.global_transform.origin
 		bullet_spawn_location = Vector3(spatial_pos.x,spatial_pos.y, 0)
 		
-    
+	
 
 
 		

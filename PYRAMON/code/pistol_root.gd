@@ -29,6 +29,16 @@ var reload = 9
 var no_ammo=0
 
 var bullets_remaining = 9
+
+func smoke_timeout_complete():
+	Smoke.set_emitting(false)
+	smoke_timer.stop()
+
+func fire_timeout_complete():
+	print("hwat")
+	Smoke.set_emitting(true)
+	smoke_timer.start()
+	fire_timer.stop()
 	
 func _ready():
 	
@@ -43,7 +53,6 @@ func _ready():
 	
 	add_child(fire_timer)
 	add_child(smoke_timer)
-
 
 # warning-ignore:unused_argument
 func _process(delta):
@@ -91,18 +100,6 @@ func _process(delta):
 	if  bullets_remaining<=-9:
 		reload=0
 		no_ammo=1
-		
-		
-
-func smoke_timeout_complete():
-	Smoke.set_emitting(false)
-	smoke_timer.stop()
-
-func fire_timeout_complete():
-	print("hwat")
-	Smoke.set_emitting(true)
-	smoke_timer.start()
-	fire_timer.stop()
 
 func shoot():
 	# check if we have ammo
