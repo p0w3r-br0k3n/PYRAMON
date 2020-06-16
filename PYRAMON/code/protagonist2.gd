@@ -30,6 +30,7 @@ func _ready():
 	add_to_group("Player")
 	$walking.play("holster")
 	$holster_time.start()
+
 func _process(_delta):
 	health=health-1
 	
@@ -144,6 +145,9 @@ func _on_holster_time_timeout():
 
 func _on_empty_mag_timeout():
 	reload_hands=1
+	
+func hurt():
+	print("Ow! Player was hurt!")
 
 
 
