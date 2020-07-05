@@ -39,7 +39,7 @@ surfaces/0 = {
 script = ExtResource( 1 )
 
 [node name="Cube006" type="MeshInstance" parent="."]
-transform = Transform( 0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.135929, -0.640282, 0.264493 )
+transform = Transform( 0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
@@ -49,5 +49,5 @@ mesh = SubResource( 2 )
 material/0 = null
 
 [node name="CollisionPolygon" type="CollisionShape" parent="."]
-transform = Transform( 4.40984, 0, 0, 0, 13.5171, 4.70591, 0, -2.86569, 8.23133, 0, -0.518768, 0.303462 )
+transform = Transform( 2.0862, 0, 0, 0, 2.52262, 0.878236, 0, -0.666473, 1.91436, 0, -0.00615257, 0.0700723 )
 shape = SubResource( 3 )

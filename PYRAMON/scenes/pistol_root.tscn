@@ -1,20 +1,20 @@
 [gd_scene load_steps=31 format=2]
 
-[ext_resource path="res://weapons/Material_004.material" type="Material" id=2]
-[ext_resource path="res://weapons/Material_001.material" type="Material" id=3]
-[ext_resource path="res://weapons/Material_003.material" type="Material" id=4]
-[ext_resource path="res://weapons/Material_002.material" type="Material" id=5]
-[ext_resource path="res://sounds/pistol_fire_sound.wav" type="AudioStream" id=6]
-[ext_resource path="res://sounds/pistol_reload_sound.wav" type="AudioStream" id=7]
-[ext_resource path="res://particles/pistol_smoke.tres" type="Material" id=8]
-[ext_resource path="res://sprites/fire_smoke_sprite.png" type="Texture" id=9]
-[ext_resource path="res://particles/smoke_fire_particles.tres" type="Material" id=10]
-[ext_resource path="res://animations/basic_gun_recoil.tres" type="Animation" id=11]
-[ext_resource path="res://animations/basic_gun_reload.tres" type="Animation" id=12]
-[ext_resource path="res://animations/pistol_empty.tres" type="Animation" id=13]
-[ext_resource path="res://sounds/no_more_ammo.wav" type="AudioStream" id=14]
-[ext_resource path="res://code/bullets_until_reload.gd" type="Script" id=15]
-[ext_resource path="res://code/bullets_remaining_label.gd" type="Script" id=16]
+[ext_resource path="res://weapons/Material_004.material" type="Material" id=1]
+[ext_resource path="res://weapons/Material_001.material" type="Material" id=2]
+[ext_resource path="res://weapons/Material_003.material" type="Material" id=3]
+[ext_resource path="res://weapons/Material_002.material" type="Material" id=4]
+[ext_resource path="res://sounds/pistol_fire_sound.wav" type="AudioStream" id=5]
+[ext_resource path="res://sounds/pistol_reload_sound.wav" type="AudioStream" id=6]
+[ext_resource path="res://particles/pistol_smoke.tres" type="Material" id=7]
+[ext_resource path="res://sprites/fire_smoke_sprite.png" type="Texture" id=8]
+[ext_resource path="res://particles/smoke_fire_particles.tres" type="Material" id=9]
+[ext_resource path="res://animations/basic_gun_recoil.tres" type="Animation" id=10]
+[ext_resource path="res://animations/basic_gun_reload.tres" type="Animation" id=11]
+[ext_resource path="res://animations/pistol_empty.tres" type="Animation" id=12]
+[ext_resource path="res://sounds/no_more_ammo.wav" type="AudioStream" id=13]
+[ext_resource path="res://code/bullets_until_reload.gd" type="Script" id=14]
+[ext_resource path="res://code/bullets_remaining_label.gd" type="Script" id=15]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Spatial
@@ -86,9 +86,7 @@ func _process(delta):
 	if Input.is_action_just_pressed(\"mouse_click\") and (rec_cant_shoot==0 and  stop==0 or start == 1 and cant_shoot==0 and bullets_remaining>-9):
 		var mouse_pos = get_tree().root.get_mouse_position()
 		mouse_position = mouse_pos #Vector3(mouse_pos.x, mouse_pos.y, 0)
-		print (bullets_remaining)
-		print (bullet_spawn_location)
-		print (clip)
+		
 		$fire_pistol.set_emitting(true)
 		$fire_pistol/fire_pistol_time.start()
 		
@@ -225,7 +223,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 36,
-"material": ExtResource( 2 ),
+"material": ExtResource( 1 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
@@ -239,7 +237,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 3456,
-"material": ExtResource( 3 ),
+"material": ExtResource( 2 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 2304
@@ -253,7 +251,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 36,
-"material": ExtResource( 4 ),
+"material": ExtResource( 3 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
@@ -267,7 +265,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 36,
-"material": ExtResource( 4 ),
+"material": ExtResource( 3 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
@@ -281,7 +279,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 372,
-"material": ExtResource( 3 ),
+"material": ExtResource( 2 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 192
@@ -295,7 +293,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 36,
-"material": ExtResource( 2 ),
+"material": ExtResource( 1 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
@@ -309,7 +307,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 36,
-"material": ExtResource( 5 ),
+"material": ExtResource( 4 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
@@ -323,7 +321,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 36,
-"material": ExtResource( 3 ),
+"material": ExtResource( 2 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
@@ -337,7 +335,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 36,
-"material": ExtResource( 3 ),
+"material": ExtResource( 2 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
@@ -351,7 +349,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 36,
-"material": ExtResource( 3 ),
+"material": ExtResource( 2 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
@@ -384,7 +382,7 @@ params_diffuse_mode = 1
 params_specular_mode = 1
 params_blend_mode = 1
 albedo_color = Color( 0.776471, 0.631373, 0.513726, 1 )
-albedo_texture = ExtResource( 9 )
+albedo_texture = ExtResource( 8 )
 depth_enabled = true
 depth_scale = 16.0
 depth_deep_parallax = true
@@ -411,7 +409,7 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Cube005" type="MeshInstance" parent="Cube"]
-transform = Transform( 0.813269, 0, 0, 0, 0.992808, 0.0880008, 0, -0.126518, 0.767991, 2.98023e-08, 0.349876, 0.00241089 )
+transform = Transform( 0.813269, 0, 0, 0, 0.992808, 0.0880008, 0, -0.126518, 0.767991, 2.98023e-008, 0.349876, 0.00241089 )
 mesh = SubResource( 4 )
 material/0 = null
 
@@ -435,29 +433,29 @@ mesh = SubResource( 8 )
 material/0 = null
 
 [node name="Cube003" type="MeshInstance" parent="Cube/Cube001"]
-transform = Transform( -0.555699, 0.034516, -5.69927e-09, 0.0194513, 0.986077, 9.97162e-11, 3.16902e-09, -9.8388e-11, -1, -0.694493, -0.0913033, -6.20752 )
+transform = Transform( -0.555699, 0.034516, -5.69927e-009, 0.0194513, 0.986077, 9.97162e-011, 3.16902e-009, -9.8388e-011, -1, -0.694493, -0.0913033, -6.20752 )
 mesh = SubResource( 9 )
 material/0 = null
 
 [node name="Cube004" type="MeshInstance" parent="Cube/Cube001"]
-transform = Transform( -0.555699, 0.034516, -5.69927e-09, 0.0194513, 0.986077, 9.97162e-11, 3.16902e-09, -9.8388e-11, -1, 0.444923, -0.0913033, -6.20752 )
+transform = Transform( -0.555699, 0.034516, -5.69927e-009, 0.0194513, 0.986077, 9.97162e-011, 3.16902e-009, -9.8388e-011, -1, 0.444923, -0.0913033, -6.20752 )
 mesh = SubResource( 10 )
 material/0 = null
 
 [node name="Cube007" type="MeshInstance" parent="Cube"]
-transform = Transform( 1, 0, 0, 0, 1, -2.32831e-10, 0, 0, 0.999997, 1.49012e-08, 2.86102e-06, 0.174881 )
+transform = Transform( 1, 0, 0, 0, 1, -2.32831e-010, 0, 0, 0.999997, 1.49012e-008, 2.86102e-006, 0.174881 )
 mesh = SubResource( 11 )
 material/0 = null
 
 [node name="pistol_gun_sound_source" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 5 )
 
 [node name="pistol_reload_sound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
+stream = ExtResource( 6 )
 
 [node name="smoke_pistol" type="Particles" parent="."]
 transform = Transform( -0.0864507, 0.000120714, 0.3922, 0.0055413, -0.480114, 0.00129427, 0.120004, 0.0065853, 0.0274787, -0.0439999, 5.0303, -8.50823 )
-material_override = ExtResource( 8 )
+material_override = ExtResource( 7 )
 emitting = false
 amount = 50
 lifetime = 2.0
@@ -471,19 +469,20 @@ draw_pass_1 = SubResource( 13 )
 [node name="fire_pistol" type="Particles" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.00200517, -0.948216, 0, 1.05461, 0.00200517, 0.0461062, 2.87514, -9.96909 )
 material_override = SubResource( 14 )
-emitting = false
-amount = 48
+amount = 10
+lifetime = 0.78
 preprocess = 27.1
 speed_scale = 3.9
-process_material = ExtResource( 10 )
+process_material = ExtResource( 9 )
 draw_pass_1 = SubResource( 15 )
 
 [node name="fire_pistol_time" type="Timer" parent="fire_pistol"]
+wait_time = 0.2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/basic_gun_recoil = ExtResource( 11 )
-anims/basic_gun_reload = ExtResource( 12 )
-anims/pistol_empty = ExtResource( 13 )
+anims/basic_gun_recoil = ExtResource( 10 )
+anims/basic_gun_reload = ExtResource( 11 )
+anims/pistol_empty = ExtResource( 12 )
 
 [node name="reload" type="Timer" parent="."]
 wait_time = 0.5
@@ -492,7 +491,7 @@ wait_time = 0.5
 wait_time = 0.5
 
 [node name="no_more_ammo" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 14 )
+stream = ExtResource( 13 )
 
 [node name="Control" type="Control" parent="."]
 margin_left = 952.381
@@ -518,7 +517,7 @@ margin_bottom = 373.0
 rect_scale = Vector2( 27.8286, 16.1728 )
 custom_colors/font_color = Color( 0.521569, 1, 0, 1 )
 text = "a"
-script = ExtResource( 15 )
+script = ExtResource( 14 )
 
 [node name="Label" type="Label" parent="Control"]
 anchor_right = 0.98
@@ -529,7 +528,7 @@ margin_bottom = 372.667
 rect_scale = Vector2( 27.829, 16.173 )
 custom_colors/font_color = Color( 0, 0.529412, 1, 1 )
 text = "a"
-script = ExtResource( 16 )
+script = ExtResource( 15 )
 
 [node name="Area" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.999999, -0.144714, 2.76372, -10.1685 )
