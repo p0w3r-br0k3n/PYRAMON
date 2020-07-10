@@ -42,7 +42,7 @@ func _process(delta):
 		var result = space_state.intersect_ray(global_transform.origin, target.global_transform.origin)
 		if result.collider:
 			if result.collider.is_in_group("Player"):
-				#sho.shoot()
+				sho.shoot()
 		
 				move_to_target(delta)
 				print("fire")

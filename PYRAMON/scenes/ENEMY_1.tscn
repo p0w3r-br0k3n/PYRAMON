@@ -11,7 +11,7 @@
 [ext_resource path="res://animations/walking_left.tres" type="Animation" id=9]
 [ext_resource path="res://characters/Material_006.material" type="Material" id=10]
 [ext_resource path="res://characters/Material_002.material" type="Material" id=11]
-[ext_resource path="res://weapons/pistol_enemies.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/smg.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "head"
@@ -211,13 +211,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35973, -0.0589781, -4.01904 
 mesh = SubResource( 13 )
 material/0 = null
 
-[node name="scene_root" parent="hand_swervel/hand_right" instance=ExtResource( 12 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.1659, 0.482085, 0.120197 )
-
 [node name="hand_left" type="MeshInstance" parent="hand_swervel/hand_right"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.37444, -0.132091, 0.0809412 )
 mesh = SubResource( 14 )
 material/0 = null
+
+[node name="scene_root" parent="hand_swervel/hand_right" instance=ExtResource( 12 )]
+transform = Transform( -8.53753e-008, 0, 1.95316, 0, 1.95316, 0, -1.95316, 0, -8.53753e-008, -0.251819, -1.57701, 2.69258 )
 
 [node name="Area" type="Area" parent="."]
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 0.0475378, 0.53013, -17.7766 )
